@@ -18,7 +18,7 @@ Si esa escena te suena familiar —o al menos una versión de ella—, este libr
 
 ## La verdad que nadie te dice
 
-Aquí va la neta: la mayoría de los profesionales en México y América Latina están exactamente donde tú estás. Según estudios recientes, menos del 20% de los trabajadores en la región usan herramientas de inteligencia artificial de manera regular en su trabajo. Eso quiere decir que 8 de cada 10 personas en tu oficina están igual o peor que tú.
+Aquí va la verdad: la mayoría de los profesionales en México y América Latina están exactamente donde tú estás. Según estudios recientes, menos del 20% de los trabajadores en la región usan herramientas de inteligencia artificial de manera regular en su trabajo. Eso quiere decir que 8 de cada 10 personas en tu oficina están igual o peor que tú.
 
 ¿Sabes qué significa eso? Que "llegar tarde" es relativo. Sí, ya hay gente que lleva un año experimentando con estas herramientas. Pero la adopción masiva en nuestros países apenas está empezando. No llegaste al final de la fiesta: llegaste cuando apenas están poniendo la buena música.
 
