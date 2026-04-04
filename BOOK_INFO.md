@@ -112,7 +112,7 @@ Con un tono conversacional, ejemplos del día a día y prompts que puedes usar d
 | Intro | Sí, Llegaste Tarde. Y Está Bien. | ✅ Completo |
 | 1 | ¿Qué Es la IA? (Explicado Como Si Fueras Mi Mamá) | ✅ Completo |
 | 2 | Tu Primera Conversación con la IA (Sin Morir en el Intento) | ✅ Completo |
-| 3 | El Arte de Pedir (Prompts para Gente Normal) | 📋 Resumen |
+| 3 | El Arte de Pedir (Prompts para Gente Normal) | ✅ Completo |
 | 4 | IA para Tu Área (Casos por Profesión) | 📋 Resumen |
 | 5 | Excel + IA = Tu Nuevo Superpoder | 📋 Resumen |
 | 6 | Automatiza lo Aburrido (Sin Saber Programar) | 📋 Resumen |
