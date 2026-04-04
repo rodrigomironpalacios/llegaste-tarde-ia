@@ -55,7 +55,7 @@ El sitio web contiene todos los prompts del libro listos para copiar y pegar, el
 | Capítulo 4 | ✅ Completo |
 | Capítulo 5 | ✅ Completo |
 | Capítulo 6 | ✅ Completo |
-| Capítulo 7 | 📋 Resumen listo |
+| Capítulo 7 | ✅ Completo |
 | Capítulo 8 | 📋 Resumen listo |
 | Conclusión | 📋 Resumen listo |
 | Sitio web | ✅ Completo |
