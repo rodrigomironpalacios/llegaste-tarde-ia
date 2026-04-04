@@ -96,6 +96,46 @@ const BOOK_DATA = {
       icon: "🚀",
       prompt: `Soy [tu perfil profesional: edad, carrera, años de experiencia, puesto actual]. Mi objetivo a 2 años es [describe]. Mis fortalezas son [lista]. Mis áreas de mejora son [lista]. Con base en el mercado laboral actual en [tu país], dame: 1) Los 3 movimientos estratégicos que debería hacer en los próximos 6 meses, 2) Habilidades específicas que debería desarrollar, 3) Cómo posicionar mi perfil de LinkedIn para ese objetivo, 4) Un plan mensual de acciones concretas.`,
     },
+    { id: 11, name: "Análisis de Competencia Exprés", chapter: "A", category: "Marketing", icon: "🔍",
+      prompt: `Actúa como un analista de inteligencia competitiva. Voy a darte información pública sobre mi competidor [nombre]. Analiza: 1) Su propuesta de valor principal, 2) A qué público le habla, 3) Qué están haciendo bien que yo debería considerar, 4) Qué oportunidades están dejando que yo podría aprovechar. Información: [pega textos de su sitio web, redes o materiales públicos]` },
+    { id: 12, name: "Script para Llamada en Frío", chapter: "A", category: "Marketing", icon: "📞",
+      prompt: `Actúa como un trainer de ventas. Necesito un script para una llamada en frío de máximo 90 segundos. Vendo [producto/servicio] a [tipo de empresa]. El dolor principal de mi cliente es [describe]. Mi diferenciador es [describe]. Dame el script con: apertura que enganche, pregunta de dolor, propuesta en una oración, y cierre para agendar una reunión. Incluye 3 respuestas para objeciones comunes.` },
+    { id: 13, name: "Análisis de Métricas de Campaña", chapter: "A", category: "Marketing", icon: "📊",
+      prompt: `Soy gerente de marketing digital. Estos son los resultados de mi última campaña en [plataforma]: [pega métricas]. Mi objetivo era [describe]. Mi presupuesto fue [monto]. Dime: 1) ¿La campaña fue exitosa? ¿Por qué sí o no?, 2) Qué métricas están por debajo del benchmark de mi industria, 3) 3 ajustes concretos para mejorar en la siguiente campaña.` },
+    { id: 14, name: "Copy para Email Marketing", chapter: "A", category: "Marketing", icon: "💌",
+      prompt: `Actúa como un copywriter especializado en email marketing. Necesito un correo para [objetivo: lanzamiento / promoción / reactivación de clientes inactivos]. Mi marca es [describe]. El público es [describe]. El tono es [describe]. Dame: asunto del correo (3 opciones), preview text, cuerpo del correo (máximo 200 palabras) y CTA. Que no suene a spam y que se sienta personal.` },
+    { id: 15, name: "Estrategia de Precios", chapter: "A", category: "Marketing", icon: "💰",
+      prompt: `Actúa como un consultor de pricing. Mi producto/servicio es [describe]. Mis costos son aproximadamente [describe]. Mi competencia cobra entre [rango]. Mi público objetivo es [describe]. Ayúdame a: 1) Definir 3 posibles estrategias de precio, 2) Pros y contras de cada una para mi caso, 3) Cómo comunicar el precio al cliente sin que se enfoque solo en el número.` },
+    { id: 16, name: "Plan de Onboarding", chapter: "A", category: "RRHH", icon: "🤝",
+      prompt: `Actúa como un especialista en experiencia del empleado. Necesito un plan de onboarding para un nuevo [puesto] en una empresa de [industria, tamaño]. El onboarding debe cubrir sus primeros 30 días. Incluye: semana 1 (orientación y cultura), semana 2 (capacitación técnica), semana 3 (integración al equipo), semana 4 (primeros entregables). Para cada semana dame actividades específicas, responsable y objetivo. Formato de tabla.` },
+    { id: 17, name: "Encuesta de Clima Laboral", chapter: "A", category: "RRHH", icon: "📝",
+      prompt: `Actúa como un consultor de desarrollo organizacional. Necesito diseñar una encuesta de clima laboral para una empresa de [tamaño] empleados en [industria]. Las áreas que más nos preocupan son: [liderazgo / comunicación / compensación / desarrollo profesional / balance vida-trabajo]. Dame 20 preguntas usando escala Likert (1-5), organizadas por categoría, más 3 preguntas abiertas.` },
+    { id: 18, name: "Guión para Conversación Difícil", chapter: "A", category: "RRHH", icon: "🗣️",
+      prompt: `Actúa como un coach de liderazgo. Necesito tener una conversación difícil con un colaborador sobre [situación: bajo desempeño / actitud / puntualidad / conflicto]. Contexto: [describe la situación]. Quiero ser directo pero respetuoso. Dame: 1) Cómo abrir la conversación, 2) Puntos clave a tocar, 3) Cómo manejar si se pone defensivo, 4) Cómo cerrar con acuerdos claros.` },
+    { id: 19, name: "Descripción de Puesto", chapter: "A", category: "RRHH", icon: "📄",
+      prompt: `Soy de RRHH y necesito documentar el puesto de [nombre]. El ocupante reporta a [quién]. Sus responsabilidades principales son: [lista general]. Las herramientas que usa son: [lista]. Escríbeme una descripción de puesto formal con: objetivo del puesto, responsabilidades clave (6-8), requisitos de perfil, competencias necesarias, y relaciones internas.` },
+    { id: 20, name: "Política Interna", chapter: "A", category: "RRHH", icon: "📋",
+      prompt: `Actúa como un consultor de RRHH. Necesito redactar una política de [tema: home office / código de vestimenta / uso de IA / redes sociales / viáticos]. La empresa tiene [tamaño] empleados en [industria]. El tono debe ser claro y directo, sin jerga legal innecesaria. Incluye: objetivo de la política, alcance, lineamientos, excepciones y consecuencias. Máximo 2 páginas.` },
+    { id: 21, name: "Análisis de Flujo de Efectivo", chapter: "A", category: "Finanzas", icon: "💵",
+      prompt: `Actúa como un analista financiero. Te voy a dar los datos de mi flujo de efectivo de los últimos [período]. Necesito que identifiques: 1) Meses con mayor presión de liquidez, 2) Patrones estacionales, 3) Gastos que crecieron más que los ingresos, 4) Recomendaciones para mejorar el flujo en los próximos 3 meses. Datos: [pega los datos]` },
+    { id: 22, name: "Presupuesto Departamental", chapter: "A", category: "Finanzas", icon: "🧮",
+      prompt: `Soy [tu puesto] y necesito armar el presupuesto de mi área para [período]. El presupuesto del año pasado fue [monto] distribuido así: [categorías]. Este año espero [cambios]. Dame: 1) Estructura de presupuesto en tabla, 2) Cómo justificar cada línea ante finanzas, 3) Dónde podría negociar más presupuesto, 4) Gastos que podría recortar sin impacto operativo.` },
+    { id: 23, name: "Explicación de Estados Financieros", chapter: "A", category: "Finanzas", icon: "📊",
+      prompt: `Actúa como un director de finanzas que sabe comunicar con claridad. Voy a darte los números clave de nuestro [estado de resultados / balance general]. Necesito una explicación de máximo 300 palabras dirigida a [gerentes de área / equipo comercial / consejo] que responda: ¿cómo nos fue?, ¿por qué?, ¿qué sigue? Usa analogías simples si es necesario. Datos: [pega los números clave]` },
+    { id: 24, name: "Checklist de Cierre Mensual", chapter: "A", category: "Finanzas", icon: "✅",
+      prompt: `Actúa como un controller financiero. Necesito crear un checklist de cierre mensual para el área de contabilidad de una empresa [tamaño] en [industria] en México. Incluye: actividades previas al cierre, actividades del cierre, conciliaciones necesarias, revisiones de control, y entregables finales con fecha límite relativa. Formato de tabla.` },
+    { id: 25, name: "Rentabilidad por Producto", chapter: "A", category: "Finanzas", icon: "📈",
+      prompt: `Tengo [X] productos/servicios con los siguientes datos de ingresos y costos: [pega datos]. Necesito un análisis de rentabilidad que incluya: 1) Margen bruto y neto por producto, 2) Ranking de más a menos rentable, 3) Productos por debajo del margen mínimo de [X%], 4) Recomendaciones: ¿cuáles potenciar, cuáles replantear, cuáles descontinuar?` },
+    { id: 26, name: "Comparativa de Cláusulas", chapter: "A", category: "Legal", icon: "⚖️",
+      prompt: `Actúa como un abogado corporativo. Te voy a dar dos versiones de [tipo de cláusula] de un contrato. Compáralas e identifica: 1) Diferencias clave, 2) Cuál favorece más a cada parte, 3) Riesgos de cada versión, 4) Sugerencia de redacción que equilibre los intereses. Versión A: [pega]. Versión B: [pega]. NOTA: Verificaré todo antes de usar.` },
+    { id: 27, name: "Resumen de Nueva Regulación", chapter: "A", category: "Legal", icon: "📜",
+      prompt: `Actúa como un abogado especializado en [área] en México. Te voy a pegar el texto de una nueva disposición regulatoria. Necesito: 1) Resumen en 5 puntos clave, 2) ¿A quién le aplica?, 3) ¿Qué tenemos que hacer para cumplir?, 4) Fechas límite importantes, 5) Sanciones por incumplimiento. Texto: [pega]. NOTA: Validaré contra fuente oficial.` },
+    { id: 28, name: "Modelo de Negocio Canvas", chapter: "A", category: "Emprendimiento", icon: "🧩",
+      prompt: `Actúa como un mentor de startups. Mi idea de negocio es [describe]. Ayúdame a llenar un Business Model Canvas simplificado con los 9 bloques: segmento de clientes, propuesta de valor, canales, relación con clientes, fuentes de ingresos, recursos clave, actividades clave, socios clave, estructura de costos. Para cada bloque dame 1-2 oraciones. Después dime cuál es el bloque más débil.` },
+    { id: 29, name: "Plan Financiero para Emprendedor", chapter: "A", category: "Emprendimiento", icon: "📐",
+      prompt: `Voy a emprender [describe tu negocio]. Mi inversión inicial es [monto]. Mis costos fijos mensuales estimados: [lista]. Mi precio de venta: [monto] por [unidad]. Calcúlame: 1) Punto de equilibrio, 2) Proyección a 6 y 12 meses (optimista, realista, pesimista), 3) Meses de "colchón" antes de ser rentable, 4) Los 3 gastos que probablemente estoy subestimando.` },
+    { id: 30, name: "Automatización de Atención al Cliente", chapter: "A", category: "Emprendimiento", icon: "🤖",
+      prompt: `Tengo un negocio de [describe] y recibo [cantidad] consultas al día por [canales]. Las preguntas más frecuentes son: [lista 5-7]. Ayúdame a: 1) Redactar respuestas predefinidas para cada una (tono cercano, no robótico), 2) Diseñar un flujo de "si pregunta X, responde Y", 3) Identificar cuándo debe intervenir un humano, 4) Sugerir una herramienta gratuita para implementar esto.` },
   ],
   glossary: [
     { term: "Prompt", def: "La instrucción o pregunta que le das a la IA. Entre mejor sea tu prompt, mejor será la respuesta." },
@@ -113,10 +153,19 @@ const BOOK_DATA = {
     { term: "Machine Learning", def: "Tipo de IA que aprende de datos para descubrir patrones por sí sola." },
     { term: "Sesgo (Bias)", def: "Prejuicios en la IA basados en los datos con los que fue entrenada." },
     { term: "Copilot", def: "IA que te acompaña mientras trabajas, sugiriendo en tiempo real." },
+    { term: "Agente (Agent)", def: "IA que ejecuta secuencias de tareas de forma autónoma, no solo responde." },
+    { term: "RAG", def: "Técnica donde la IA consulta documentos específicos antes de responder." },
+    { term: "Temperatura", def: "Parámetro que controla qué tan creativa (alta) o precisa (baja) es la IA." },
+    { term: "Few-shot prompting", def: "Darle 2-3 ejemplos del resultado deseado antes de pedirle uno nuevo." },
+    { term: "Chain of thought", def: "Pedirle a la IA que piense paso a paso antes de dar su respuesta final." },
+    { term: "Multimodal", def: "IA que procesa y genera texto, imágenes, audio y video." },
+    { term: "System prompt", def: "Instrucciones iniciales que definen cómo debe comportarse la IA." },
+    { term: "GPT personalizado", def: "Versión de ChatGPT configurada para una tarea específica con instrucciones propias." },
+    { term: "Guardrails", def: "Reglas y filtros para evitar que la IA genere contenido dañino o fuera de política." },
   ],
 };
 
-const CATEGORIES = ["Todos", "Comunicación", "Productividad", "Excel", "Estrategia", "Carrera"];
+const CATEGORIES = ["Todos", "Comunicación", "Productividad", "Excel", "Estrategia", "Carrera", "Marketing", "RRHH", "Finanzas", "Legal", "Emprendimiento"];
 
 function CopyButton({ text }) {
   const [copied, setCopied] = useState(false);
@@ -365,7 +414,7 @@ export default function App() {
           margin: "0 auto 40px",
           lineHeight: 1.6,
         }}>
-          Todos los prompts, el glosario y los recursos del libro — listos para copiar, pegar y usar hoy mismo.
+          Todos los prompts, el glosario y los recursos del libro — listos para copiar, pegar y usar hoy mismo. 40 prompts organizados por capítulo y profesión.
         </p>
 
         {/* NAV */}
@@ -579,7 +628,7 @@ export default function App() {
               marginBottom: 24,
               lineHeight: 1.6,
             }}>
-              Los 15 términos que necesitas conocer para sobrevivir cualquier conversación sobre IA. Directo del Capítulo 1.
+              Los 15 términos esenciales del Capítulo 1 más 10 términos avanzados del Apéndice D. Todo lo que necesitas para sobrevivir cualquier conversación sobre IA.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {BOOK_DATA.glossary.map((item, i) => (
