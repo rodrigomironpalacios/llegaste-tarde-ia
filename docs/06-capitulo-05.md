@@ -323,5 +323,3 @@ Excel dejó de ser tu enemigo. Ahora es una herramienta que puedes dominar con l
 - Siempre verifica los resultados antes de enviar.
 
 En el Capítulo 6 vamos a ir un paso más allá: no solo hacer las cosas más rápido, sino hacer que algunas se hagan SOLAS. Bienvenido al mundo de la automatización sin código.
-
-Nos vemos ahí.

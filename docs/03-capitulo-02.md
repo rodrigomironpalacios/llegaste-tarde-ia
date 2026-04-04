@@ -203,7 +203,7 @@ La buena noticia es que mejorar tus prompts es una habilidad que se aprende ráp
 
 ## Antes de pasar al siguiente capítulo
 
-Hagamos una pausa de realidad. Si hiciste el ejercicio del correo, felicidades: acabas de tener tu primera experiencia productiva con IA. Ya no eres "alguien que no sabe nada de IA". Eres alguien que ya la usó para resolver un problema real. Eso te pone adelante del 80% de los profesionales de tu entorno.
+Hagamos una pausa de realidad. Si hiciste el ejercicio del correo, felicidades: acabas de tener tu primera experiencia productiva con IA. Ya no eres "alguien que no sabe nada de IA". Eres alguien que ya la usó para resolver un problema real. Eso te pone adelante de la gran mayoría de profesionales a tu alrededor.
 
 Si no hiciste el ejercicio… regresa y hazlo. En serio. Este libro funciona solo si lo practicas. Leerlo sin practicar es como ver tutoriales de natación sin meterte al agua.
 
@@ -214,5 +214,3 @@ Tu tarea antes del Capítulo 3:
 3. **Equivócate a propósito.** Escribe un prompt terrible, vago, sin contexto. Ve la respuesta mala. Luego reescríbelo bien y compara. Ese contraste es el mejor maestro.
 
 En el Capítulo 3 vamos a convertir esto en una ciencia. Vas a aprender el framework ROCA — una fórmula simple para escribir prompts que funcionen para cualquier situación. Es donde la magia realmente empieza.
-
-Nos vemos ahí.

@@ -178,5 +178,3 @@ Este capítulo fue sobre estrategia, no solo productividad. Lo que aprendiste:
 - En LinkedIn y tu CV, la IA es el medio, el logro es el protagonista.
 
 En el Capítulo 8 juntamos todo en un plan de acción concreto: 30 días, paso a paso, para ir de donde estás hoy a donde quieres estar. Es el último capítulo antes de la conclusión, y es pura acción.
-
-Nos vemos ahí.

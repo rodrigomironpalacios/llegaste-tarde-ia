@@ -16,9 +16,9 @@ Pánico porque llevas meses viendo noticias sobre inteligencia artificial, posts
 
 Si esa escena te suena familiar —o al menos una versión de ella—, este libro es para ti.
 
-## La verdad que nadie te dice
+### La verdad que nadie te dice
 
-Aquí va la verdad: la mayoría de los profesionales en México y América Latina están exactamente donde tú estás. Según estudios recientes, menos del 20% de los trabajadores en la región usan herramientas de inteligencia artificial de manera regular en su trabajo. Eso quiere decir que 8 de cada 10 personas en tu oficina están igual o peor que tú.
+Aquí va la neta: la mayoría de los profesionales en México y América Latina están exactamente donde tú estás. Según estudios recientes, menos del 20% de los trabajadores en la región usan herramientas de inteligencia artificial de manera regular en su trabajo. Eso quiere decir que 8 de cada 10 personas en tu oficina están igual o peor que tú.
 
 ¿Sabes qué significa eso? Que "llegar tarde" es relativo. Sí, ya hay gente que lleva un año experimentando con estas herramientas. Pero la adopción masiva en nuestros países apenas está empezando. No llegaste al final de la fiesta: llegaste cuando apenas están poniendo la buena música.
 
@@ -26,13 +26,13 @@ El problema no es que seas lento. El problema es que la información que existe 
 
 Este libro existe para romper ese ciclo.
 
-## Lo que este libro NO es
+### Lo que este libro NO es
 
 No te voy a enseñar a programar. No vas a salir de aquí construyendo robots. No te voy a llenar la cabeza de teoría sobre cómo funciona una red neuronal por dentro (honestamente, no necesitas saberlo, así como no necesitas saber cómo funciona el motor de tu coche para manejarlo).
 
 Tampoco es un libro de "motivación digital" lleno de frases bonitas y cero sustancia. Nada de "el futuro es hoy" sin decirte exactamente qué hacer mañana a las 9 AM.
 
-## Lo que este libro SÍ es
+### Lo que este libro SÍ es
 
 Es un atajo.
 
@@ -45,7 +45,7 @@ Es la guía que alguien debió haberte dado hace seis meses, escrita en español
 
 Cada capítulo tiene ejemplos reales, prompts que puedes copiar y pegar hoy mismo, y un enfoque 100% práctico. Nada de leer 50 páginas de teoría antes de poder hacer algo útil.
 
-## Cómo usar este libro
+### Cómo usar este libro
 
 Puedes leerlo de principio a fin (recomendado si estás empezando desde cero) o saltar directo al capítulo que más te urja. Si lo que quieres es resolver tu problema con Excel, ve al Capítulo 5. Si quieres saber cómo lucir bien usando IA en tu trabajo sin que tu jefe piense que estás haciendo trampa, ve al Capítulo 7.
 
@@ -53,7 +53,7 @@ Todos los prompts que aparecen en este libro están disponibles en el sitio web 
 
 Ah, y una cosa más: este libro está diseñado para que lo termines. Son capítulos cortos, directos y sin relleno. Porque sé que tu tiempo vale y porque si no lo terminas, los dos perdemos.
 
-## El trato
+### El trato
 
 Yo me comprometo a no hacerte perder el tiempo y a darte herramientas que puedas usar desde hoy. Tú te comprometes a abrir ChatGPT (o Claude, o Gemini, o la herramienta que prefieras) y a hacer los ejercicios. No solo a leerlos. A hacerlos.
 

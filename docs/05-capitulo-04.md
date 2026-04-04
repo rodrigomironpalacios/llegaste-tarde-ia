@@ -420,5 +420,3 @@ Ninguno de los prompts de este capítulo te va a dar un resultado perfecto que p
 Eso no es un defecto. Es exactamente cómo debe funcionar. Un borrador que puedes editar en 5 minutos siempre es más rápido que una hoja en blanco que te toma 45 minutos llenar.
 
 En el siguiente capítulo vamos a entrar al tema que más les duele a muchos: Excel. Prepárate para hacer las paces con las tablas dinámicas.
-
-Nos vemos ahí.

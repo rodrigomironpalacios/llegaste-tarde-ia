@@ -251,6 +251,4 @@ La automatización no es para ingenieros. Es para cualquiera que esté cansado d
 - Tu primera automatización se crea en 30 minutos y te ahorra horas cada mes.
 - El ROI de tiempo se calcula fácil y los números convencen a cualquier jefe.
 
-En el Capítulo 7 vamos a hablar de algo igual de importante: cómo hacer que todo esto te ayude a crecer profesionalmente. Porque una cosa es ser productivo y otra es que tu jefe, tu empresa y tu industria lo noten. Vamos a asegurarnos de que lo noten.
-
-Nos vemos ahí.
+En el Capítulo 7 vamos a hablar de algo igual de importante: cómo hacer que todo esto te ayude a crecer profesionalmente. Porque una cosa es ser productivo y otra es que tu jefe, tu empresa y tu industria lo noten.

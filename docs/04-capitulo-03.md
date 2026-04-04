@@ -368,5 +368,3 @@ Eso, mi querido lector, es un superpoder profesional. Y ahora es tuyo.
 4. **Crea tu propio prompt con ROCA.** Piensa en una tarea que hagas frecuentemente en tu trabajo y construye un prompt desde cero usando las 4 letras. Guárdalo. Va a ser el primero de tu biblioteca personal.
 
 En el Capítulo 4 vamos a hacer algo que vas a agradecer mucho: ver exactamente cómo la IA se aplica a TU profesión específica. Marketing, ventas, RRHH, finanzas, legal, administración, emprendimiento — cada área con sus propios casos de uso y prompts dedicados. Busca tu sección y prepárate para decir "¿por qué no supe esto antes?".
-
-Nos vemos ahí.

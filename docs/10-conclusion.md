@@ -30,7 +30,7 @@ Hagamos un recuento rápido de todo lo que tienes encima:
 
 **Tienes un plan** — 30 días de acciones concretas y una biblioteca personal de prompts que crece cada semana.
 
-Eso es más de lo que sabe el 80% de los profesionales en México y América Latina. Y lo aprendiste en un libro que puedes leer en un fin de semana.
+Eso es más de lo que sabe la enorme mayoría de los profesionales en México y América Latina. Y lo aprendiste en un libro que puedes leer en un fin de semana.
 
 ## Lo que viene (sin ciencia ficción)
 
