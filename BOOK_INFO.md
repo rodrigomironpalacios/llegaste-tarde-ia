@@ -116,7 +116,7 @@ Con un tono conversacional, ejemplos del día a día y prompts que puedes usar d
 | 4 | IA para Tu Área (Casos por Profesión) | ✅ Completo |
 | 5 | Excel + IA = Tu Nuevo Superpoder | ✅ Completo |
 | 6 | Automatiza lo Aburrido (Sin Saber Programar) | ✅ Completo |
-| 7 | Cómo Destacar en Tu Trabajo Usando IA (Sin Que Te Vean Raro) | 📋 Resumen |
+| 7 | Cómo Destacar en Tu Trabajo Usando IA (Sin Que Te Vean Raro) | ✅ Completo |
 | 8 | Tu Plan de 30 Días para Ponerte al Corriente | 📋 Resumen |
 | — | Conclusión: No Llegaste Tarde. Llegaste Justo a Tiempo. | 📋 Resumen |
 | — | Apéndices (Prompts, Recursos, Comparativa, Glosario) | 📋 Resumen |
