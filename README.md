@@ -60,6 +60,7 @@ El sitio web contiene todos los prompts del libro listos para copiar y pegar, el
 | Conclusión | ✅ Completa |
 | Sitio web | ✅ Completo |
 | 10 Prompts | ✅ Completos |
+| Apéndices | ✅ Completos |
 
 ## 📜 Licencia
 

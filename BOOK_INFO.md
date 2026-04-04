@@ -119,7 +119,7 @@ Con un tono conversacional, ejemplos del día a día y prompts que puedes usar d
 | 7 | Cómo Destacar en Tu Trabajo Usando IA (Sin Que Te Vean Raro) | ✅ Completo |
 | 8 | Tu Plan de 30 Días para Ponerte al Corriente | ✅ Completo |
 | — | Conclusión: No Llegaste Tarde. Llegaste Justo a Tiempo. | ✅ Completa |
-| — | Apéndices (Prompts, Recursos, Comparativa, Glosario) | 📋 Resumen |
+| — | Apéndices (Prompts, Recursos, Comparativa, Glosario) | ✅ Completos |
 
 ---
 
