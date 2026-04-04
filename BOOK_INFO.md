@@ -114,7 +114,7 @@ Con un tono conversacional, ejemplos del día a día y prompts que puedes usar d
 | 2 | Tu Primera Conversación con la IA (Sin Morir en el Intento) | ✅ Completo |
 | 3 | El Arte de Pedir (Prompts para Gente Normal) | ✅ Completo |
 | 4 | IA para Tu Área (Casos por Profesión) | ✅ Completo |
-| 5 | Excel + IA = Tu Nuevo Superpoder | 📋 Resumen |
+| 5 | Excel + IA = Tu Nuevo Superpoder | ✅ Completo |
 | 6 | Automatiza lo Aburrido (Sin Saber Programar) | 📋 Resumen |
 | 7 | Cómo Destacar en Tu Trabajo Usando IA (Sin Que Te Vean Raro) | 📋 Resumen |
 | 8 | Tu Plan de 30 Días para Ponerte al Corriente | 📋 Resumen |
