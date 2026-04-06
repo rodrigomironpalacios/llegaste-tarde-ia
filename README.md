@@ -42,7 +42,9 @@ Profesionales de **marketing, ventas, RRHH, finanzas, legal, administración, co
 
 ## 🌐 Sitio Web Companion
 
-El sitio web contiene todos los prompts del libro listos para copiar y pegar, el glosario de términos y la tabla de contenidos interactiva.
+El sitio web contiene los 40 prompts del libro listos para copiar y pegar, el glosario de 30 términos de IA y la tabla de contenidos interactiva. Optimizado para SEO con HTML semántico, structured data (JSON-LD), Open Graph y meta tags.
+
+**Archivo principal:** `website/index.html` (HTML estático, SEO-friendly)
 
 ## 📝 Estado del Proyecto
 
