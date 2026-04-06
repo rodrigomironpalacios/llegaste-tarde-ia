@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://rodrigomironpalacios.github.io/llegaste-tarde-ia/sitemap.xml
+Sitemap: https://llegastetardealaia.com/sitemap.xml
