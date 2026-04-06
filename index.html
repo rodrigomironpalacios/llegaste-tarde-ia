@@ -168,6 +168,21 @@ nav a.active { background: var(--accent); color: #fff; }
 .gloss-term { font-weight: 700; font-size: 15px; color: var(--accent); }
 .gloss-def { font-size: 14px; color: var(--text2); margin-left: 8px; }
 
+/* Blog */
+.blog-grid { display: grid; gap: 16px; }
+.blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.2s; }
+.blog-card:hover { border-color: var(--text3); }
+.blog-card a { text-decoration: none; color: inherit; display: block; padding: 24px; }
+.blog-card a:hover { text-decoration: none; }
+.blog-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+.blog-date { font-size: 12px; color: var(--text3); font-weight: 500; }
+.blog-tag { font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: var(--tag); color: var(--accent); text-transform: uppercase; letter-spacing: 0.03em; }
+.blog-card h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+.blog-card p { font-size: 14px; color: var(--text2); line-height: 1.5; }
+.blog-read { font-size: 13px; color: var(--accent); font-weight: 600; margin-top: 12px; display: inline-block; }
+.blog-empty { text-align: center; padding: 48px 20px; color: var(--text2); }
+.blog-empty h3 { font-family: 'Instrument Serif', serif; font-size: 24px; color: var(--text); margin-bottom: 8px; font-weight: 400; }
+
 /* Footer */
 footer { margin-top: 72px; text-align: center; padding: 36px 0 48px; border-top: 1px solid var(--border); }
 footer h2 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 8px; }
@@ -207,6 +222,7 @@ footer p { font-size: 14px; color: var(--text2); max-width: 440px; margin: 0 aut
   <a href="#prompts" class="active" data-tab="prompts" role="tab" aria-selected="true">⚡ Prompts</a>
   <a href="#capitulos" data-tab="capitulos" role="tab" aria-selected="false">📖 Capítulos</a>
   <a href="#glosario" data-tab="glosario" role="tab" aria-selected="false">📚 Glosario de IA</a>
+  <a href="#blog" data-tab="blog" role="tab" aria-selected="false">✍️ Blog</a>
 </nav>
 
 <main class="container" role="main">
@@ -367,6 +383,76 @@ footer p { font-size: 14px; color: var(--text2); max-width: 440px; margin: 0 aut
     <div class="gloss-card"><span class="gloss-term">Guardrails</span><span class="gloss-def">— Límites de seguridad que evitan que la IA genere contenido dañino o inapropiado.</span></div>
   </section>
 
+  <!-- ============ BLOG SECTION ============ -->
+  <section id="blog" class="section" aria-label="Blog sobre inteligencia artificial para profesionales">
+    <h2 class="sr-only">Blog — Inteligencia Artificial para Profesionales</h2>
+    <p class="section-intro">Artículos prácticos sobre cómo usar inteligencia artificial en tu trabajo diario. Tips, tutoriales y casos reales para profesionales que quieren sacarle jugo a la IA sin complicarse.</p>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <article class="blog-card">
+        <a href="/blog/5-cosas-que-la-ia-hace-mejor-que-tu.html">
+          <div class="blog-meta">
+            <span class="blog-date">Próximamente</span>
+            <span class="blog-tag">Productividad</span>
+          </div>
+          <h3>5 Cosas Que la IA Hace Mejor Que Tú (y 5 Que Nunca Podrá)</h3>
+          <p>La IA es increíble para ciertas tareas — y pésima para otras. Saber la diferencia es lo que separa a los profesionales que la usan bien de los que pierden el tiempo.</p>
+          <span class="blog-read">Leer artículo →</span>
+        </a>
+      </article>
+
+      <article class="blog-card">
+        <a href="/blog/como-usar-ia-en-excel-sin-ser-experto.html">
+          <div class="blog-meta">
+            <span class="blog-date">Próximamente</span>
+            <span class="blog-tag">Excel</span>
+          </div>
+          <h3>Cómo Usar IA en Excel Sin Ser Experto: Guía para Principiantes</h3>
+          <p>Deja de googlear fórmulas. Aprende a pedirle a la IA que escriba tus BUSCARV, tablas dinámicas y reportes por ti — con ejemplos reales.</p>
+          <span class="blog-read">Leer artículo →</span>
+        </a>
+      </article>
+
+      <article class="blog-card">
+        <a href="/blog/que-es-un-prompt-y-como-escribir-uno-bueno.html">
+          <div class="blog-meta">
+            <span class="blog-date">Próximamente</span>
+            <span class="blog-tag">Prompts</span>
+          </div>
+          <h3>¿Qué Es un Prompt y Cómo Escribir Uno Bueno? (Framework ROCA)</h3>
+          <p>Un prompt no es "hacerle una pregunta a la IA". Es darle instrucciones claras para que te dé exactamente lo que necesitas. Así se hace.</p>
+          <span class="blog-read">Leer artículo →</span>
+        </a>
+      </article>
+
+      <article class="blog-card">
+        <a href="/blog/ia-para-rrhh-5-prompts-que-ahorran-horas.html">
+          <div class="blog-meta">
+            <span class="blog-date">Próximamente</span>
+            <span class="blog-tag">RRHH</span>
+          </div>
+          <h3>IA para RRHH: 5 Prompts Que Te Ahorran Horas Cada Semana</h3>
+          <p>Desde redactar vacantes que atraigan talento hasta evaluar CVs y preparar onboardings. Prompts listos para copiar si trabajas en recursos humanos.</p>
+          <span class="blog-read">Leer artículo →</span>
+        </a>
+      </article>
+
+      <article class="blog-card">
+        <a href="/blog/le-digo-a-mi-jefe-que-uso-ia.html">
+          <div class="blog-meta">
+            <span class="blog-date">Próximamente</span>
+            <span class="blog-tag">Carrera</span>
+          </div>
+          <h3>¿Le Digo a Mi Jefe Que Uso IA? Guía Práctica para No Meter la Pata</h3>
+          <p>El dilema que todos tienen. Cuándo decirlo, cuándo callarte, y cómo presentar resultados hechos con IA sin que parezca trampa.</p>
+          <span class="blog-read">Leer artículo →</span>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -399,7 +485,8 @@ document.querySelectorAll('nav a').forEach(function(tab) {
     this.classList.add('active');
     this.setAttribute('aria-selected', 'true');
     document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
-    document.getElementById(target === 'capitulos' ? 'capitulos' : target === 'glosario' ? 'glosario' : 'prompts').classList.add('active');
+    var sectionMap = { prompts: 'prompts', capitulos: 'capitulos', glosario: 'glosario', blog: 'blog' };
+    document.getElementById(sectionMap[target] || 'prompts').classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });

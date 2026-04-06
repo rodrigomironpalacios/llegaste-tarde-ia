@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta Early Adopters — Llegaste Tarde a la IA</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --accent: #d95a1b; --accent-soft: rgba(217,90,27,0.10); --bg: #faf8f4; --surface: #fff; --card: #fff; --border: #e5e0d8; --text: #1a1714; --text2: #7a7268; --text3: #b0a99e; --green: #22c55e; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Karla', sans-serif; line-height: 1.6; min-height: 100vh; }
+::selection { background: rgba(217,90,27,0.2); }
+
+.wrap { max-width: 560px; margin: 0 auto; padding: 0 20px 80px; }
+.hero { text-align: center; padding: 48px 20px 32px; }
+.hero h1 { font-family: 'Instrument Serif', serif; font-size: 32px; font-weight: 400; margin-bottom: 6px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { font-size: 14px; color: var(--text2); max-width: 400px; margin: 0 auto; }
+.badge { display: inline-block; background: var(--accent-soft); border: 1px solid rgba(217,90,27,0.2); border-radius: 40px; padding: 4px 16px; font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+
+/* Progress */
+.progress { margin-bottom: 24px; }
+.progress-top { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px; font-weight: 600; }
+.progress-top .label { color: var(--text2); }
+.progress-top .pct { color: var(--accent); }
+.progress-bar { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+/* Question */
+.q-section { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.q-text { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 16px; }
+
+/* Rating */
+.rating { display: flex; gap: 6px; flex-wrap: wrap; }
+.rating button { flex: 1 1 0; min-width: 52px; padding: 10px 4px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text2); font-size: 12px; font-weight: 500; cursor: pointer; font-family: inherit; text-align: center; transition: all 0.15s; line-height: 1.3; }
+.rating button .num { font-size: 18px; display: block; margin-bottom: 2px; }
+.rating button.sel { border: 2px solid var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+
+/* Options */
+.opts { display: flex; flex-direction: column; gap: 6px; }
+.opts button { padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); font-size: 14px; font-weight: 400; cursor: pointer; font-family: inherit; text-align: left; transition: all 0.15s; }
+.opts button.sel { border: 2px solid var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.opts button.dis { opacity: 0.35; cursor: not-allowed; }
+.multi-count { font-size: 12px; color: var(--text2); margin-bottom: 6px; }
+
+/* Textarea */
+textarea { width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); font-size: 14px; font-family: inherit; resize: vertical; outline: none; line-height: 1.5; }
+textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(217,90,27,0.08); }
+
+/* Nav buttons */
+.nav { display: flex; justify-content: space-between; margin-top: 28px; gap: 12px; }
+.btn { padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; border: none; transition: all 0.15s; }
+.btn:active { transform: scale(0.97); }
+.btn-back { background: transparent; border: 1px solid var(--border); color: var(--text2); }
+.btn-back:disabled { color: var(--text3); cursor: not-allowed; }
+.btn-next { background: var(--accent); color: #fff; }
+.btn-next.dim { background: var(--border); color: var(--text3); }
+.btn-submit { background: var(--green); color: #fff; }
+
+/* Dots */
+.dots { display: flex; justify-content: center; gap: 4px; margin-top: 20px; flex-wrap: wrap; }
+.dots span { width: 9px; height: 9px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.15s; }
+.dots span.current { background: var(--accent); }
+.dots span.done { background: var(--accent-soft); }
+
+/* Done screen */
+.done-screen { text-align: center; padding: 60px 0; }
+.done-screen .icon { font-size: 56px; margin-bottom: 16px; }
+.done-screen h2 { font-family: 'Instrument Serif', serif; font-size: 28px; font-weight: 400; margin-bottom: 10px; }
+.done-screen p { font-size: 15px; color: var(--text2); max-width: 380px; margin: 0 auto; line-height: 1.6; }
+
+@media (max-width: 480px) { .rating button { min-width: 44px; font-size: 11px; } .q-text { font-size: 15px; } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Early Adopter Feedback</div>
+  <h1>Llegaste Tarde <em>a la IA</em></h1>
+  <p>Tu opinión nos ayuda a hacer un mejor libro. Son 20 preguntas, ~5 minutos.</p>
+</div>
+
+<div class="wrap">
+  <div id="surveyApp"></div>
+</div>
+
+<script>
+var QUESTIONS = [
+  { id:"q1", sec:"Primera Impresión", type:"rating", q:"¿Qué tan identificado te sentiste con la escena de la introducción (la junta donde nadie sabe de IA)?", labels:["Nada","Poco","Algo","Mucho","Totalmente"] },
+  { id:"q2", sec:"Primera Impresión", type:"rating", q:"¿El título 'Llegaste Tarde a la IA' te motivó a leer o te generó ansiedad?", labels:["Solo ansiedad","Más ansiedad","Neutro","Más motivación","Pura motivación"] },
+  { id:"q3", sec:"Contenido", type:"rating", q:"¿Qué tan claro fue el Capítulo 1 para entender qué es la IA sin sentirte abrumado?", labels:["Confuso","Algo confuso","Aceptable","Claro","Muy claro"] },
+  { id:"q4", sec:"Contenido", type:"rating", q:"¿El framework ROCA (Rol, Objetivo, Contexto, Acción) te pareció fácil de entender y usar?", labels:["Muy difícil","Difícil","Regular","Fácil","Muy fácil"] },
+  { id:"q5", sec:"Contenido", type:"multi", q:"¿Cuáles capítulos te parecieron MÁS útiles? (Máximo 3)", max:3, opts:["Cap 1 — ¿Qué es la IA?","Cap 2 — Tu Primera Conversación","Cap 3 — El Arte de Pedir (ROCA)","Cap 4 — IA para Tu Área","Cap 5 — Excel + IA","Cap 6 — Automatiza lo Aburrido","Cap 7 — Cómo Destacar en Tu Trabajo","Cap 8 — Plan de 30 Días"] },
+  { id:"q6", sec:"Contenido", type:"multi", q:"¿Cuáles capítulos sentiste que les faltó más profundidad?", max:8, opts:["Cap 1 — ¿Qué es la IA?","Cap 2 — Tu Primera Conversación","Cap 3 — El Arte de Pedir (ROCA)","Cap 4 — IA para Tu Área","Cap 5 — Excel + IA","Cap 6 — Automatiza lo Aburrido","Cap 7 — Cómo Destacar en Tu Trabajo","Cap 8 — Plan de 30 Días","Ninguno — todos bien"] },
+  { id:"q7", sec:"Tono y Estilo", type:"rating", q:"¿El tono del libro (conversacional, con humor ligero) te pareció adecuado para el tema?", labels:["Nada adecuado","Poco","Aceptable","Adecuado","Perfecto"] },
+  { id:"q8", sec:"Tono y Estilo", type:"single", q:"Si tuvieras que describir el tono del libro en una palabra, ¿cuál sería?", opts:["Amigable","Motivador","Práctico","Condescendiente","Superficial","Profesional","Divertido"] },
+  { id:"q9", sec:"Tono y Estilo", type:"rating", q:"¿La extensión del libro te pareció adecuada?", labels:["Muy corto","Algo corto","Perfecto","Algo largo","Muy largo"] },
+  { id:"q10", sec:"Prompts y Herramientas", type:"rating", q:"¿Qué tan útiles te parecieron los prompts incluidos en el libro?", labels:["Inútiles","Poco útiles","Algo útiles","Útiles","Muy útiles"] },
+  { id:"q11", sec:"Prompts y Herramientas", type:"single", q:"¿Probaste alguno de los prompts del libro durante o después de leerlo?", opts:["Sí, varios","Sí, uno o dos","No, pero pienso hacerlo","No, y no creo que lo haga"] },
+  { id:"q12", sec:"Prompts y Herramientas", type:"rating", q:"¿Qué tan útil te pareció el sitio web companion (donde están los prompts para copiar)?", labels:["No lo vi","Poco útil","Algo útil","Útil","Muy útil"] },
+  { id:"q13", sec:"Impacto Profesional", type:"single", q:"Después de leer el libro, ¿cómo cambió tu nivel de confianza para usar IA en tu trabajo?", opts:["Sigo igual de inseguro","Un poco más confiado","Bastante más confiado","Me siento listo para usarla diario","Ya la estoy usando gracias al libro"] },
+  { id:"q14", sec:"Impacto Profesional", type:"rating", q:"Del 1 al 5, ¿qué tan probable es que recomiendes este libro a un compañero de trabajo?", labels:["Nada probable","Poco probable","Tal vez","Probable","Seguro lo recomiendo"] },
+  { id:"q15", sec:"Impacto Profesional", type:"single", q:"¿Cuánto pagarías por este libro?", opts:["Menos de $99 MXN","$99–$149 MXN","$149–$199 MXN","$199–$299 MXN","Más de $299 MXN"] },
+  { id:"q16", sec:"Sobre Ti", type:"single", q:"¿En qué área trabajas?", opts:["Marketing / Comunicación","Ventas / Comercial","RRHH / Talento","Finanzas / Contabilidad","Legal","Administración / Gerencia","Emprendimiento propio","TI / Sistemas","Otra"] },
+  { id:"q17", sec:"Sobre Ti", type:"single", q:"¿Cuál era tu nivel de experiencia con IA ANTES de leer el libro?", opts:["Nunca la había usado","La probé una o dos veces","La uso de vez en cuando","La uso frecuentemente"] },
+  { id:"q18", sec:"Retroalimentación Abierta", type:"text", q:"¿Qué fue lo que MÁS te gustó del libro?", ph:"Lo que más me gustó fue..." },
+  { id:"q19", sec:"Retroalimentación Abierta", type:"text", q:"¿Qué le cambiarías o le agregarías al libro?", ph:"Yo cambiaría o agregaría..." },
+  { id:"q20", sec:"Retroalimentación Abierta", type:"text", q:"¿Hay algún tema sobre IA que esperabas encontrar y no estaba?", ph:"Me hubiera gustado leer sobre..." }
+];
+
+var answers = {};
+var step = 0;
+var submitted = false;
+
+// Check localStorage for previous submission
+try { if (localStorage.getItem('survey_done') === '1') submitted = true; } catch(e) {}
+
+function render() {
+  var app = document.getElementById('surveyApp');
+  if (submitted) { app.innerHTML = doneHTML(); return; }
+  var q = QUESTIONS[step];
+  var pct = Math.round(((step + 1) / QUESTIONS.length) * 100);
+  var answered = isAnswered(q.id);
+  var isLast = step === QUESTIONS.length - 1;
+
+  var html = '';
+  html += '<div class="progress"><div class="progress-top"><span class="label">Pregunta ' + (step+1) + ' de ' + QUESTIONS.length + '</span><span class="pct">' + pct + '%</span></div><div class="progress-bar"><div class="progress-fill" style="width:' + pct + '%"></div></div></div>';
+  html += '<div class="q-section">' + q.sec + '</div>';
+  html += '<div class="q-text">' + q.q + '</div>';
+
+  if (q.type === 'rating') html += ratingHTML(q);
+  if (q.type === 'single') html += singleHTML(q);
+  if (q.type === 'multi') html += multiHTML(q);
+  if (q.type === 'text') html += '<textarea rows="3" placeholder="' + (q.ph||'') + '" oninput="setAnswer(\'' + q.id + '\',this.value)">' + (answers[q.id]||'') + '</textarea>';
+
+  html += '<div class="nav">';
+  html += '<button class="btn btn-back" onclick="go(-1)"' + (step===0?' disabled':'') + '>← Anterior</button>';
+  if (isLast) html += '<button class="btn btn-submit" onclick="submitSurvey()">Enviar encuesta ✓</button>';
+  else html += '<button class="btn btn-next' + (answered?'':' dim') + '" onclick="go(1)">Siguiente →</button>';
+  html += '</div>';
+
+  html += '<div class="dots">';
+  for (var i = 0; i < QUESTIONS.length; i++) {
+    var cls = i === step ? 'current' : (answers[QUESTIONS[i].id] !== undefined ? 'done' : '');
+    html += '<span class="' + cls + '" onclick="goTo(' + i + ')"></span>';
+  }
+  html += '</div>';
+
+  app.innerHTML = html;
+}
+
+function ratingHTML(q) {
+  var h = '<div class="rating">';
+  for (var i = 0; i < q.labels.length; i++) {
+    var v = i + 1;
+    var sel = answers[q.id] === v ? ' sel' : '';
+    h += '<button class="' + sel + '" onclick="setAnswer(\'' + q.id + '\',' + v + ')"><span class="num">' + v + '</span>' + q.labels[i] + '</button>';
+  }
+  return h + '</div>';
+}
+
+function singleHTML(q) {
+  var h = '<div class="opts">';
+  for (var i = 0; i < q.opts.length; i++) {
+    var sel = answers[q.id] === q.opts[i] ? ' sel' : '';
+    h += '<button class="' + sel + '" onclick="setAnswer(\'' + q.id + '\',\'' + q.opts[i].replace(/'/g,"\\'") + '\')">' + q.opts[i] + '</button>';
+  }
+  return h + '</div>';
+}
+
+function multiHTML(q) {
+  var val = answers[q.id] || [];
+  var h = '<div class="multi-count">' + val.length + '/' + q.max + ' seleccionados</div><div class="opts">';
+  for (var i = 0; i < q.opts.length; i++) {
+    var isSel = val.indexOf(q.opts[i]) !== -1;
+    var isDis = !isSel && val.length >= q.max;
+    var cls = isSel ? ' sel' : (isDis ? ' dis' : '');
+    h += '<button class="' + cls + '" onclick="toggleMulti(\'' + q.id + '\',\'' + q.opts[i].replace(/'/g,"\\'") + '\',' + q.max + ')">' + (isSel?'✓ ':'○ ') + q.opts[i] + '</button>';
+  }
+  return h + '</div>';
+}
+
+function doneHTML() {
+  return '<div class="done-screen"><div class="icon">🎉</div><h2>¡Gracias!</h2><p>Tu opinión es invaluable para hacer un mejor libro. Cada respuesta nos ayuda a ajustar el contenido antes del lanzamiento.</p></div>';
+}
+
+function isAnswered(id) {
+  var v = answers[id];
+  if (v === undefined || v === '') return false;
+  if (Array.isArray(v) && v.length === 0) return false;
+  return true;
+}
+
+function setAnswer(id, val) { answers[id] = val; render(); }
+
+function toggleMulti(id, opt, max) {
+  var arr = answers[id] || [];
+  var idx = arr.indexOf(opt);
+  if (idx !== -1) arr.splice(idx, 1);
+  else if (arr.length < max) arr.push(opt);
+  answers[id] = arr;
+  render();
+}
+
+function go(dir) { step = Math.max(0, Math.min(QUESTIONS.length - 1, step + dir)); render(); window.scrollTo({top:0,behavior:'smooth'}); }
+function goTo(i) { step = i; render(); }
+
+function submitSurvey() {
+  var payload = Object.assign({}, answers, { _ts: new Date().toISOString(), _ua: navigator.userAgent });
+
+  // Send to configured endpoint (replace URL with your Formspree, Google Sheets webhook, etc.)
+  var ENDPOINT = ''; // TODO: Set your form endpoint here
+  if (ENDPOINT) {
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function(e) { console.error('Submit error:', e); });
+  }
+
+  // Always log to console as backup
+  console.log('Survey response:', JSON.stringify(payload, null, 2));
+
+  try { localStorage.setItem('survey_done', '1'); } catch(e) {}
+  submitted = true;
+  render();
+}
+
+render();
+</script>
+
+</body>
+</html>
