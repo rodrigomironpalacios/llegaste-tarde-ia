@@ -307,7 +307,7 @@ Con un tono conversacional, ejemplos del día a día y prompts que puedes usar d
 **Extensión total estimada:** 6-8 páginas
 - **Apéndice A — Banco de 30 Prompts por Profesión:** Marketing (5), Ventas (5), RRHH (5), Finanzas (5), Legal (5), Emprendimiento (5)
 - **Apéndice B — Recursos Gratuitos:** Cursos en español, canales de YouTube, newsletters, comunidades online recomendadas
-- **Apéndice C — Comparativa de Herramientas:** Tabla con ChatGPT vs. Claude vs. Gemini vs. Copilot (precio, fortalezas, debilidades, mejor caso de uso, plataforma)
+- **Apéndice C — Comparativa de Herramientas:** Tabla con Claude vs. ChatGPT vs. Gemini vs. Copilot (precio, fortalezas, debilidades, mejor caso de uso, plataforma)
 - **Apéndice D — Glosario Extendido:** Versión ampliada del mini-glosario del Capítulo 1
 
 ---
@@ -355,7 +355,7 @@ Prompts completos que aparecen a lo largo del libro y están disponibles en el s
 
 - Inteligencia artificial para principiantes
 - IA para profesionales
-- ChatGPT en español
+- Claude en español, ChatGPT en español
 - Productividad con IA
 - Inteligencia artificial sin programar
 - IA para el trabajo

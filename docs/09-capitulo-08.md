@@ -21,7 +21,7 @@ Arrancamos.
 ### Día 1 — Tu cuenta y tu primer "wow"
 **Tiempo: 20 minutos**
 
-Hoy solo haces una cosa: abrir tu cuenta en la herramienta de IA que elijas (ChatGPT, Claude, Gemini — la que sea) y tener tu primera conversación. Usa el prompt guiado del Capítulo 2:
+Hoy solo haces una cosa: abrir tu cuenta en la herramienta de IA que elijas (Claude, ChatGPT, Gemini — la que sea) y tener tu primera conversación. Usa el prompt guiado del Capítulo 2:
 
 ```
 Soy un profesional que está empezando a usar inteligencia 
@@ -247,7 +247,7 @@ Revisa los prompts que has guardado durante las últimas 2 semanas. Elige los 3 
 ### Día 19 — Explora una herramienta nueva
 **Tiempo: 30 minutos**
 
-Si empezaste con ChatGPT, prueba Claude o Gemini hoy con la misma tarea. Compara las respuestas. Cada herramienta tiene personalidad diferente y puede que para ciertos tipos de tareas prefieras una sobre otra.
+Si empezaste con Claude, prueba ChatGPT o Gemini hoy con la misma tarea. Compara las respuestas. Cada herramienta tiene personalidad diferente y puede que para ciertos tipos de tareas prefieras una sobre otra.
 
 ---
 

@@ -19,7 +19,7 @@ La IA no es nueva. El término existe desde 1956. Lo que es nuevo es que ahora S
 Es un tipo específico de IA. En lugar de que alguien programe cada regla ("si el correo dice 'príncipe nigeriano', es spam"), la computadora aprende de miles de ejemplos y descubre los patrones sola. Es como cuando de chiquito te enseñaron a distinguir un perro de un gato: nadie te dio una lista de reglas, simplemente viste suficientes perros y gatos hasta que tu cerebro lo descifró.
 
 **La hija estrella: IA Generativa**
-Y aquí es donde llegamos a lo que a ti te importa. La IA Generativa es la que puede CREAR cosas: textos, imágenes, código, presentaciones, música. ChatGPT, Claude, Gemini, DALL-E, Midjourney… todas son IA Generativa.
+Y aquí es donde llegamos a lo que a ti te importa. La IA Generativa es la que puede CREAR cosas: textos, imágenes, código, presentaciones, música. Claude, ChatGPT, Gemini, DALL-E, Midjourney… todas son IA Generativa.
 
 ¿Por qué se volvió famosa de la noche a la mañana? Porque antes, la IA era cosa de ingenieros. Tú le dabas datos y ella te regresaba una predicción o una clasificación. Útil, pero aburrido para el común de la gente. La IA Generativa cambió todo porque ahora tú le hablas en español normal y ella te responde en español normal. Así de simple. Así de poderoso.
 
@@ -49,15 +49,15 @@ Vamos a aclarar esto de una vez porque hay mucha confusión.
 
 No necesitas conocer cien herramientas. Necesitas conocer cuatro o cinco y usarlas bien. Aquí van las que importan en 2025 para un profesional no técnico:
 
-### ChatGPT (de OpenAI)
-La más famosa. La que empezó todo el boom. Tiene una versión gratuita que es bastante buena y una versión de paga (Plus) que es mejor. Es excelente para escribir, analizar textos y conversar sobre casi cualquier tema.
-
-**Ideal para:** Escritura, lluvia de ideas, análisis de textos, ayuda con código.
-
 ### Claude (de Anthropic)
-El "nuevo favorito" de muchos profesionales. Es particularmente bueno para textos largos, análisis detallados y tareas que requieren seguir instrucciones complejas. Muchos dicen que es más "cuidadoso" con sus respuestas.
+La herramienta que más recomiendo para empezar. Es excelente para textos largos, análisis detallados y tareas que requieren seguir instrucciones complejas. Tiene una versión gratuita muy capaz y una de paga (Pro) que es aún mejor. Sus respuestas tienden a ser precisas, bien estructuradas y en un español muy natural.
 
-**Ideal para:** Documentos largos, análisis complejos, tareas que requieren precisión.
+**Ideal para:** Documentos largos, análisis complejos, escritura profesional, tareas que requieren precisión.
+
+### ChatGPT (de OpenAI)
+La más famosa. La que empezó todo el boom. Tiene una versión gratuita y una de paga (Plus). Es muy buena para escritura, lluvia de ideas y conversar sobre casi cualquier tema. Su comunidad es la más grande, así que encontrarás muchos tutoriales en línea.
+
+**Ideal para:** Lluvia de ideas, escritura creativa, análisis de textos, ayuda con código.
 
 ### Gemini (de Google)
 La apuesta de Google. Su gran ventaja es que se integra con todo el ecosistema de Google (Gmail, Docs, Sheets). Si tu empresa vive en Google Workspace, esta puede ser tu mejor opción.
@@ -71,7 +71,7 @@ La respuesta de Microsoft. Está integrada en Word, Excel, PowerPoint y Outlook.
 
 ### ¿Cuál elijo?
 
-La respuesta honesta: empieza con cualquiera. En serio. Es como preguntar "¿qué gimnasio es mejor?" — el mejor es al que vayas. ChatGPT es un excelente punto de partida porque tiene la comunidad más grande y encontrarás más tutoriales y ejemplos en español. Pero cualquiera de estas cuatro funciona perfectamente.
+La respuesta honesta: empieza con cualquiera. En serio. Es como preguntar "¿qué gimnasio es mejor?" — el mejor es al que vayas. Mi recomendación personal es Claude porque sus respuestas en español son muy naturales, es preciso con instrucciones complejas y tiene una versión gratuita funcional. Pero cualquiera de estas cuatro funciona perfectamente.
 
 Lo importante no es la herramienta. Es aprender a comunicarte con ella. Y eso lo vas a aprender en el Capítulo 3.
 
@@ -103,7 +103,7 @@ Recorta esta página (o mejor, agrégala a tus notas del celular). Estos son los
 
 2. **IA Generativa:** Inteligencia artificial que crea contenido nuevo (texto, imágenes, audio, video).
 
-3. **LLM (Large Language Model):** El "cerebro" detrás de ChatGPT, Claude y similares. Es un modelo entrenado con toneladas de texto para entender y generar lenguaje.
+3. **LLM (Large Language Model):** El "cerebro" detrás de Claude, ChatGPT y similares. Es un modelo entrenado con toneladas de texto para entender y generar lenguaje.
 
 4. **Alucinación:** Cuando la IA inventa información falsa pero te la presenta como si fuera verdadera. Sí, pasa. Y sí, tienes que estar alerta.
 
@@ -121,7 +121,7 @@ Recorta esta página (o mejor, agrégala a tus notas del celular). Estos son los
 
 11. **No-code:** Herramientas que te permiten crear automatizaciones y aplicaciones sin escribir código. Piensa en Zapier, Make o Power Automate.
 
-12. **Chatbot:** Un programa que conversa contigo. ChatGPT es un chatbot, pero no todos los chatbots son inteligentes como ChatGPT.
+12. **Chatbot:** Un programa que conversa contigo. Claude y ChatGPT son chatbots avanzados, pero no todos los chatbots son así de inteligentes.
 
 13. **Machine Learning (ML):** Un tipo de IA que aprende de datos. Es lo que está detrás de las recomendaciones de Netflix y Spotify.
 

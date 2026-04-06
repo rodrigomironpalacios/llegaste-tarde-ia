@@ -55,7 +55,7 @@ Ah, y una cosa más: este libro está diseñado para que lo termines. Son capít
 
 ### El trato
 
-Yo me comprometo a no hacerte perder el tiempo y a darte herramientas que puedas usar desde hoy. Tú te comprometes a abrir ChatGPT (o Claude, o Gemini, o la herramienta que prefieras) y a hacer los ejercicios. No solo a leerlos. A hacerlos.
+Yo me comprometo a no hacerte perder el tiempo y a darte herramientas que puedas usar desde hoy. Tú te comprometes a abrir Claude (o ChatGPT, o Gemini, o la herramienta que prefieras) y a hacer los ejercicios. No solo a leerlos. A hacerlos.
 
 ¿Trato?
 

@@ -91,7 +91,3 @@ Gracias por tu tiempo, tu confianza y tu disposición de aprender algo nuevo. Si
 Porque la verdad — ya lo sabes — es que no llegaste tarde.
 
 Llegaste justo a tiempo.
-
----
-
-*Ahora ve y levanta esa mano.*

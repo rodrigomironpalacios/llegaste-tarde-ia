@@ -131,7 +131,7 @@ Aquí es donde la cosa se pone interesante. Las herramientas de automatización 
 
 La IA es el cerebro. La automatización son las manos. Juntas, son un empleado que nunca se cansa, nunca olvida y trabaja las 24 horas.
 
-Tanto Zapier como Make ya tienen integración nativa con ChatGPT y otros modelos de IA. Eso significa que puedes agregar un paso de "IA" dentro de tu automatización sin saber programar.
+Tanto Zapier como Make ya tienen integración nativa con Claude, ChatGPT y otros modelos de IA. Eso significa que puedes agregar un paso de "IA" dentro de tu automatización sin saber programar.
 
 ## Tu primera automatización: paso a paso
 
@@ -156,7 +156,7 @@ Haz clic en "Create Zap" o "Crear Zap".
 
 **Paso 4: Agrega el paso de IA**
 - Agrega un nuevo paso
-- Busca "ChatGPT" o "OpenAI" en las apps
+- Busca "Claude" o "ChatGPT" en las apps
 - Selecciona la acción "Conversation" o "Send Prompt"
 - En el prompt escribe algo como: "Resume el siguiente correo en máximo 3 oraciones. Identifica si hay alguna acción urgente. Correo: [aquí Zapier inserta automáticamente el contenido del correo]"
 - Conecta tu cuenta de OpenAI (necesitas una API key — hay tutoriales sencillos para obtenerla)

@@ -13,7 +13,7 @@ Dicho eso, tres cosas importantes:
 2. **Las herramientas de IA cambian rápido.** Muy rápido. Lo que hoy se llama de una forma, mañana puede tener otro nombre, otro precio o haber desaparecido. Hice mi mejor esfuerzo por darte información actualizada, pero verifica siempre en las páginas oficiales.
 3. **Los prompts y ejemplos son puntos de partida, no recetas sagradas.** La magia está en que tú los adaptes a tu contexto. Si un prompt no te funciona a la primera, no es que la IA esté rota: es que necesitas ajustar tu pregunta. Eso también lo vas a aprender aquí.
 
-Las marcas mencionadas en este libro (ChatGPT, Copilot, Gemini, Claude, Excel, Google Sheets, entre otras) son propiedad de sus respectivas empresas. Este libro no tiene afiliación con ninguna de ellas.
+Las marcas mencionadas en este libro (Claude, ChatGPT, Copilot, Gemini, Excel, Google Sheets, entre otras) son propiedad de sus respectivas empresas. Este libro no tiene afiliación con ninguna de ellas.
 
 Y por último: si después de leer este libro te vuelves la persona más productiva de tu oficina, me debes un café. O al menos una reseña en Amazon. Preferiblemente ambas.
 
@@ -76,7 +76,7 @@ Ah, y una cosa más: este libro está diseñado para que lo termines. Son capít
 
 ### El trato
 
-Yo me comprometo a no hacerte perder el tiempo y a darte herramientas que puedas usar desde hoy. Tú te comprometes a abrir ChatGPT (o Claude, o Gemini, o la herramienta que prefieras) y a hacer los ejercicios. No solo a leerlos. A hacerlos.
+Yo me comprometo a no hacerte perder el tiempo y a darte herramientas que puedas usar desde hoy. Tú te comprometes a abrir Claude (o ChatGPT, o Gemini, o la herramienta que prefieras) y a hacer los ejercicios. No solo a leerlos. A hacerlos.
 
 ¿Trato?
 
@@ -105,7 +105,7 @@ La IA no es nueva. El término existe desde 1956. Lo que es nuevo es que ahora S
 Es un tipo específico de IA. En lugar de que alguien programe cada regla ("si el correo dice 'príncipe nigeriano', es spam"), la computadora aprende de miles de ejemplos y descubre los patrones sola. Es como cuando de chiquito te enseñaron a distinguir un perro de un gato: nadie te dio una lista de reglas, simplemente viste suficientes perros y gatos hasta que tu cerebro lo descifró.
 
 **La hija estrella: IA Generativa**
-Y aquí es donde llegamos a lo que a ti te importa. La IA Generativa es la que puede CREAR cosas: textos, imágenes, código, presentaciones, música. ChatGPT, Claude, Gemini, DALL-E, Midjourney… todas son IA Generativa.
+Y aquí es donde llegamos a lo que a ti te importa. La IA Generativa es la que puede CREAR cosas: textos, imágenes, código, presentaciones, música. Claude, ChatGPT, Gemini, DALL-E, Midjourney… todas son IA Generativa.
 
 ¿Por qué se volvió famosa de la noche a la mañana? Porque antes, la IA era cosa de ingenieros. Tú le dabas datos y ella te regresaba una predicción o una clasificación. Útil, pero aburrido para el común de la gente. La IA Generativa cambió todo porque ahora tú le hablas en español normal y ella te responde en español normal. Así de simple. Así de poderoso.
 
@@ -135,15 +135,15 @@ Vamos a aclarar esto de una vez porque hay mucha confusión.
 
 No necesitas conocer cien herramientas. Necesitas conocer cuatro o cinco y usarlas bien. Aquí van las que importan en 2025 para un profesional no técnico:
 
-### ChatGPT (de OpenAI)
-La más famosa. La que empezó todo el boom. Tiene una versión gratuita que es bastante buena y una versión de paga (Plus) que es mejor. Es excelente para escribir, analizar textos y conversar sobre casi cualquier tema.
-
-**Ideal para:** Escritura, lluvia de ideas, análisis de textos, ayuda con código.
-
 ### Claude (de Anthropic)
-El "nuevo favorito" de muchos profesionales. Es particularmente bueno para textos largos, análisis detallados y tareas que requieren seguir instrucciones complejas. Muchos dicen que es más "cuidadoso" con sus respuestas.
+La herramienta que más recomiendo para empezar. Es excelente para textos largos, análisis detallados y tareas que requieren seguir instrucciones complejas. Tiene una versión gratuita muy capaz y una de paga (Pro) que es aún mejor. Sus respuestas tienden a ser precisas, bien estructuradas y en un español muy natural.
 
-**Ideal para:** Documentos largos, análisis complejos, tareas que requieren precisión.
+**Ideal para:** Documentos largos, análisis complejos, escritura profesional, tareas que requieren precisión.
+
+### ChatGPT (de OpenAI)
+La más famosa. La que empezó todo el boom. Tiene una versión gratuita y una de paga (Plus). Es muy buena para escritura, lluvia de ideas y conversar sobre casi cualquier tema. Su comunidad es la más grande, así que encontrarás muchos tutoriales en línea.
+
+**Ideal para:** Lluvia de ideas, escritura creativa, análisis de textos, ayuda con código.
 
 ### Gemini (de Google)
 La apuesta de Google. Su gran ventaja es que se integra con todo el ecosistema de Google (Gmail, Docs, Sheets). Si tu empresa vive en Google Workspace, esta puede ser tu mejor opción.
@@ -157,7 +157,7 @@ La respuesta de Microsoft. Está integrada en Word, Excel, PowerPoint y Outlook.
 
 ### ¿Cuál elijo?
 
-La respuesta honesta: empieza con cualquiera. En serio. Es como preguntar "¿qué gimnasio es mejor?" — el mejor es al que vayas. ChatGPT es un excelente punto de partida porque tiene la comunidad más grande y encontrarás más tutoriales y ejemplos en español. Pero cualquiera de estas cuatro funciona perfectamente.
+La respuesta honesta: empieza con cualquiera. En serio. Es como preguntar "¿qué gimnasio es mejor?" — el mejor es al que vayas. Mi recomendación personal es Claude porque sus respuestas en español son muy naturales, es preciso con instrucciones complejas y tiene una versión gratuita funcional. Pero cualquiera de estas cuatro funciona perfectamente.
 
 Lo importante no es la herramienta. Es aprender a comunicarte con ella. Y eso lo vas a aprender en el Capítulo 3.
 
@@ -189,7 +189,7 @@ Recorta esta página (o mejor, agrégala a tus notas del celular). Estos son los
 
 2. **IA Generativa:** Inteligencia artificial que crea contenido nuevo (texto, imágenes, audio, video).
 
-3. **LLM (Large Language Model):** El "cerebro" detrás de ChatGPT, Claude y similares. Es un modelo entrenado con toneladas de texto para entender y generar lenguaje.
+3. **LLM (Large Language Model):** El "cerebro" detrás de Claude, ChatGPT y similares. Es un modelo entrenado con toneladas de texto para entender y generar lenguaje.
 
 4. **Alucinación:** Cuando la IA inventa información falsa pero te la presenta como si fuera verdadera. Sí, pasa. Y sí, tienes que estar alerta.
 
@@ -207,7 +207,7 @@ Recorta esta página (o mejor, agrégala a tus notas del celular). Estos son los
 
 11. **No-code:** Herramientas que te permiten crear automatizaciones y aplicaciones sin escribir código. Piensa en Zapier, Make o Power Automate.
 
-12. **Chatbot:** Un programa que conversa contigo. ChatGPT es un chatbot, pero no todos los chatbots son inteligentes como ChatGPT.
+12. **Chatbot:** Un programa que conversa contigo. Claude y ChatGPT son chatbots avanzados, pero no todos los chatbots son así de inteligentes.
 
 13. **Machine Learning (ML):** Un tipo de IA que aprende de datos. Es lo que está detrás de las recomendaciones de Netflix y Spotify.
 
@@ -235,28 +235,28 @@ Nos vemos ahí.
 
 Llegó el momento. Ya sabes qué es la IA, conoces las herramientas principales y tienes el vocabulario básico. Ahora toca lo bueno: abrir una de estas herramientas y tener tu primera conversación productiva.
 
-Si ya lo hiciste alguna vez —le preguntaste algo a ChatGPT, te contestó algo raro y cerraste la pestaña pensando "esto no es para mí"—, quédate. Porque lo que probablemente pasó fue que no sabías cómo pedirle las cosas. No es que la herramienta no sirva. Es como la primera vez que usaste Excel: abriste una hoja en blanco, te quedaste viendo las celdas y pensaste "¿y ahora qué?". Pero hoy usas Excel todos los días (aunque sea a regañadientes).
+Si ya lo hiciste alguna vez —le preguntaste algo a Claude o ChatGPT, te contestó algo raro y cerraste la pestaña pensando "esto no es para mí"—, quédate. Porque lo que probablemente pasó fue que no sabías cómo pedirle las cosas. No es que la herramienta no sirva. Es como la primera vez que usaste Excel: abriste una hoja en blanco, te quedaste viendo las celdas y pensaste "¿y ahora qué?". Pero hoy usas Excel todos los días (aunque sea a regañadientes).
 
 Con la IA va a pasar lo mismo. Y este capítulo es tu primer día.
 
 ## Paso a paso: abre tu cuenta (en 3 minutos)
 
-Vamos a usar ChatGPT como ejemplo porque es la herramienta más accesible y popular. Si prefieres Claude, Gemini o Copilot, el proceso es muy similar — creas cuenta, abres el chat y escribes. Los principios que vas a aprender aquí aplican para todas.
-
-### Para ChatGPT:
-
-1. **Abre tu navegador** y ve a chat.openai.com
-2. **Haz clic en "Sign up"** (registrarse). Puedes usar tu cuenta de Google, tu cuenta de Microsoft o un correo electrónico normal.
-3. **Confirma tu correo** si te lo pide.
-4. **Listo.** Vas a ver una pantalla con un campo de texto en la parte inferior que dice algo como "Message ChatGPT". Esa es tu línea de comunicación directa con la inteligencia artificial.
-
-No necesitas pagar. La versión gratuita es más que suficiente para empezar y para todo lo que vamos a hacer en este capítulo. Ya cuando le agarres el gusto, tú decides si quieres la versión de paga.
+Vamos a usar Claude como ejemplo porque es la herramienta que más recomiendo para empezar: sus respuestas son precisas, el español es muy natural y la interfaz es sencilla. Si prefieres ChatGPT, Gemini o Copilot, el proceso es muy similar — creas cuenta, abres el chat y escribes. Los principios que vas a aprender aquí aplican para todas.
 
 ### Para Claude:
 
-1. Ve a claude.ai
-2. Crea tu cuenta con Google o con correo.
-3. Mismo concepto: una caja de texto donde escribes y Claude te responde.
+1. **Abre tu navegador** y ve a claude.ai
+2. **Haz clic en "Sign up"** (registrarse). Puedes usar tu cuenta de Google o un correo electrónico normal.
+3. **Confirma tu correo** si te lo pide.
+4. **Listo.** Vas a ver una pantalla con un campo de texto en la parte inferior donde escribes tu mensaje. Esa es tu línea de comunicación directa con la inteligencia artificial.
+
+No necesitas pagar. La versión gratuita es más que suficiente para empezar y para todo lo que vamos a hacer en este capítulo. Ya cuando le agarres el gusto, tú decides si quieres la versión de paga.
+
+### Para ChatGPT:
+
+1. Ve a chat.openai.com
+2. Crea tu cuenta con Google, Microsoft o correo.
+3. Mismo concepto: una caja de texto donde escribes y ChatGPT te responde.
 
 ### Para Gemini:
 
@@ -1480,7 +1480,7 @@ Dame:
 
 ---
 
-## Copilot en Excel vs. ChatGPT para Excel: ¿cuándo usar cada uno?
+## Copilot en Excel vs. Claude para Excel: ¿cuándo usar cada uno?
 
 Ahora que ya sabes pedirle fórmulas a la IA, vale la pena entender que hay dos caminos y cuándo conviene cada uno.
 
@@ -1499,7 +1499,7 @@ Microsoft Copilot está integrado directamente en Excel si tienes una suscripci�
 - A veces no entiende bien lo que le pides con datos complejos
 - Está en constante evolución, así que las funciones cambian seguido
 
-### Camino 2: ChatGPT / Claude / Gemini (IA externa)
+### Camino 2: Claude / ChatGPT / Gemini (IA externa)
 
 Aquí el flujo es: abres tu herramienta de IA en el navegador, describes tu situación o pegas tus datos, y te da la respuesta que luego tú aplicas manualmente en Excel.
 
@@ -1517,9 +1517,9 @@ Aquí el flujo es: abres tu herramienta de IA en el navegador, describes tu situ
 
 ### Mi recomendación honesta:
 
-Si tienes acceso a Copilot, úsalo para tareas rápidas dentro de Excel. Pero cuando necesites que te enseñen o que te expliquen el razonamiento detrás de algo, usa ChatGPT o Claude. La combinación de ambos es lo más poderoso.
+Si tienes acceso a Copilot, úsalo para tareas rápidas dentro de Excel. Pero cuando necesites que te enseñen o que te expliquen el razonamiento detrás de algo, usa Claude o ChatGPT. La combinación de ambos es lo más poderoso.
 
-Y si no tienes Copilot, no te preocupes. Con ChatGPT gratuito y los prompts de este capítulo puedes hacer el 90% de lo que necesitas. Solo toma un paso extra de copiar y pegar.
+Y si no tienes Copilot, no te preocupes. Con Claude gratuito y los prompts de este capítulo puedes hacer el 90% de lo que necesitas. Solo toma un paso extra de copiar y pegar.
 
 ---
 
@@ -1531,7 +1531,7 @@ Vamos a juntar todo lo que aprendiste en un flujo de trabajo realista. Imagina q
 Abre tu archivo de Excel. Identifica qué tienes: qué columnas, cuántas filas, si los datos están limpios o son un desastre.
 
 ### Minuto 2-4: Limpia si es necesario
-Si los datos están sucios, abre ChatGPT y usa el Prompt 3 (Limpia estos datos). Describe los problemas. Aplica las soluciones que te dé.
+Si los datos están sucios, abre Claude y usa el Prompt 3 (Limpia estos datos). Describe los problemas. Aplica las soluciones que te dé.
 
 ### Minuto 4-6: Crea la tabla dinámica
 Usa el Prompt 5 (tabla dinámica) describiendo tus columnas y lo que quieres analizar. Sigue las instrucciones paso a paso.
@@ -1566,7 +1566,7 @@ Excel dejó de ser tu enemigo. Ahora es una herramienta que puedes dominar con l
 
 - Ya no necesitas memorizar fórmulas. Solo necesitas saber describir lo que quieres.
 - Los 5 prompts de Excel cubren el 90% de lo que necesitas en tu día a día.
-- Copilot y ChatGPT se complementan: uno trabaja dentro de Excel, el otro te enseña y te explica.
+- Copilot y Claude se complementan: uno trabaja dentro de Excel, el otro te enseña y te explica.
 - El flujo de "datos crudos a reporte" es de 10 minutos una vez que le agarras la onda.
 - Siempre verifica los resultados antes de enviar.
 
@@ -1707,7 +1707,7 @@ Aquí es donde la cosa se pone interesante. Las herramientas de automatización 
 
 La IA es el cerebro. La automatización son las manos. Juntas, son un empleado que nunca se cansa, nunca olvida y trabaja las 24 horas.
 
-Tanto Zapier como Make ya tienen integración nativa con ChatGPT y otros modelos de IA. Eso significa que puedes agregar un paso de "IA" dentro de tu automatización sin saber programar.
+Tanto Zapier como Make ya tienen integración nativa con Claude, ChatGPT y otros modelos de IA. Eso significa que puedes agregar un paso de "IA" dentro de tu automatización sin saber programar.
 
 ## Tu primera automatización: paso a paso
 
@@ -1732,7 +1732,7 @@ Haz clic en "Create Zap" o "Crear Zap".
 
 **Paso 4: Agrega el paso de IA**
 - Agrega un nuevo paso
-- Busca "ChatGPT" o "OpenAI" en las apps
+- Busca "Claude" o "ChatGPT" en las apps
 - Selecciona la acción "Conversation" o "Send Prompt"
 - En el prompt escribe algo como: "Resume el siguiente correo en máximo 3 oraciones. Identifica si hay alguna acción urgente. Correo: [aquí Zapier inserta automáticamente el contenido del correo]"
 - Conecta tu cuenta de OpenAI (necesitas una API key — hay tutoriales sencillos para obtenerla)
@@ -1878,7 +1878,7 @@ A veces mencionar que usaste IA te hace ver innovador. Otras veces distrae del r
 
 ## Cómo presentar resultados hechos con IA
 
-Tu jefe no quiere saber que usaste ChatGPT. Tu jefe quiere ver que el reporte está listo antes de tiempo, que el análisis es sólido y que la presentación se ve profesional. Enfócate en eso.
+Tu jefe no quiere saber que usaste Claude o ChatGPT. Tu jefe quiere ver que el reporte está listo antes de tiempo, que el análisis es sólido y que la presentación se ve profesional. Enfócate en eso.
 
 **Lo que tu jefe quiere escuchar:**
 - "Ya tengo el reporte listo. Encontré tres hallazgos interesantes que quiero platicarte."
@@ -1886,9 +1886,9 @@ Tu jefe no quiere saber que usaste ChatGPT. Tu jefe quiere ver que el reporte es
 - "Logré reducir el tiempo de elaboración de reportes de 4 horas a 45 minutos."
 
 **Lo que tu jefe NO necesita escuchar:**
-- "ChatGPT me escribió el reporte."
+- "La IA me escribió el reporte."
 - "Le pedí a la IA que analizara los datos."
-- "Copié esto de Claude."
+- "Copié esto de la IA."
 
 ¿Ves la diferencia? En el primer caso, tú eres el protagonista. En el segundo, la herramienta es la protagonista y tú suenas como su secretario.
 
@@ -1936,7 +1936,7 @@ costos / riesgos / resultados rápidos].
 
 [ACCIÓN] Escríbeme una propuesta de una página con:
 1) Título del proyecto (que suene profesional, no 
-   "usar ChatGPT")
+   "usar Claude")
 2) Problema actual (en 3 oraciones, con números)
 3) Solución propuesta (qué herramientas, qué proceso nuevo)
 4) Beneficios esperados (tiempo, costo, calidad — con 
@@ -1957,7 +1957,7 @@ Tus nuevas habilidades de IA necesitan ser visibles para el mundo profesional. A
 
 ### En tu LinkedIn
 
-No pongas "usuario de ChatGPT" como habilidad. Eso es como poner "sé usar Google". En su lugar:
+No pongas "usuario de Claude" o "usuario de ChatGPT" como habilidad. Eso es como poner "sé usar Google". En su lugar:
 
 **En tu headline o título:**
 - ❌ "Gerente de Marketing | Usuario de IA"
@@ -1973,7 +1973,7 @@ Comparte aprendizajes, no alardes. "Hoy descubrí que usando IA para [tarea], pu
 
 Agrega IA como herramienta dentro de tus logros, no como sección aparte:
 
-- ❌ "Habilidades: ChatGPT, Copilot, Gemini"
+- ❌ "Habilidades: Claude, ChatGPT, Copilot"
 - ✅ "Optimicé el proceso de reportería del área implementando herramientas de IA, reduciendo el tiempo de elaboración en 70%"
 - ✅ "Diseñé e implementé flujos de automatización con IA para el seguimiento de clientes, mejorando el tiempo de respuesta de 48h a 4h"
 
@@ -2037,7 +2037,7 @@ Arrancamos.
 ### Día 1 — Tu cuenta y tu primer "wow"
 **Tiempo: 20 minutos**
 
-Hoy solo haces una cosa: abrir tu cuenta en la herramienta de IA que elijas (ChatGPT, Claude, Gemini — la que sea) y tener tu primera conversación. Usa el prompt guiado del Capítulo 2:
+Hoy solo haces una cosa: abrir tu cuenta en la herramienta de IA que elijas (Claude, ChatGPT, Gemini — la que sea) y tener tu primera conversación. Usa el prompt guiado del Capítulo 2:
 
 ```
 Soy un profesional que está empezando a usar inteligencia 
@@ -2263,7 +2263,7 @@ Revisa los prompts que has guardado durante las últimas 2 semanas. Elige los 3 
 ### Día 19 — Explora una herramienta nueva
 **Tiempo: 30 minutos**
 
-Si empezaste con ChatGPT, prueba Claude o Gemini hoy con la misma tarea. Compara las respuestas. Cada herramienta tiene personalidad diferente y puede que para ciertos tipos de tareas prefieras una sobre otra.
+Si empezaste con Claude, prueba ChatGPT o Gemini hoy con la misma tarea. Compara las respuestas. Cada herramienta tiene personalidad diferente y puede que para ciertos tipos de tareas prefieras una sobre otra.
 
 ---
 
@@ -3472,14 +3472,14 @@ Estos recursos estaban disponibles al momento de escribir este libro. Verifica e
 ### Cursos gratuitos en español
 
 - **Google — Fundamentos de IA Generativa:** Curso introductorio de Google Cloud, disponible en español. Ideal para entender los conceptos base. Busca "Google Cloud Skills Boost IA Generativa".
-- **LinkedIn Learning:** Si tienes acceso (muchas empresas lo ofrecen gratis a sus empleados), busca "inteligencia artificial para no técnicos" o "ChatGPT para profesionales". Hay cursos de 1-2 horas.
+- **LinkedIn Learning:** Si tienes acceso (muchas empresas lo ofrecen gratis a sus empleados), busca "inteligencia artificial para no técnicos" o "IA para profesionales". Hay cursos de 1-2 horas.
 - **Platzi:** Plataforma latinoamericana con cursos de IA aplicada, prompts y automatización. Algunos cursos introductorios son gratuitos.
 - **Coursera — IA para todos (Andrew Ng):** El curso más popular del mundo sobre IA para no técnicos. Disponible en español con subtítulos. Se puede auditar gratis.
 - **Microsoft Learn:** Rutas de aprendizaje gratuitas sobre Copilot y herramientas de IA de Microsoft. Busca "Microsoft Learn Copilot".
 
 ### Canales de YouTube en español
 
-- Busca canales que se enfoquen en IA aplicada a productividad y negocios, no en programación. Las búsquedas "ChatGPT para negocios", "IA para profesionales" y "automatización sin código" te van a dar buenas opciones.
+- Busca canales que se enfoquen en IA aplicada a productividad y negocios, no en programación. Las búsquedas "IA para negocios", "Claude para profesionales" y "automatización sin código" te van a dar buenas opciones.
 - Evita canales que prometen hacerte millonario con IA en 30 días. Si suena demasiado bueno para ser verdad, lo es.
 
 ### Newsletters recomendadas
@@ -3492,7 +3492,7 @@ Estos recursos estaban disponibles al momento de escribir este libro. Verifica e
 
 - **Grupos de LinkedIn:** Busca "IA para profesionales México" o "Inteligencia Artificial LATAM". Son buenos para ver qué están haciendo otros profesionales de tu industria.
 - **Grupos de WhatsApp/Telegram locales:** Muchas ciudades tienen comunidades de IA. Pregunta en LinkedIn si alguien conoce alguna en tu zona.
-- **Reddit:** r/ChatGPT y r/artificial son comunidades activas con tips, prompts y discusiones (en inglés principalmente).
+- **Reddit:** r/ClaudeAI, r/ChatGPT y r/artificial son comunidades activas con tips, prompts y discusiones (en inglés principalmente).
 
 ---
 
@@ -3500,22 +3500,22 @@ Estos recursos estaban disponibles al momento de escribir este libro. Verifica e
 
 ### Tabla rápida (al momento de publicación)
 
-| Característica | ChatGPT (OpenAI) | Claude (Anthropic) | Gemini (Google) | Copilot (Microsoft) |
+| Característica | Claude (Anthropic) | ChatGPT (OpenAI) | Gemini (Google) | Copilot (Microsoft) |
 |---|---|---|---|---|
-| **Mejor para** | Uso general, escritura, código | Textos largos, análisis detallado, instrucciones complejas | Integración con Google Workspace, búsqueda actualizada | Integración con Office 365 (Word, Excel, PowerPoint) |
-| **Versión gratuita** | Sí (GPT-4o mini) | Sí (con límites) | Sí (con cuenta de Google) | Sí (versión básica) |
-| **Precio plan personal** | ~$20 USD/mes (Plus) | ~$20 USD/mes (Pro) | ~$20 USD/mes (Advanced) | ~$20 USD/mes (incluido en M365 Copilot) |
+| **Mejor para** | Textos largos, análisis detallado, instrucciones complejas, español natural | Uso general, escritura creativa, código, comunidad grande | Integración con Google Workspace, búsqueda actualizada | Integración con Office 365 (Word, Excel, PowerPoint) |
+| **Versión gratuita** | Sí (con límites generosos) | Sí (GPT-4o mini) | Sí (con cuenta de Google) | Sí (versión básica) |
+| **Precio plan personal** | ~$20 USD/mes (Pro) | ~$20 USD/mes (Plus) | ~$20 USD/mes (Advanced) | ~$20 USD/mes (incluido en M365 Copilot) |
 | **Idioma español** | Excelente | Excelente | Muy bueno | Muy bueno |
-| **Textos largos** | Bueno | Excelente | Bueno | Bueno |
+| **Textos largos** | Excelente | Bueno | Bueno | Bueno |
 | **Análisis de datos** | Muy bueno (sube archivos) | Muy bueno (sube archivos) | Bueno | Excelente (dentro de Excel) |
-| **Imágenes** | Genera y analiza | Solo analiza | Genera y analiza | Genera y analiza |
+| **Imágenes** | Solo analiza | Genera y analiza | Genera y analiza | Genera y analiza |
 | **Integración nativa** | Limitada (API) | Limitada (API) | Gmail, Docs, Sheets, Drive | Word, Excel, PowerPoint, Outlook, Teams |
 | **App móvil** | Sí (iOS y Android) | Sí (iOS y Android) | Sí (iOS y Android) | Sí (dentro de apps Microsoft) |
-| **Ideal si tu empresa usa** | Muchas herramientas diversas | Necesitan precisión y textos largos | Google Workspace | Microsoft 365 |
+| **Ideal si tu empresa usa** | Necesitan precisión, análisis y textos largos | Muchas herramientas diversas | Google Workspace | Microsoft 365 |
 
 ### ¿Con cuál empiezo?
 
-Si no sabes cuál elegir, empieza con **ChatGPT**. Tiene la comunidad más grande, la mayor cantidad de tutoriales en español y una versión gratuita funcional. Una vez que le agarres la onda, prueba las demás para ver cuál se adapta mejor a tu flujo de trabajo.
+Si no sabes cuál elegir, empieza con **Claude**. Sus respuestas en español son muy naturales, es excelente con textos largos y análisis complejos, y tiene una versión gratuita funcional. Una vez que le agarres la onda, prueba las demás para ver cuál se adapta mejor a tu flujo de trabajo.
 
 **Nota:** Los precios, funciones y nombres de planes cambian frecuentemente. Verifica siempre en el sitio oficial antes de suscribirte.
 
@@ -3527,7 +3527,7 @@ Los primeros 15 términos aparecen en el Capítulo 1. Aquí se agregan 15 más p
 
 1. **Prompt** — La instrucción o pregunta que le das a la IA.
 2. **IA Generativa** — IA que crea contenido nuevo: texto, imágenes, audio, video.
-3. **LLM (Large Language Model)** — El modelo de lenguaje detrás de ChatGPT, Claude y similares.
+3. **LLM (Large Language Model)** — El modelo de lenguaje detrás de Claude, ChatGPT y similares.
 4. **Alucinación** — Cuando la IA inventa información falsa con apariencia de verdad.
 5. **Token** — Unidad de medida de texto para la IA (~1-2 tokens por palabra en español).
 6. **Contexto (ventana de contexto)** — Cantidad de información que la IA retiene en una conversación.

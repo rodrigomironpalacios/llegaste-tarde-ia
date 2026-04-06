@@ -45,7 +45,7 @@ A veces mencionar que usaste IA te hace ver innovador. Otras veces distrae del r
 
 ## Cómo presentar resultados hechos con IA
 
-Tu jefe no quiere saber que usaste ChatGPT. Tu jefe quiere ver que el reporte está listo antes de tiempo, que el análisis es sólido y que la presentación se ve profesional. Enfócate en eso.
+Tu jefe no quiere saber que usaste Claude o ChatGPT. Tu jefe quiere ver que el reporte está listo antes de tiempo, que el análisis es sólido y que la presentación se ve profesional. Enfócate en eso.
 
 **Lo que tu jefe quiere escuchar:**
 - "Ya tengo el reporte listo. Encontré tres hallazgos interesantes que quiero platicarte."
@@ -53,9 +53,9 @@ Tu jefe no quiere saber que usaste ChatGPT. Tu jefe quiere ver que el reporte es
 - "Logré reducir el tiempo de elaboración de reportes de 4 horas a 45 minutos."
 
 **Lo que tu jefe NO necesita escuchar:**
-- "ChatGPT me escribió el reporte."
+- "La IA me escribió el reporte."
 - "Le pedí a la IA que analizara los datos."
-- "Copié esto de Claude."
+- "Copié esto de la IA."
 
 ¿Ves la diferencia? En el primer caso, tú eres el protagonista. En el segundo, la herramienta es la protagonista y tú suenas como su secretario.
 
@@ -103,7 +103,7 @@ costos / riesgos / resultados rápidos].
 
 [ACCIÓN] Escríbeme una propuesta de una página con:
 1) Título del proyecto (que suene profesional, no 
-   "usar ChatGPT")
+   "usar Claude")
 2) Problema actual (en 3 oraciones, con números)
 3) Solución propuesta (qué herramientas, qué proceso nuevo)
 4) Beneficios esperados (tiempo, costo, calidad — con 
@@ -124,7 +124,7 @@ Tus nuevas habilidades de IA necesitan ser visibles para el mundo profesional. A
 
 ### En tu LinkedIn
 
-No pongas "usuario de ChatGPT" como habilidad. Eso es como poner "sé usar Google". En su lugar:
+No pongas "usuario de Claude" o "usuario de ChatGPT" como habilidad. Eso es como poner "sé usar Google". En su lugar:
 
 **En tu headline o título:**
 - ❌ "Gerente de Marketing | Usuario de IA"
@@ -140,7 +140,7 @@ Comparte aprendizajes, no alardes. "Hoy descubrí que usando IA para [tarea], pu
 
 Agrega IA como herramienta dentro de tus logros, no como sección aparte:
 
-- ❌ "Habilidades: ChatGPT, Copilot, Gemini"
+- ❌ "Habilidades: Claude, ChatGPT, Copilot"
 - ✅ "Optimicé el proceso de reportería del área implementando herramientas de IA, reduciendo el tiempo de elaboración en 70%"
 - ✅ "Diseñé e implementé flujos de automatización con IA para el seguimiento de clientes, mejorando el tiempo de respuesta de 48h a 4h"
 

@@ -232,7 +232,7 @@ Dame:
 
 ---
 
-## Copilot en Excel vs. ChatGPT para Excel: ¿cuándo usar cada uno?
+## Copilot en Excel vs. Claude para Excel: ¿cuándo usar cada uno?
 
 Ahora que ya sabes pedirle fórmulas a la IA, vale la pena entender que hay dos caminos y cuándo conviene cada uno.
 
@@ -251,7 +251,7 @@ Microsoft Copilot está integrado directamente en Excel si tienes una suscripci�
 - A veces no entiende bien lo que le pides con datos complejos
 - Está en constante evolución, así que las funciones cambian seguido
 
-### Camino 2: ChatGPT / Claude / Gemini (IA externa)
+### Camino 2: Claude / ChatGPT / Gemini (IA externa)
 
 Aquí el flujo es: abres tu herramienta de IA en el navegador, describes tu situación o pegas tus datos, y te da la respuesta que luego tú aplicas manualmente en Excel.
 
@@ -269,9 +269,9 @@ Aquí el flujo es: abres tu herramienta de IA en el navegador, describes tu situ
 
 ### Mi recomendación honesta:
 
-Si tienes acceso a Copilot, úsalo para tareas rápidas dentro de Excel. Pero cuando necesites que te enseñen o que te expliquen el razonamiento detrás de algo, usa ChatGPT o Claude. La combinación de ambos es lo más poderoso.
+Si tienes acceso a Copilot, úsalo para tareas rápidas dentro de Excel. Pero cuando necesites que te enseñen o que te expliquen el razonamiento detrás de algo, usa Claude o ChatGPT. La combinación de ambos es lo más poderoso.
 
-Y si no tienes Copilot, no te preocupes. Con ChatGPT gratuito y los prompts de este capítulo puedes hacer el 90% de lo que necesitas. Solo toma un paso extra de copiar y pegar.
+Y si no tienes Copilot, no te preocupes. Con Claude gratuito y los prompts de este capítulo puedes hacer el 90% de lo que necesitas. Solo toma un paso extra de copiar y pegar.
 
 ---
 
@@ -283,7 +283,7 @@ Vamos a juntar todo lo que aprendiste en un flujo de trabajo realista. Imagina q
 Abre tu archivo de Excel. Identifica qué tienes: qué columnas, cuántas filas, si los datos están limpios o son un desastre.
 
 ### Minuto 2-4: Limpia si es necesario
-Si los datos están sucios, abre ChatGPT y usa el Prompt 3 (Limpia estos datos). Describe los problemas. Aplica las soluciones que te dé.
+Si los datos están sucios, abre Claude y usa el Prompt 3 (Limpia estos datos). Describe los problemas. Aplica las soluciones que te dé.
 
 ### Minuto 4-6: Crea la tabla dinámica
 Usa el Prompt 5 (tabla dinámica) describiendo tus columnas y lo que quieres analizar. Sigue las instrucciones paso a paso.
@@ -318,7 +318,7 @@ Excel dejó de ser tu enemigo. Ahora es una herramienta que puedes dominar con l
 
 - Ya no necesitas memorizar fórmulas. Solo necesitas saber describir lo que quieres.
 - Los 5 prompts de Excel cubren el 90% de lo que necesitas en tu día a día.
-- Copilot y ChatGPT se complementan: uno trabaja dentro de Excel, el otro te enseña y te explica.
+- Copilot y Claude se complementan: uno trabaja dentro de Excel, el otro te enseña y te explica.
 - El flujo de "datos crudos a reporte" es de 10 minutos una vez que le agarras la onda.
 - Siempre verifica los resultados antes de enviar.
 

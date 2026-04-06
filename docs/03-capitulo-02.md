@@ -4,28 +4,28 @@
 
 Llegó el momento. Ya sabes qué es la IA, conoces las herramientas principales y tienes el vocabulario básico. Ahora toca lo bueno: abrir una de estas herramientas y tener tu primera conversación productiva.
 
-Si ya lo hiciste alguna vez —le preguntaste algo a ChatGPT, te contestó algo raro y cerraste la pestaña pensando "esto no es para mí"—, quédate. Porque lo que probablemente pasó fue que no sabías cómo pedirle las cosas. No es que la herramienta no sirva. Es como la primera vez que usaste Excel: abriste una hoja en blanco, te quedaste viendo las celdas y pensaste "¿y ahora qué?". Pero hoy usas Excel todos los días (aunque sea a regañadientes).
+Si ya lo hiciste alguna vez —le preguntaste algo a Claude o ChatGPT, te contestó algo raro y cerraste la pestaña pensando "esto no es para mí"—, quédate. Porque lo que probablemente pasó fue que no sabías cómo pedirle las cosas. No es que la herramienta no sirva. Es como la primera vez que usaste Excel: abriste una hoja en blanco, te quedaste viendo las celdas y pensaste "¿y ahora qué?". Pero hoy usas Excel todos los días (aunque sea a regañadientes).
 
 Con la IA va a pasar lo mismo. Y este capítulo es tu primer día.
 
 ## Paso a paso: abre tu cuenta (en 3 minutos)
 
-Vamos a usar ChatGPT como ejemplo porque es la herramienta más accesible y popular. Si prefieres Claude, Gemini o Copilot, el proceso es muy similar — creas cuenta, abres el chat y escribes. Los principios que vas a aprender aquí aplican para todas.
-
-### Para ChatGPT:
-
-1. **Abre tu navegador** y ve a chat.openai.com
-2. **Haz clic en "Sign up"** (registrarse). Puedes usar tu cuenta de Google, tu cuenta de Microsoft o un correo electrónico normal.
-3. **Confirma tu correo** si te lo pide.
-4. **Listo.** Vas a ver una pantalla con un campo de texto en la parte inferior que dice algo como "Message ChatGPT". Esa es tu línea de comunicación directa con la inteligencia artificial.
-
-No necesitas pagar. La versión gratuita es más que suficiente para empezar y para todo lo que vamos a hacer en este capítulo. Ya cuando le agarres el gusto, tú decides si quieres la versión de paga.
+Vamos a usar Claude como ejemplo porque es la herramienta que más recomiendo para empezar: sus respuestas son precisas, el español es muy natural y la interfaz es sencilla. Si prefieres ChatGPT, Gemini o Copilot, el proceso es muy similar — creas cuenta, abres el chat y escribes. Los principios que vas a aprender aquí aplican para todas.
 
 ### Para Claude:
 
-1. Ve a claude.ai
-2. Crea tu cuenta con Google o con correo.
-3. Mismo concepto: una caja de texto donde escribes y Claude te responde.
+1. **Abre tu navegador** y ve a claude.ai
+2. **Haz clic en "Sign up"** (registrarse). Puedes usar tu cuenta de Google o un correo electrónico normal.
+3. **Confirma tu correo** si te lo pide.
+4. **Listo.** Vas a ver una pantalla con un campo de texto en la parte inferior donde escribes tu mensaje. Esa es tu línea de comunicación directa con la inteligencia artificial.
+
+No necesitas pagar. La versión gratuita es más que suficiente para empezar y para todo lo que vamos a hacer en este capítulo. Ya cuando le agarres el gusto, tú decides si quieres la versión de paga.
+
+### Para ChatGPT:
+
+1. Ve a chat.openai.com
+2. Crea tu cuenta con Google, Microsoft o correo.
+3. Mismo concepto: una caja de texto donde escribes y ChatGPT te responde.
 
 ### Para Gemini:
 
