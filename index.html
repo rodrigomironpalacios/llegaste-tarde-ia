@@ -219,10 +219,10 @@ footer p { font-size: 14px; color: var(--text2); max-width: 440px; margin: 0 aut
 
 <!-- NAV -->
 <nav role="navigation" aria-label="Secciones del sitio">
-  <a href="#prompts" class="active" data-tab="prompts" role="tab" aria-selected="true">⚡ Prompts</a>
-  <a href="#capitulos" data-tab="capitulos" role="tab" aria-selected="false">📖 Capítulos</a>
-  <a href="#glosario" data-tab="glosario" role="tab" aria-selected="false">📚 Glosario de IA</a>
-  <a href="/blog" style="text-decoration:none">✍️ Blog</a>
+  <a href="/" class="active" data-tab="prompts" role="tab" aria-selected="true">⚡ Prompts</a>
+  <a href="/" data-tab="capitulos" role="tab" aria-selected="false">📖 Capítulos</a>
+  <a href="/" data-tab="glosario" role="tab" aria-selected="false">📚 Glosario de IA</a>
+  <a href="/blog">✍️ Blog</a>
 </nav>
 
 <main class="container" role="main">
@@ -476,16 +476,16 @@ footer p { font-size: 14px; color: var(--text2); max-width: 440px; margin: 0 aut
 <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 
 <script>
-// Tab navigation
-document.querySelectorAll('nav a').forEach(function(tab) {
+// Tab navigation (sin hash routing — la URL no cambia)
+document.querySelectorAll('nav a[data-tab]').forEach(function(tab) {
   tab.addEventListener('click', function(e) {
     e.preventDefault();
     var target = this.getAttribute('data-tab');
-    document.querySelectorAll('nav a').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('nav a[data-tab]').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
     this.classList.add('active');
     this.setAttribute('aria-selected', 'true');
     document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
-    var sectionMap = { prompts: 'prompts', capitulos: 'capitulos', glosario: 'glosario', blog: 'blog' };
+    var sectionMap = { prompts: 'prompts', capitulos: 'capitulos', glosario: 'glosario' };
     document.getElementById(sectionMap[target] || 'prompts').classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Llegaste Tarde a la IA</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#d95a1b;--ag:rgba(217,90,27,.10);--ab:rgba(217,90,27,.25);--bg:#0b0b0e;--sb:#0d0d11;--sur:#141418;--card:#1a1a20;--bor:#27272f;--txt:#ece8e0;--t2:#8d8a82;--t3:#5a5850;--ok:#22c55e;--err:#ef4444;--sw:240px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Karla',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex}
+::selection{background:rgba(217,90,27,.3)}
+a{color:var(--accent);text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+
+/* ── SIDEBAR ─────────────────────── */
+.sidebar{width:var(--sw);background:var(--sb);border-right:1px solid var(--bor);display:flex;flex-direction:column;flex-shrink:0;height:100vh;position:fixed;left:0;top:0;z-index:10}
+.sb-logo{padding:22px 18px;border-bottom:1px solid var(--bor)}
+.sb-logo .brand{font-family:'Instrument Serif',serif;font-size:15px;color:var(--txt);line-height:1.3}
+.sb-logo .brand em{color:var(--accent);font-style:normal}
+.sb-logo .badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--ag);border:1px solid var(--ab);padding:2px 8px;border-radius:20px;margin-top:6px;display:inline-block}
+.sb-nav{padding:14px 10px;flex:1}
+.sbn{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:600;color:var(--t2);border:none;background:none;width:100%;text-align:left;transition:all .15s;margin-bottom:2px}
+.sbn:hover{color:var(--txt);background:var(--sur)}
+.sbn.active{color:var(--txt);background:var(--card)}
+.sbn .ic{font-size:16px;width:22px;text-align:center;flex-shrink:0}
+.sb-foot{padding:12px 10px;border-top:1px solid var(--bor)}
+.sb-foot a{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:600;color:var(--t3);transition:all .15s}
+.sb-foot a:hover{color:var(--txt);background:var(--sur);text-decoration:none}
+
+/* ── MAIN ────────────────────────── */
+.main{margin-left:var(--sw);flex:1;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+
+/* ── BUTTONS ─────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:700;border:none;font-family:inherit;transition:all .15s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#c44e15}
+.btn-ghost{background:var(--card);color:var(--t2);border:1px solid var(--bor)}.btn-ghost:hover{color:var(--txt)}
+.btn-danger{background:rgba(239,68,68,.12);color:var(--err);border:1px solid rgba(239,68,68,.2)}.btn-danger:hover{background:rgba(239,68,68,.2)}
+.btn-ok{background:rgba(34,197,94,.12);color:var(--ok);border:1px solid rgba(34,197,94,.2)}.btn-ok:hover{background:rgba(34,197,94,.2)}
+.btn-sm{padding:5px 12px;font-size:12px}
+
+/* ── DASHBOARD ───────────────────── */
+.dash{padding:36px 40px;max-width:860px}
+.page-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.page-title{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400}
+.post-list{display:flex;flex-direction:column;gap:8px}
+.post-row{background:var(--card);border:1px solid var(--bor);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:border-color .15s}
+.post-row:hover{border-color:var(--t3)}
+.pr-info{flex:1;min-width:0}
+.pr-title{font-size:15px;font-weight:700;color:var(--txt);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr-meta{display:flex;gap:10px;align-items:center}
+.pr-tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--ag);padding:2px 8px;border-radius:12px}
+.pr-date{font-size:12px;color:var(--t3);font-weight:500}
+.pr-actions{display:flex;gap:6px;flex-shrink:0}
+.loading-row{background:var(--card);border:1px solid var(--bor);border-radius:14px;padding:16px 20px;color:var(--t3);font-size:14px;text-align:center}
+.empty-state{text-align:center;padding:60px 20px;color:var(--t2)}
+.empty-state .ei{font-size:44px;margin-bottom:14px}
+.empty-state h3{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--txt);margin-bottom:8px}
+.empty-state p{font-size:14px;max-width:300px;margin:0 auto 20px}
+
+/* ── EDITOR LAYOUT ───────────────── */
+.editor-wrap{display:flex;flex-direction:column;height:100vh}
+.ed-topbar{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--bor);background:var(--sur);flex-shrink:0}
+.ed-title-input{flex:1;background:transparent;border:none;outline:none;font-family:'Instrument Serif',serif;font-size:19px;color:var(--txt);padding:4px 8px;border-radius:6px;min-width:0}
+.ed-title-input::placeholder{color:var(--t3)}
+.ed-title-input:focus{background:var(--card)}
+.ed-actions{display:flex;gap:8px;flex-shrink:0;align-items:center}
+.pub-status{font-size:11px;color:var(--t3);font-weight:600}
+
+.ed-body{display:flex;flex:1;overflow:hidden}
+
+/* ── EDITOR PANEL ────────────────── */
+.ed-panel{flex:1;display:flex;flex-direction:column;border-right:1px solid var(--bor);overflow:hidden;min-width:0}
+.meta-strip{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--bor);background:var(--sur);flex-shrink:0}
+.mf{display:flex;align-items:center;gap:6px;padding:7px 14px;border-right:1px solid var(--bor)}
+.mf label{font-size:11px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.mf input,.mf select{background:transparent;border:none;outline:none;font-size:12px;color:var(--txt);font-family:inherit;font-weight:600;min-width:70px}
+.mf select option{background:var(--card)}
+.slug-row{display:flex;align-items:center;gap:6px;padding:4px 14px 6px;background:var(--sur);border-bottom:1px solid var(--bor);flex-shrink:0}
+.slug-row .sl{font-size:11px;color:var(--t3);font-family:'JetBrains Mono',monospace}
+.slug-row input{background:transparent;border:none;outline:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600;flex:1;min-width:0}
+.meta-desc-row{display:flex;align-items:center;gap:8px;padding:6px 14px;border-bottom:1px solid var(--bor);background:var(--sur);flex-shrink:0}
+.meta-desc-row label{font-size:11px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.06em;flex-shrink:0}
+.meta-desc-row input{flex:1;background:transparent;border:none;outline:none;font-size:13px;color:var(--t2);font-family:inherit}
+.meta-desc-row input::placeholder{color:var(--t3)}
+.char-count{font-size:11px;color:var(--t3);flex-shrink:0;font-weight:600}
+.char-count.warn{color:var(--accent)}.char-count.over{color:var(--err)}
+
+/* ── TOOLBAR ─────────────────────── */
+.toolbar{display:flex;align-items:center;gap:2px;padding:6px 10px;border-bottom:1px solid var(--bor);background:var(--sur);flex-shrink:0;flex-wrap:wrap}
+.tb{padding:5px 7px;border:none;background:none;color:var(--t2);border-radius:6px;font-size:12px;font-weight:700;font-family:inherit;transition:all .12s;min-width:26px;display:flex;align-items:center;justify-content:center}
+.tb:hover{background:var(--card);color:var(--txt)}
+.tb.on{background:var(--ag);color:var(--accent)}
+.tb-sep{width:1px;height:18px;background:var(--bor);margin:0 3px;flex-shrink:0}
+
+/* ── WYSIWYG ─────────────────────── */
+.ed-content{flex:1;overflow-y:auto;padding:28px 36px}
+.wysiwyg{min-height:380px;outline:none;font-size:16px;color:var(--t2);line-height:1.7;caret-color:var(--accent)}
+.wysiwyg:empty::before{content:'Escribe el artículo aquí...';color:var(--t3);pointer-events:none}
+.wysiwyg h2{font-size:20px;font-weight:700;color:var(--txt);margin:32px 0 10px;line-height:1.3}
+.wysiwyg h3{font-size:17px;font-weight:700;color:var(--txt);margin:24px 0 8px}
+.wysiwyg p{font-size:16px;color:var(--t2);margin-bottom:14px}
+.wysiwyg strong{color:var(--txt)}
+.wysiwyg ul,.wysiwyg ol{margin:0 0 14px 20px;color:var(--t2)}
+.wysiwyg li{margin-bottom:5px;font-size:16px}
+.wysiwyg blockquote{border-left:3px solid var(--accent);padding:10px 18px;margin:20px 0;background:var(--sur);border-radius:0 10px 10px 0;font-style:italic;color:var(--txt)}
+.wysiwyg pre{background:var(--sur);border:1px solid var(--bor);border-radius:10px;padding:16px;margin:18px 0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;color:var(--txt);white-space:pre-wrap}
+.wysiwyg a{color:var(--accent)}
+
+/* ── CTA SECTION ─────────────────── */
+.cta-ed{margin-top:32px;padding:18px;border:1px dashed var(--bor);border-radius:12px}
+.cta-ed-title{font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.cta-field{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.cta-field label{font-size:12px;color:var(--t3);font-weight:600}
+.cta-field input{background:var(--sur);border:1px solid var(--bor);border-radius:8px;padding:7px 11px;font-size:13px;color:var(--txt);font-family:inherit;outline:none}
+.cta-field input:focus{border-color:var(--accent)}
+
+/* ── PREVIEW PANEL ───────────────── */
+.prev-panel{width:42%;flex-shrink:0;display:flex;flex-direction:column;overflow:hidden}
+.prev-hdr{padding:7px 18px;border-bottom:1px solid var(--bor);background:var(--sur);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.prev-hdr span{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:.08em;text-transform:uppercase}
+.prev-frame{flex:1;overflow-y:auto;padding:28px 24px;font-family:'Karla',sans-serif}
+.prev-frame .pv-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--ag);padding:2px 8px;border-radius:14px;margin-bottom:14px}
+.prev-frame .pv-title{font-family:'Instrument Serif',serif;font-size:clamp(20px,3.5vw,32px);font-weight:400;line-height:1.15;color:var(--txt);margin-bottom:8px}
+.prev-frame .pv-meta{font-size:12px;color:var(--t3);margin-bottom:32px;font-weight:600}
+.prev-frame h2{font-size:19px;font-weight:700;color:var(--txt);margin:32px 0 10px}
+.prev-frame h3{font-size:16px;font-weight:700;color:var(--txt);margin:24px 0 8px}
+.prev-frame p{font-size:15px;color:var(--t2);margin-bottom:14px;line-height:1.7}
+.prev-frame strong{color:var(--txt)}
+.prev-frame ul,.prev-frame ol{margin:0 0 14px 20px;color:var(--t2)}
+.prev-frame li{margin-bottom:5px;font-size:15px}
+.prev-frame blockquote{border-left:3px solid var(--accent);padding:10px 18px;margin:20px 0;background:var(--sur);border-radius:0 10px 10px 0;font-style:italic;color:var(--txt)}
+.prev-frame pre{background:var(--sur);border:1px solid var(--bor);border-radius:10px;padding:14px;margin:16px 0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7;color:var(--txt);white-space:pre-wrap;overflow-x:auto}
+.prev-frame .pv-cta{background:var(--card);border:1px solid var(--bor);border-radius:14px;padding:22px;text-align:center;margin:36px 0}
+.prev-frame .pv-cta-title{font-family:'Instrument Serif',serif;font-size:19px;font-weight:400;color:var(--txt);margin-bottom:6px}
+.prev-frame .pv-cta p{font-size:13px;color:var(--t2);margin-bottom:10px}
+.prev-frame .pv-cta-btn{display:inline-block;background:var(--accent);color:#fff;padding:8px 20px;border-radius:9px;font-weight:700;font-size:13px}
+
+/* ── TOAST ───────────────────────── */
+.toast-wrap{position:fixed;bottom:22px;right:22px;z-index:1000;display:flex;flex-direction:column;gap:8px}
+.toast{background:var(--card);border:1px solid var(--bor);border-radius:12px;padding:11px 18px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;min-width:260px;box-shadow:0 8px 32px rgba(0,0,0,.4);animation:tIn .25s ease}
+.toast.ok{border-color:rgba(34,197,94,.3);color:var(--ok)}
+.toast.er{border-color:rgba(239,68,68,.3);color:var(--err)}
+.toast.inf{border-color:var(--ab);color:var(--accent)}
+@keyframes tIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+
+/* ── MODAL ───────────────────────── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:200;backdrop-filter:blur(4px)}
+.modal{background:var(--card);border:1px solid var(--bor);border-radius:18px;padding:30px;max-width:420px;width:90%}
+.modal h3{font-family:'Instrument Serif',serif;font-size:21px;font-weight:400;margin-bottom:8px}
+.modal p{font-size:14px;color:var(--t2);margin-bottom:22px}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end}
+
+/* ── LINK MODAL ──────────────────── */
+.link-row{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.link-row label{font-size:12px;color:var(--t3);font-weight:700;text-transform:uppercase}
+.link-row input{background:var(--sur);border:1px solid var(--bor);border-radius:8px;padding:8px 12px;font-size:14px;color:var(--txt);font-family:inherit;outline:none}
+.link-row input:focus{border-color:var(--accent)}
+
+/* ── SPINNER ─────────────────────── */
+.spin{width:14px;height:14px;border:2px solid var(--bor);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite;display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+@media(max-width:860px){.prev-panel{display:none}}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="brand">Llegaste Tarde <em>a la IA</em></div>
+    <div class="badge">Panel Admin</div>
+  </div>
+  <nav class="sb-nav">
+    <button class="sbn active" id="sbn-dash" onclick="showDashboard()">
+      <span class="ic">📋</span> Dashboard
+    </button>
+    <button class="sbn" id="sbn-new" onclick="showEditor(null)">
+      <span class="ic">✏️</span> Nuevo Post
+    </button>
+  </nav>
+  <div class="sb-foot">
+    <a href="/" target="_blank"><span>🌐</span> Ver sitio</a>
+    <a href="/blog" target="_blank"><span>📖</span> Ver blog</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main" id="main"></main>
+
+<!-- TOASTS -->
+<div class="toast-wrap" id="toasts"></div>
+
+<!-- CONFIRM MODAL -->
+<div class="overlay" id="delModal" style="display:none">
+  <div class="modal">
+    <h3>¿Eliminar post?</h3>
+    <p id="delMsg">Esta acción no se puede deshacer.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeDelModal()">Cancelar</button>
+      <button class="btn btn-danger" id="delOk">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- LINK MODAL -->
+<div class="overlay" id="linkModal" style="display:none">
+  <div class="modal">
+    <h3>Insertar enlace</h3>
+    <div class="link-row"><label>Texto</label><input id="linkText" placeholder="Texto del enlace"></div>
+    <div class="link-row"><label>URL</label><input id="linkUrl" placeholder="https://..."></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeLinkModal()">Cancelar</button>
+      <button class="btn btn-primary" onclick="insertLink()">Insertar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+// UTILS
+// ══════════════════════════════════════════════
+const slugify = s => s.toLowerCase()
+  .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+  .replace(/[^a-z0-9\s-]/g,'').trim()
+  .replace(/\s+/g,'-').replace(/-+/g,'-');
+
+const stripHtml = h => h.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+
+function readTime(html){ const w=stripHtml(html).split(/\s+/).length; return Math.max(1,Math.ceil(w/200)); }
+
+function formatDate(s){
+  if(!s) return '';
+  const d=new Date(s+'T12:00:00');
+  return d.toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'});
+}
+
+function toast(msg,type='inf'){
+  const el=document.createElement('div');
+  el.className=`toast ${type}`;
+  el.innerHTML=`<span>${{ok:'✓',er:'✕',inf:'ℹ'}[type]||'ℹ'}</span> ${msg}`;
+  document.getElementById('toasts').appendChild(el);
+  setTimeout(()=>el.remove(),4000);
+}
+
+function setNav(id){
+  document.querySelectorAll('.sbn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el) el.classList.add('active');
+}
+
+// ── Delete confirm ──
+let _delResolve=null;
+function confirmDel(msg){
+  return new Promise(res=>{
+    _delResolve=res;
+    document.getElementById('delMsg').textContent=msg;
+    document.getElementById('delModal').style.display='flex';
+    document.getElementById('delOk').onclick=()=>{closeDelModal();res(true)};
+  });
+}
+function closeDelModal(){
+  document.getElementById('delModal').style.display='none';
+  if(_delResolve) _delResolve(false);
+}
+
+// ── Link modal ──
+let _savedRange=null;
+function openLinkModal(){
+  const sel=window.getSelection();
+  if(sel.rangeCount) _savedRange=sel.getRangeAt(0).cloneRange();
+  document.getElementById('linkText').value=sel.toString()||'';
+  document.getElementById('linkUrl').value='';
+  document.getElementById('linkModal').style.display='flex';
+  setTimeout(()=>document.getElementById('linkUrl').focus(),50);
+}
+function closeLinkModal(){ document.getElementById('linkModal').style.display='none'; }
+function insertLink(){
+  const txt=document.getElementById('linkText').value.trim();
+  const url=document.getElementById('linkUrl').value.trim();
+  if(!url){ closeLinkModal(); return; }
+  closeLinkModal();
+  document.getElementById('wysiwyg').focus();
+  const sel=window.getSelection();
+  if(_savedRange){ sel.removeAllRanges(); sel.addRange(_savedRange); }
+  document.execCommand('createLink',false,url);
+  // set target blank on newly created links
+  document.querySelectorAll('#wysiwyg a:not([target])').forEach(a=>{ a.target='_blank'; a.rel='noopener'; });
+  if(txt && sel.toString()!==txt) document.execCommand('insertText',false,txt);
+  updatePreview();
+}
+
+// ══════════════════════════════════════════════
+// GITHUB API
+// ══════════════════════════════════════════════
+async function ghGet(path){
+  const r=await fetch(`/api/github?path=${encodeURIComponent(path)}`);
+  if(!r.ok){ const d=await r.json(); throw new Error(d.error||`HTTP ${r.status}`); }
+  return r.json();
+}
+async function ghPost(body){
+  const r=await fetch('/api/github',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json();
+  if(!r.ok) throw new Error(d.error||`HTTP ${r.status}`);
+  return d;
+}
+function b64decode(s){ return decodeURIComponent(escape(atob(s.replace(/\n/g,'')))); }
+
+// ══════════════════════════════════════════════
+// DASHBOARD
+// ══════════════════════════════════════════════
+async function showDashboard(){
+  setNav('sbn-dash');
+  const main=document.getElementById('main');
+  main.innerHTML=`
+    <div class="dash">
+      <div class="page-hdr">
+        <h1 class="page-title">Blog Posts</h1>
+        <button class="btn btn-primary" onclick="showEditor(null)">✏️ Nuevo Post</button>
+      </div>
+      <div class="post-list" id="postList">
+        <div class="loading-row">Cargando posts... <span class="spin"></span></div>
+      </div>
+    </div>`;
+
+  try {
+    const files=await ghGet('blog');
+    const posts=files.filter(f=>f.type==='file'&&f.name.endsWith('.html')&&f.name!=='index.html'&&!f.name.startsWith('_'));
+
+    if(!posts.length){
+      document.getElementById('postList').innerHTML=`
+        <div class="empty-state">
+          <div class="ei">📝</div>
+          <h3>No hay posts todavía</h3>
+          <p>Crea tu primer artículo de blog.</p>
+          <button class="btn btn-primary" onclick="showEditor(null)">Crear primer post</button>
+        </div>`;
+      return;
+    }
+
+    // Load each post in parallel (extract metadata)
+    const rows=await Promise.all(posts.map(async f=>{
+      try{
+        const data=await ghGet(f.path);
+        const html=b64decode(data.content);
+        const doc=new DOMParser().parseFromString(html,'text/html');
+        const title=doc.querySelector('article h1')?.textContent?.trim()||f.name.replace('.html','');
+        const tag=doc.querySelector('article .tag')?.textContent?.trim()||'—';
+        const meta=doc.querySelector('article .meta')?.textContent?.trim()||'';
+        const date=doc.querySelector('time')?.getAttribute('datetime')||'';
+        return {name:f.name,path:f.path,sha:data.sha,title,tag,meta,date};
+      }catch{ return {name:f.name,path:f.path,sha:'',title:f.name.replace('.html',''),tag:'—',meta:'',date:''}; }
+    }));
+
+    const slug=r=>`/blog/${r.name.replace('.html','')}`;
+    document.getElementById('postList').innerHTML=rows.map(r=>`
+      <div class="post-row">
+        <div class="pr-info">
+          <div class="pr-title">${r.title}</div>
+          <div class="pr-meta">
+            <span class="pr-tag">${r.tag}</span>
+            ${r.date?`<span class="pr-date">${formatDate(r.date)}</span>`:''}
+          </div>
+        </div>
+        <div class="pr-actions">
+          <a class="btn btn-ghost btn-sm" href="${slug(r)}" target="_blank">👁 Ver</a>
+          <button class="btn btn-ghost btn-sm" onclick='editPost(${JSON.stringify(r)})'>✏️ Editar</button>
+          <button class="btn btn-danger btn-sm" onclick='deletePost(${JSON.stringify(r)})'>🗑 Eliminar</button>
+        </div>
+      </div>`).join('');
+  } catch(e){
+    document.getElementById('postList').innerHTML=`<div class="loading-row" style="color:var(--err)">Error: ${e.message}</div>`;
+  }
+}
+
+async function editPost(row){
+  const data=await ghGet(row.path);
+  const html=b64decode(data.content);
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const post={
+    isEdit:true, path:row.path, sha:data.sha,
+    title:doc.querySelector('article h1')?.textContent?.trim()||'',
+    slug:row.name.replace('.html',''),
+    tag:doc.querySelector('article .tag')?.textContent?.trim()||'',
+    metaDesc:doc.querySelector('meta[name="description"]')?.getAttribute('content')||'',
+    date:doc.querySelector('time')?.getAttribute('datetime')||new Date().toISOString().slice(0,10),
+    readTime:doc.querySelector('article .meta')?.textContent?.match(/(\d+) min/)?.[1]||'5',
+    bodyHtml:extractBody(doc),
+    ctaTitle:doc.querySelector('.cta-box p:first-child')?.textContent?.trim()||'¿Quieres aprender más?',
+    ctaDesc:doc.querySelector('.cta-box p:nth-child(2)')?.textContent?.trim()||'',
+    ctaUrl:doc.querySelector('.cta-box a')?.getAttribute('href')||'/',
+    ctaBtn:doc.querySelector('.cta-box a')?.textContent?.trim()||'Ver los prompts gratuitos →',
+  };
+  showEditor(post);
+}
+
+function extractBody(doc){
+  // Extract article content between header and CTA
+  const article=doc.querySelector('article');
+  if(!article) return '';
+  const clone=article.cloneNode(true);
+  clone.querySelector('h1')?.remove();
+  clone.querySelector('.tag')?.remove();
+  clone.querySelector('.meta')?.remove();
+  clone.querySelector('.cta-box')?.remove();
+  clone.querySelector('.back-link')?.remove();
+  return clone.innerHTML.trim();
+}
+
+async function deletePost(row){
+  const ok=await confirmDel(`Se eliminará "${row.title}" de GitHub y del sitio.`);
+  if(!ok) return;
+  try{
+    toast('Eliminando post...','inf');
+    // Also update blog/index.html to remove the card
+    await removeBlogIndexCard(row.name.replace('.html',''));
+    await ghPost({action:'delete',path:row.path,message:`Admin: Eliminar ${row.name}`});
+    toast('Post eliminado. El sitio se actualizará en ~30 seg.','ok');
+    showDashboard();
+  }catch(e){ toast('Error: '+e.message,'er'); }
+}
+
+// ══════════════════════════════════════════════
+// EDITOR
+// ══════════════════════════════════════════════
+function showEditor(post){
+  setNav(post?'sbn-dash':'sbn-new');
+  const p=post||{isEdit:false,title:'',slug:'',tag:'Fundamentos',metaDesc:'',date:new Date().toISOString().slice(0,10),readTime:'5',bodyHtml:'',ctaTitle:'¿Quieres aprender más?',ctaDesc:'Este artículo es una probadita de lo que encontrarás en el libro completo.',ctaUrl:'/',ctaBtn:'Ver prompts gratuitos →'};
+
+  document.getElementById('main').innerHTML=`
+  <div class="editor-wrap">
+    <!-- Top bar -->
+    <div class="ed-topbar">
+      <button class="btn btn-ghost" style="padding:7px 12px;font-size:13px" onclick="showDashboard()">← Volver</button>
+      <input class="ed-title-input" id="edTitle" placeholder="Título del artículo..." value="${esc(p.title)}">
+      <div class="ed-actions">
+        <span class="pub-status" id="pubStatus"></span>
+        <button class="btn btn-ghost" onclick="saveDraft()">Borrador</button>
+        <button class="btn btn-primary" id="pubBtn" onclick="publishPost()">🚀 Publicar</button>
+      </div>
+    </div>
+
+    <div class="ed-body">
+      <!-- Editor panel -->
+      <div class="ed-panel">
+        <!-- Meta strip -->
+        <div class="meta-strip">
+          <div class="mf"><label>Categoría</label>
+            <select id="edTag">
+              ${['Fundamentos','Productividad','Excel','Marketing','RRHH','Finanzas','Legal','Emprendimiento','Carrera','Prompts'].map(t=>`<option${t===p.tag?' selected':''}>${t}</option>`).join('')}
+            </select>
+          </div>
+          <div class="mf"><label>Fecha</label><input type="date" id="edDate" value="${p.date}"></div>
+          <div class="mf"><label>Lectura</label><input type="text" id="edRT" value="${p.readTime}" style="width:40px"> min</div>
+        </div>
+        <!-- Slug -->
+        <div class="slug-row">
+          <span class="sl">llegastetardealaia.com/blog/</span>
+          <input id="edSlug" value="${esc(p.slug)}" placeholder="slug-del-articulo" spellcheck="false">
+        </div>
+        <!-- Meta desc -->
+        <div class="meta-desc-row">
+          <label>META</label>
+          <input id="edMeta" placeholder="Descripción SEO (155 caracteres máx.)" value="${esc(p.metaDesc)}" maxlength="200">
+          <span class="char-count" id="metaCount">0</span>
+        </div>
+        <!-- Toolbar -->
+        <div class="toolbar">
+          <button class="tb" onclick="fmt('bold')" title="Negrita"><b>B</b></button>
+          <button class="tb" onclick="fmt('italic')" title="Itálica"><i>I</i></button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="insertH('H2')" title="Subtítulo H2">H2</button>
+          <button class="tb" onclick="insertH('H3')" title="Subtítulo H3">H3</button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="fmt('insertUnorderedList')" title="Lista">• Lista</button>
+          <button class="tb" onclick="fmt('insertOrderedList')" title="Lista numerada">1. Lista</button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="insertBlockquote()" title="Cita">" Cita</button>
+          <button class="tb" onclick="insertCode()" title="Bloque de código">&lt;/&gt; Code</button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="openLinkModal()" title="Enlace">🔗 Link</button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="updateReadTime()" title="Calcular tiempo de lectura">⏱ Auto RT</button>
+        </div>
+        <!-- Content -->
+        <div class="ed-content">
+          <div class="wysiwyg" id="wysiwyg" contenteditable="true" spellcheck="true">${p.bodyHtml}</div>
+          <!-- CTA section -->
+          <div class="cta-ed">
+            <div class="cta-ed-title">🎯 Sección CTA (Call to Action)</div>
+            <div class="cta-field"><label>Título del CTA</label><input id="ctaTitle" value="${esc(p.ctaTitle)}"></div>
+            <div class="cta-field"><label>Descripción</label><input id="ctaDesc" value="${esc(p.ctaDesc)}"></div>
+            <div class="cta-field"><label>URL del botón</label><input id="ctaUrl" value="${esc(p.ctaUrl)}"></div>
+            <div class="cta-field"><label>Texto del botón</label><input id="ctaBtn" value="${esc(p.ctaBtn)}"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview panel -->
+      <div class="prev-panel">
+        <div class="prev-hdr"><span>Vista previa</span><span id="rtIndicator"></span></div>
+        <div class="prev-frame" id="prevFrame"></div>
+      </div>
+    </div>
+  </div>`;
+
+  // Store edit state
+  window._editPost=p;
+
+  // Init events
+  const titleEl=document.getElementById('edTitle');
+  const slugEl=document.getElementById('edSlug');
+  const metaEl=document.getElementById('edMeta');
+  const wyEl=document.getElementById('wysiwyg');
+
+  // Auto-slug from title (only for new posts)
+  if(!p.isEdit){
+    titleEl.addEventListener('input',()=>{
+      slugEl.value=slugify(titleEl.value);
+      updatePreview();
+    });
+  }
+  titleEl.addEventListener('input',updatePreview);
+  metaEl.addEventListener('input',()=>{
+    const n=metaEl.value.length;
+    const cc=document.getElementById('metaCount');
+    cc.textContent=n;
+    cc.className='char-count'+(n>155?' over':n>120?' warn':'');
+    updatePreview();
+  });
+  document.getElementById('edTag').addEventListener('change',updatePreview);
+  document.getElementById('edDate').addEventListener('change',updatePreview);
+  document.getElementById('edRT').addEventListener('input',updatePreview);
+  wyEl.addEventListener('input',()=>{ updatePreview(); });
+  document.querySelectorAll('#ctaTitle,#ctaDesc,#ctaUrl,#ctaBtn').forEach(el=>el.addEventListener('input',updatePreview));
+
+  // Load draft from localStorage
+  const draft=localStorage.getItem('draft_'+(p.slug||'new'));
+  if(draft){
+    try{
+      const d=JSON.parse(draft);
+      if(d.bodyHtml) wyEl.innerHTML=d.bodyHtml;
+      if(d.ctaTitle) document.getElementById('ctaTitle').value=d.ctaTitle;
+      if(d.ctaDesc) document.getElementById('ctaDesc').value=d.ctaDesc;
+    }catch(e){}
+  }
+
+  // Init char count
+  metaEl.dispatchEvent(new Event('input'));
+  updatePreview();
+  wyEl.focus();
+}
+
+function esc(s){ return (s||'').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function getEditorData(){
+  return {
+    title:document.getElementById('edTitle').value.trim(),
+    slug:document.getElementById('edSlug').value.trim(),
+    tag:document.getElementById('edTag').value,
+    date:document.getElementById('edDate').value,
+    readTime:document.getElementById('edRT').value,
+    metaDesc:document.getElementById('edMeta').value.trim(),
+    bodyHtml:document.getElementById('wysiwyg').innerHTML,
+    ctaTitle:document.getElementById('ctaTitle').value,
+    ctaDesc:document.getElementById('ctaDesc').value,
+    ctaUrl:document.getElementById('ctaUrl').value,
+    ctaBtn:document.getElementById('ctaBtn').value,
+  };
+}
+
+// ── Toolbar commands ──
+function fmt(cmd){ document.getElementById('wysiwyg').focus(); document.execCommand(cmd,false,null); updatePreview(); }
+
+function insertH(tag){
+  document.getElementById('wysiwyg').focus();
+  const sel=window.getSelection();
+  if(!sel.rangeCount) return;
+  const range=sel.getRangeAt(0);
+  const h=document.createElement(tag);
+  h.textContent=sel.toString()||'Subtítulo';
+  range.deleteContents();
+  range.insertNode(h);
+  range.setStartAfter(h);
+  sel.removeAllRanges(); sel.addRange(range);
+  updatePreview();
+}
+
+function insertBlockquote(){
+  document.getElementById('wysiwyg').focus();
+  const sel=window.getSelection();
+  if(!sel.rangeCount) return;
+  const bq=document.createElement('blockquote');
+  bq.textContent=sel.toString()||'Cita destacada aquí';
+  const range=sel.getRangeAt(0);
+  range.deleteContents();
+  range.insertNode(bq);
+  range.setStartAfter(bq);
+  sel.removeAllRanges(); sel.addRange(range);
+  updatePreview();
+}
+
+function insertCode(){
+  document.getElementById('wysiwyg').focus();
+  const sel=window.getSelection();
+  if(!sel.rangeCount) return;
+  const pre=document.createElement('pre');
+  pre.textContent=sel.toString()||'Actúa como [rol]. Necesito [objetivo].\nContexto: [tu contexto].\nDame: [formato esperado].';
+  const range=sel.getRangeAt(0);
+  range.deleteContents();
+  range.insertNode(pre);
+  range.setStartAfter(pre);
+  sel.removeAllRanges(); sel.addRange(range);
+  updatePreview();
+}
+
+function updateReadTime(){
+  const html=document.getElementById('wysiwyg').innerHTML;
+  const rt=readTime(html);
+  document.getElementById('edRT').value=rt;
+  toast(`Tiempo estimado: ${rt} min de lectura`,'inf');
+  updatePreview();
+}
+
+// ── Live Preview ──
+function updatePreview(){
+  const d=getEditorData();
+  const frame=document.getElementById('prevFrame');
+  if(!frame) return;
+  const rt=document.getElementById('rtIndicator');
+  if(rt) rt.textContent=`~${d.readTime} min`;
+
+  frame.innerHTML=`
+    <span class="pv-tag">${d.tag||'Categoría'}</span>
+    <div class="pv-title">${d.title||'Título del artículo'}</div>
+    <div class="pv-meta">${d.readTime} min de lectura · ${formatDate(d.date)}</div>
+    ${d.bodyHtml}
+    ${(d.ctaTitle||d.ctaDesc)?`
+    <div class="pv-cta">
+      <div class="pv-cta-title">${d.ctaTitle}</div>
+      <p>${d.ctaDesc}</p>
+      <a class="pv-cta-btn" href="${d.ctaUrl}">${d.ctaBtn}</a>
+    </div>`:''}`;
+}
+
+// ── Save Draft ──
+function saveDraft(){
+  const d=getEditorData();
+  const key='draft_'+(d.slug||'new');
+  localStorage.setItem(key,JSON.stringify(d));
+  toast('Borrador guardado localmente','inf');
+}
+
+// ══════════════════════════════════════════════
+// PUBLISH
+// ══════════════════════════════════════════════
+async function publishPost(){
+  const d=getEditorData();
+  if(!d.title){ toast('Agrega un título antes de publicar','er'); return; }
+  if(!d.slug){ toast('El slug no puede estar vacío','er'); return; }
+
+  const btn=document.getElementById('pubBtn');
+  btn.innerHTML='<span class="spin"></span> Publicando...';
+  btn.disabled=true;
+  document.getElementById('pubStatus').textContent='';
+
+  try {
+    const postPath=`blog/${d.slug}.html`;
+    const postHtml=generatePostHtml(d);
+
+    toast('Guardando artículo en GitHub...','inf');
+    await ghPost({action:'save',path:postPath,content:postHtml,message:`Publicar: ${d.title}`});
+
+    toast('Actualizando índice del blog...','inf');
+    await updateBlogIndex(d);
+
+    // Clear draft
+    localStorage.removeItem('draft_'+(d.slug||'new'));
+
+    toast('¡Post publicado! El sitio se actualizará en ~30 seg.','ok');
+    document.getElementById('pubStatus').textContent='✓ Publicado';
+    btn.innerHTML='✓ Publicado';
+    btn.className='btn btn-ok';
+    setTimeout(()=>showDashboard(),2000);
+  } catch(e){
+    toast('Error al publicar: '+e.message,'er');
+    btn.innerHTML='🚀 Publicar';
+    btn.disabled=false;
+  }
+}
+
+// ══════════════════════════════════════════════
+// HTML GENERATION
+// ══════════════════════════════════════════════
+function generatePostHtml(d){
+  const dateISO=d.date;
+  const dateStr=formatDate(d.date);
+  const domain='https://llegastetardealaia.com';
+  const url=`${domain}/blog/${d.slug}`;
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${d.title} — Llegaste Tarde a la IA</title>
+<meta name="description" content="${d.metaDesc||d.title}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="${d.title}">
+<meta property="og:description" content="${d.metaDesc||d.title}">
+<meta property="og:url" content="${url}">
+<meta property="og:locale" content="es_MX">
+<meta property="article:published_time" content="${dateISO}">
+<meta property="article:tag" content="${d.tag}">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"${d.title.replace(/"/g,'\\"')}","description":"${(d.metaDesc||d.title).replace(/"/g,'\\"')}","inLanguage":"es","datePublished":"${dateISO}","author":{"@type":"Organization","name":"Llegaste Tarde a la IA"},"publisher":{"@type":"Organization","name":"Llegaste Tarde a la IA"}}
+<\/script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#d95a1b;--ag:rgba(217,90,27,.10);--bg:#0b0b0e;--sur:#141418;--card:#1a1a20;--bor:#27272f;--txt:#ece8e0;--t2:#8d8a82;--t3:#5a5850}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Karla',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(217,90,27,.3)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.top-bar{display:flex;justify-content:space-between;align-items:center;max-width:680px;margin:0 auto;padding:20px 20px 0}
+.top-bar a.home{font-family:'Instrument Serif',serif;font-size:18px;color:var(--txt);text-decoration:none}
+.top-bar a.home em{color:var(--accent);font-style:normal}
+.top-bar nav{display:flex;gap:20px}
+.top-bar nav a{font-size:14px;font-weight:600;color:var(--t2);text-decoration:none}
+.top-bar nav a:hover{color:var(--txt)}
+article{max-width:680px;margin:0 auto;padding:48px 20px 80px}
+article .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--ag);padding:3px 10px;border-radius:16px;margin-bottom:16px}
+article h1{font-family:'Instrument Serif',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.15;margin-bottom:12px}
+article .meta{font-size:13px;color:var(--t3);margin-bottom:40px;font-weight:600}
+article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--txt);line-height:1.3}
+article h3{font-size:17px;font-weight:700;margin:28px 0 8px;color:var(--txt)}
+article p{font-size:16px;color:var(--t2);margin-bottom:16px}
+article strong{color:var(--txt)}
+article ul,article ol{margin:0 0 16px 20px;color:var(--t2)}
+article li{margin-bottom:6px}
+article blockquote{border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;background:var(--sur);border-radius:0 10px 10px 0;font-style:italic;color:var(--txt)}
+article pre{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:18px;margin:20px 0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;color:var(--txt);white-space:pre-wrap;overflow-x:auto}
+article a{color:var(--accent)}
+.cta-box{background:var(--card);border:1px solid var(--bor);border-radius:16px;padding:28px 24px;margin:40px 0;text-align:center}
+.cta-box p{margin-bottom:8px}
+.cta-box .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 28px;border-radius:10px;font-weight:700;font-size:14px;margin-top:8px}
+.cta-box .btn:hover{background:#c44e15;text-decoration:none}
+.back-link{display:inline-block;font-size:14px;font-weight:600;color:var(--t2);margin-top:40px;padding-top:24px;border-top:1px solid var(--bor)}
+.back-link:hover{color:var(--accent)}
+footer{max-width:680px;margin:0 auto;padding:24px 20px 40px;border-top:1px solid var(--bor);text-align:center}
+footer p{font-size:12px;color:var(--t3)}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a href="/" class="home">Llegaste Tarde <em>a la IA</em></a>
+  <nav><a href="/">Prompts</a><a href="/blog">Blog</a></nav>
+</div>
+<article>
+  <span class="tag">${d.tag}</span>
+  <h1>${d.title}</h1>
+  <div class="meta">${d.readTime} min de lectura · ${formatDate(d.date)}</div>
+  ${d.bodyHtml}
+  <div class="cta-box">
+    <p style="font-size:15px;color:var(--txt);font-weight:600;">${d.ctaTitle}</p>
+    <p style="font-size:13px;color:var(--t2);">${d.ctaDesc}</p>
+    <a href="${d.ctaUrl}" class="btn">${d.ctaBtn}</a>
+  </div>
+  <a href="/blog" class="back-link">← Volver al blog</a>
+</article>
+<footer><p>© ${new Date().getFullYear()} — Llegaste Tarde a la IA. Todos los derechos reservados.</p></footer>
+</body>
+</html>`;
+}
+
+// ══════════════════════════════════════════════
+// UPDATE BLOG INDEX
+// ══════════════════════════════════════════════
+async function updateBlogIndex(d){
+  const data=await ghGet('blog/index.html');
+  let html=b64decode(data.content);
+
+  const slug=d.slug;
+  const card=`
+    <a href="/blog/${slug}" class="post-card">
+      <span class="tag">${d.tag}</span>
+      <h2>${d.title}</h2>
+      <p class="excerpt">${d.metaDesc||''}</p>
+      <span class="meta">${d.readTime} min de lectura</span>
+    </a>`;
+
+  // If post already in index (editing), replace it
+  const cardRe=new RegExp(`<a[^>]+href="/blog/${slug}"[^>]*>[\\s\\S]*?</a>`,'g');
+  if(cardRe.test(html)){
+    html=html.replace(cardRe,card.trim());
+  } else {
+    // Insert new card at top of #posts div
+    html=html.replace('<div class="post-grid" id="posts">',`<div class="post-grid" id="posts">${card}`);
+  }
+
+  await ghPost({action:'save',path:'blog/index.html',content:html,message:`Blog index: add ${slug}`});
+}
+
+async function removeBlogIndexCard(slug){
+  try{
+    const data=await ghGet('blog/index.html');
+    let html=b64decode(data.content);
+    const cardRe=new RegExp(`<a[^>]+href="/blog/${slug}"[^>]*>[\\s\\S]*?</a>`,'g');
+    html=html.replace(cardRe,'');
+    await ghPost({action:'save',path:'blog/index.html',content:html,message:`Blog index: remove ${slug}`});
+  }catch(e){ console.warn('No se pudo actualizar blog/index.html:',e); }
+}
+
+// ══════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════
+showDashboard();
+</script>
+</body>
+</html>
