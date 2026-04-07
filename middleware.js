@@ -1,5 +1,5 @@
 export const config = {
-  matcher: ['/admin', '/admin/(.*)', '/api/github', '/api/github/(.*)']
+  matcher: ['/admin', '/admin/(.*)', '/api/github', '/api/github/(.*)', '/api/datos', '/api/datos/(.*)']
 };
 
 export default function middleware(req) {
