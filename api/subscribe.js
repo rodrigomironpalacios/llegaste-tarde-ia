@@ -1,19 +1,20 @@
-const admin = require('firebase-admin');
+import { initializeApp, getApps, cert } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert({
-      projectId:   process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey:  (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-    }),
-  });
+function getDb() {
+  if (!getApps().length) {
+    initializeApp({
+      credential: cert({
+        projectId:   process.env.FIREBASE_PROJECT_ID,
+        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        privateKey:  (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+      }),
+    });
+  }
+  return getFirestore();
 }
 
-const db = admin.firestore();
-
 export default async function handler(req, res) {
-  // Solo aceptar POST
   if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido.' });
 
   const { email } = req.body || {};
@@ -23,9 +24,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Verificar si el email ya existe (evitar duplicados)
+    const db = getDb();
+    const emailNorm = email.toLowerCase().trim();
+
+    // Evitar duplicados
     const existing = await db.collection('suscriptores')
-      .where('email', '==', email.toLowerCase().trim())
+      .where('email', '==', emailNorm)
       .limit(1)
       .get();
 
@@ -34,10 +38,10 @@ export default async function handler(req, res) {
     }
 
     await db.collection('suscriptores').add({
-      email:   email.toLowerCase().trim(),
-      fecha:   new Date().toISOString(),
-      origen:  'footer_index',
-      ip:      req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '',
+      email:  emailNorm,
+      fecha:  new Date().toISOString(),
+      origen: 'footer_index',
+      ip:     req.headers['x-forwarded-for'] || '',
     });
 
     res.status(200).json({ ok: true });
