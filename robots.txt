@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /encuesta/
+Disallow: /admin/
+Disallow: /encuesta
+Disallow: /api/
 Sitemap: https://llegastetardealaia.com/sitemap.xml
