@@ -536,19 +536,38 @@ function filterPrompts() {
 }
 
 // Email subscribe
-function handleSubscribe() {
+async function handleSubscribe() {
   var email = document.getElementById('emailInput').value.trim();
-  if (!email || !email.includes('@')) { 
+  if (!email || !email.includes('@')) {
     document.getElementById('emailInput').style.borderColor = '#ef4444';
-    return; 
+    return;
   }
   document.getElementById('emailInput').style.borderColor = 'var(--border)';
-  document.getElementById('subscribeBtn').textContent = '✓ Registrado';
-  document.getElementById('subscribeBtn').style.background = '#22c55e';
-  document.getElementById('subscribeBtn').disabled = true;
-  document.getElementById('subscribeMsg').style.display = 'block';
-  // TODO: Connect to email service (Mailchimp, ConvertKit, etc.)
-  console.log('Email captured:', email);
+  var btn = document.getElementById('subscribeBtn');
+  btn.textContent = '...';
+  btn.disabled = true;
+
+  try {
+    var res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    var data = await res.json();
+    if (data.ok) {
+      btn.textContent = '✓ Registrado';
+      btn.style.background = '#22c55e';
+      document.getElementById('subscribeMsg').style.display = 'block';
+    } else {
+      btn.textContent = 'Error';
+      btn.style.background = '#ef4444';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    btn.textContent = 'Error';
+    btn.style.background = '#ef4444';
+    btn.disabled = false;
+  }
 }
 </script>
 

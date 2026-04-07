@@ -207,21 +207,18 @@ function toggleMulti(id, opt, max) {
 function go(dir) { step = Math.max(0, Math.min(QUESTIONS.length - 1, step + dir)); render(); window.scrollTo({top:0,behavior:'smooth'}); }
 function goTo(i) { step = i; render(); }
 
-function submitSurvey() {
+async function submitSurvey() {
   var payload = Object.assign({}, answers, { _ts: new Date().toISOString(), _ua: navigator.userAgent });
 
-  // Send to configured endpoint (replace URL with your Formspree, Google Sheets webhook, etc.)
-  var ENDPOINT = ''; // TODO: Set your form endpoint here
-  if (ENDPOINT) {
-    fetch(ENDPOINT, {
+  try {
+    await fetch('/api/encuesta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    }).catch(function(e) { console.error('Submit error:', e); });
+    });
+  } catch(e) {
+    console.error('Submit error:', e);
   }
-
-  // Always log to console as backup
-  console.log('Survey response:', JSON.stringify(payload, null, 2));
 
   try { localStorage.setItem('survey_done', '1'); } catch(e) {}
   submitted = true;

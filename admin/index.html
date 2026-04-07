@@ -182,6 +182,9 @@ button{cursor:pointer;font-family:inherit}
     <button class="sbn" id="sbn-new" onclick="showEditor(null)">
       <span class="ic">✏️</span> Nuevo Post
     </button>
+    <button class="sbn" id="sbn-datos" onclick="showDatos()">
+      <span class="ic">📊</span> Datos
+    </button>
   </nav>
   <div class="sb-foot">
     <a href="/" target="_blank"><span>🌐</span> Ver sitio</a>
@@ -309,6 +312,189 @@ async function ghPost(body){
   return d;
 }
 function b64decode(s){ return decodeURIComponent(escape(atob(s.replace(/\n/g,'')))); }
+
+// ══════════════════════════════════════════════
+// DATOS
+// ══════════════════════════════════════════════
+async function showDatos(){
+  setNav('sbn-datos');
+  const main=document.getElementById('main');
+  main.innerHTML=`
+    <div class="dash">
+      <div class="page-hdr">
+        <h1 class="page-title">📊 Datos del sitio</h1>
+      </div>
+      <div id="datosContent"><div class="loading-row">Cargando datos... <span class="spin"></span></div></div>
+    </div>`;
+
+  try{
+    const res=await fetch('/api/datos');
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const {suscriptores,encuestas}=await res.json();
+    renderDatos(suscriptores,encuestas);
+  }catch(e){
+    document.getElementById('datosContent').innerHTML=`<div class="loading-row" style="color:var(--err)">Error: ${e.message}</div>`;
+  }
+}
+
+function renderDatos(subs,encs){
+  const QUESTIONS=[
+    {id:'q1',q:'Identificación con la introducción'},{id:'q2',q:'Título motivador vs ansioso'},
+    {id:'q3',q:'Claridad del Capítulo 1'},{id:'q4',q:'Facilidad del framework ROCA'},
+    {id:'q7',q:'Tono adecuado'},{id:'q9',q:'Extensión adecuada'},
+    {id:'q10',q:'Utilidad de los prompts'},{id:'q12',q:'Utilidad del sitio web'},
+    {id:'q14',q:'Probabilidad de recomendar'},
+    {id:'q8',q:'Palabra que describe el tono (texto)'},
+    {id:'q11',q:'¿Probaste los prompts?'},{id:'q13',q:'Cambio en confianza'},
+    {id:'q15',q:'Precio justo'},{id:'q16',q:'Área laboral'},
+    {id:'q17',q:'Nivel previo de experiencia con IA'},
+    {id:'q18',q:'Lo que más gustó (texto)'},{id:'q19',q:'Qué cambiarías (texto)'},
+    {id:'q20',q:'Temas que esperabas (texto)'},
+  ];
+
+  // ── CSV export ──
+  function toCSV(rows,cols){
+    const header=cols.join(',');
+    const lines=rows.map(r=>cols.map(c=>JSON.stringify(r[c]??'')).join(','));
+    return [header,...lines].join('\n');
+  }
+  function downloadCSV(content,name){
+    const a=document.createElement('a');
+    a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(content);
+    a.download=name; a.click();
+  }
+
+  // ── Bar chart ──
+  function miniBar(val,max,color='var(--accent)'){
+    const pct=max?Math.round((val/max)*100):0;
+    return `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+      <div style="flex:1;background:var(--bor,#27272f);border-radius:4px;height:8px;overflow:hidden">
+        <div style="width:${pct}%;background:${color};height:100%;border-radius:4px;transition:width .3s"></div>
+      </div>
+      <span style="font-size:11px;color:var(--t3,#5a5850);min-width:32px;text-align:right">${val}</span>
+    </div>`;
+  }
+
+  // ── Survey summary ──
+  function surveySummary(){
+    if(!encs.length) return '<p style="color:var(--t2)">Sin respuestas todavía.</p>';
+    let html='';
+    QUESTIONS.forEach(({id,q})=>{
+      const vals=encs.map(e=>e[id]).filter(v=>v!==undefined&&v!==null&&v!=='');
+      if(!vals.length) return;
+      // detect type
+      if(typeof vals[0]==='number'){
+        // rating — avg + distribution
+        const avg=(vals.reduce((s,v)=>s+v,0)/vals.length).toFixed(1);
+        const dist={};
+        vals.forEach(v=>{dist[v]=(dist[v]||0)+1;});
+        const maxD=Math.max(...Object.values(dist));
+        html+=`<div style="margin-bottom:20px">
+          <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:6px">${q} <span style="color:var(--accent);font-size:12px">Promedio: ${avg}/5</span></div>`;
+        [1,2,3,4,5].forEach(v=>{
+          html+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+            <span style="font-size:11px;color:var(--t3);width:12px;text-align:right">${v}</span>
+            ${miniBar(dist[v]||0,maxD)}
+          </div>`;
+        });
+        html+='</div>';
+      } else if(Array.isArray(vals[0])){
+        // multi — frequency
+        const flat=vals.flat();
+        const freq={};
+        flat.forEach(v=>{freq[v]=(freq[v]||0)+1;});
+        const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]);
+        const maxF=sorted[0]?.[1]||1;
+        html+=`<div style="margin-bottom:20px">
+          <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:6px">${q}</div>`;
+        sorted.forEach(([opt,cnt])=>{
+          html+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+            <span style="font-size:11px;color:var(--t2);min-width:180px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${opt}">${opt}</span>
+            ${miniBar(cnt,maxF)}
+          </div>`;
+        });
+        html+='</div>';
+      } else if(typeof vals[0]==='string' && vals[0].length<60){
+        // single choice
+        const freq={};
+        vals.forEach(v=>{freq[v]=(freq[v]||0)+1;});
+        const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]);
+        const maxF=sorted[0]?.[1]||1;
+        html+=`<div style="margin-bottom:20px">
+          <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:6px">${q}</div>`;
+        sorted.forEach(([opt,cnt])=>{
+          html+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+            <span style="font-size:11px;color:var(--t2);min-width:180px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${opt}">${opt}</span>
+            ${miniBar(cnt,maxF)}
+          </div>`;
+        });
+        html+='</div>';
+      } else {
+        // text — show list
+        html+=`<div style="margin-bottom:20px">
+          <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:8px">${q} <span style="font-size:11px;color:var(--t3)">(${vals.length} respuestas)</span></div>`;
+        vals.slice(0,5).forEach(v=>{
+          html+=`<div style="font-size:13px;color:var(--t2);padding:8px 12px;background:var(--sur,#141418);border-radius:8px;margin-bottom:4px;border-left:3px solid var(--accent)">${v}</div>`;
+        });
+        if(vals.length>5) html+=`<div style="font-size:12px;color:var(--t3);margin-top:4px">+${vals.length-5} más...</div>`;
+        html+='</div>';
+      }
+    });
+    return html;
+  }
+
+  const subsColsCSV=['id','email','fecha','origen'];
+  const encColsCSV=['id','_fecha','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20'];
+
+  document.getElementById('datosContent').innerHTML=`
+    <!-- Suscriptores -->
+    <div style="margin-bottom:40px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div>
+          <h2 style="font-family:'Instrument Serif',serif;font-size:20px;font-weight:400">📧 Suscriptores</h2>
+          <div style="font-size:13px;color:var(--t2);margin-top:2px">${subs.length} correo${subs.length!==1?'s':''} registrado${subs.length!==1?'s':''}</div>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="dlSubsCSV()">⬇ Exportar CSV</button>
+      </div>
+      ${subs.length===0
+        ? '<div class="loading-row">Sin suscriptores todavía.</div>'
+        : `<div style="background:var(--card);border:1px solid var(--bor);border-radius:14px;overflow:hidden">
+            <table style="width:100%;border-collapse:collapse;font-size:13px">
+              <thead><tr style="border-bottom:1px solid var(--bor)">
+                <th style="padding:12px 16px;text-align:left;color:var(--t3);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700">Email</th>
+                <th style="padding:12px 16px;text-align:left;color:var(--t3);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700">Fecha</th>
+                <th style="padding:12px 16px;text-align:left;color:var(--t3);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700">Origen</th>
+              </tr></thead>
+              <tbody>
+                ${subs.map((s,i)=>`<tr style="border-bottom:${i<subs.length-1?'1px solid var(--bor)':'none'}">
+                  <td style="padding:11px 16px;color:var(--txt);font-weight:600">${s.email||'—'}</td>
+                  <td style="padding:11px 16px;color:var(--t2)">${s.fecha?new Date(s.fecha).toLocaleDateString('es-MX'):'—'}</td>
+                  <td style="padding:11px 16px;color:var(--t3)">${s.origen||'—'}</td>
+                </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>`
+      }
+    </div>
+
+    <!-- Encuestas -->
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div>
+          <h2 style="font-family:'Instrument Serif',serif;font-size:20px;font-weight:400">📋 Encuestas</h2>
+          <div style="font-size:13px;color:var(--t2);margin-top:2px">${encs.length} respuesta${encs.length!==1?'s':''} recibida${encs.length!==1?'s':''}</div>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="dlEncsCSV()">⬇ Exportar CSV</button>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--bor);border-radius:14px;padding:24px">
+        ${surveySummary()}
+      </div>
+    </div>`;
+
+  // attach CSV exports to window
+  window.dlSubsCSV=()=>downloadCSV(toCSV(subs,subsColsCSV),'suscriptores.csv');
+  window.dlEncsCSV=()=>downloadCSV(toCSV(encs,encColsCSV),'encuestas.csv');
+}
 
 // ══════════════════════════════════════════════
 // DASHBOARD
