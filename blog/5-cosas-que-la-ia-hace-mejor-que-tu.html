@@ -3,23 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artículo próximamente — Llegaste Tarde a la IA</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>5 Cosas que la IA Hace Mejor que Tú (y 5 que No) — Llegaste Tarde a la IA</title>
+<meta name="description" content="Una guía honesta de para qué sirve la inteligencia artificial y para qué no. Aprende a delegar las tareas correctas a la IA y conservar las que requieren tu criterio profesional.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://llegastetardealaia.com/blog/5-cosas-que-la-ia-hace-mejor-que-tu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5 Cosas que la IA Hace Mejor que Tú (y 5 que No)">
+<meta property="og:description" content="Una guía honesta de para qué sirve la IA y para qué no. Aprende a delegar bien.">
+<meta property="og:url" content="https://llegastetardealaia.com/blog/5-cosas-que-la-ia-hace-mejor-que-tu">
+<meta property="og:locale" content="es_MX">
+<meta property="og:image" content="https://llegastetardealaia.com/og-image.png">
+<meta property="article:published_time" content="2026-04-07">
+<meta property="article:tag" content="Productividad · IA">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5 Cosas que la IA Hace Mejor que Tú (y 5 que No)",
+  "description": "Guía honesta para saber qué delegar a la IA y qué conservar con tu criterio profesional.",
+  "inLanguage": "es",
+  "datePublished": "2026-04-07",
+  "author": {"@type": "Organization", "name": "Llegaste Tarde a la IA"},
+  "publisher": {"@type": "Organization", "name": "Llegaste Tarde a la IA"}
+}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0L1NKYM39S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0L1NKYM39S', { anonymize_ip: true });
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-body { background: #0b0b0e; color: #ece8e0; font-family: 'Karla', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; padding: 20px; }
-h1 { font-family: 'Instrument Serif', serif; font-size: 32px; font-weight: 400; margin-bottom: 8px; }
-p { color: #8d8a82; font-size: 16px; margin-bottom: 24px; max-width: 400px; }
-a { display: inline-block; background: #d95a1b; color: #fff; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; }
-a:hover { background: #c44e15; }
+:root{--accent:#d95a1b;--accent-glow:rgba(217,90,27,.10);--accent-border:rgba(217,90,27,.25);--bg:#0b0b0e;--surface:#141418;--card:#1a1a20;--border:#27272f;--text:#ece8e0;--text2:#8d8a82;--text3:#5a5850;--tag:rgba(217,90,27,.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Karla',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(217,90,27,.3)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+
+.top-bar{display:flex;justify-content:space-between;align-items:center;max-width:680px;margin:0 auto;padding:20px 20px 0}
+.top-bar a.home{font-family:'Instrument Serif',serif;font-size:18px;color:var(--text);text-decoration:none}
+.top-bar a.home em{color:var(--accent);font-style:normal}
+.top-bar nav{display:flex;gap:20px}
+.top-bar nav a{font-size:14px;font-weight:600;color:var(--text2);text-decoration:none}
+.top-bar nav a:hover{color:var(--text)}
+
+article{max-width:680px;margin:0 auto;padding:48px 20px 80px}
+article .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--tag);padding:3px 10px;border-radius:16px;margin-bottom:16px}
+article h1{font-family:'Instrument Serif',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.15;margin-bottom:12px}
+article .meta{font-size:13px;color:var(--text3);margin-bottom:40px;font-weight:600}
+article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--text);line-height:1.3}
+article h2.ia-wins{color:#22c55e}
+article h2.human-wins{color:#f59e0b}
+article p{font-size:16px;color:var(--text2);margin-bottom:16px}
+article strong{color:var(--text)}
+article ul,article ol{margin:0 0 16px 20px;color:var(--text2)}
+article li{margin-bottom:8px;font-size:16px}
+article blockquote{border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 10px 10px 0}
+article blockquote p{color:var(--text);margin:0;font-style:italic}
+article hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+
+.item-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin:14px 0}
+.item-num{font-family:'Instrument Serif',serif;font-size:28px;color:var(--accent);line-height:1;margin-bottom:4px}
+.item-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px}
+.item-body{font-size:15px;color:var(--text2);line-height:1.55;margin:0}
+
+.section-header{display:flex;align-items:center;gap:12px;margin:40px 0 16px}
+.section-icon{font-size:28px}
+.section-title{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400}
+.section-title.green{color:#22c55e}
+.section-title.amber{color:#f59e0b}
+
+.cta-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin:40px 0;text-align:center}
+.cta-box p{margin-bottom:8px}
+.cta-box .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 28px;border-radius:10px;font-weight:700;font-size:14px;margin-top:8px}
+.cta-box .btn:hover{background:#c44e15;text-decoration:none}
+
+.back-link{display:inline-block;font-size:14px;font-weight:600;color:var(--text2);margin-top:40px;padding-top:24px;border-top:1px solid var(--border)}
+.back-link:hover{color:var(--accent)}
+
+footer{max-width:680px;margin:0 auto;padding:24px 20px 40px;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:12px;color:var(--text3)}
 </style>
 </head>
 <body>
-<div>
-<p style="font-size:40px; margin-bottom:16px;">✍️</p>
-<h1>Este artículo está en camino</h1>
-<p>Estamos preparando este contenido. Mientras tanto, explora los prompts gratuitos y el glosario de IA en el sitio principal.</p>
-<a href="/">Ir a los prompts →</a>
+
+<div class="top-bar">
+  <a href="/" class="home">Llegaste Tarde <em>a la IA</em></a>
+  <nav>
+    <a href="/">Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
 </div>
+
+<article>
+  <span class="tag">Productividad · IA</span>
+  <h1>5 Cosas que la IA Hace Mejor que Tú (y 5 que No)</h1>
+  <div class="meta">5 min de lectura · Abril 2026</div>
+
+  <p>La promesa de la IA generativa es enorme. Pero hay un gap entre lo que puede hacer en teoría y lo que hace bien en la práctica — especialmente en el trabajo profesional. Aquí va una guía honesta para saber qué delegar y qué conservar.</p>
+
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title green">Lo que la IA hace mejor que tú</span>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">01</div>
+    <div class="item-title">Procesar y resumir grandes volúmenes de texto</div>
+    <p class="item-body">Leer un reporte de 80 páginas, un contrato, transcripciones de juntas o hilos de correo kilométricos y extraer los puntos clave. La IA lo hace en segundos con una precisión que no cansa. Para ti, ese mismo proceso toma horas y tu atención decae.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">02</div>
+    <div class="item-title">Generar múltiples variaciones de un mismo contenido</div>
+    <p class="item-body">¿Necesitas 10 asuntos de correo para hacer A/B testing? ¿5 versiones de un párrafo en tonos distintos? La IA puede generar variaciones infinitas sin perder calidad. Un humano se agota en la tercera versión.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">03</div>
+    <div class="item-title">Estructurar ideas que tienes en la cabeza</div>
+    <p class="item-body">Tienes 20 ideas caóticas sobre cómo mejorar un proceso. Se las das a la IA y te regresa una propuesta coherente, categorizada y lista para presentar. Actúa como un brutal editor que nunca se cansa de tu material.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">04</div>
+    <div class="item-title">Traducir tecnicismos a lenguaje claro</div>
+    <p class="item-body">Explicar un concepto técnico a un público no técnico, convertir un contrato legal a lenguaje entendible, o transformar datos de finanzas en un resumen para el equipo comercial. La IA adapta el nivel de complejidad a quien va dirigido sin esfuerzo.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">05</div>
+    <div class="item-title">Trabajo de primer borrador</div>
+    <p class="item-body">La página en blanco es el enemigo de la productividad. La IA elimina ese bloqueo con una velocidad brutal. Primer borrador de correo, propuesta, presentación, descripción de puesto — en minutos. Tú te encargás de mejorarlo, no de crear desde cero.</p>
+  </div>
+
+  <hr>
+
+  <div class="section-header">
+    <span class="section-icon">🧠</span>
+    <span class="section-title amber">Lo que tú haces mejor que la IA</span>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">01</div>
+    <div class="item-title">Leer las dinámicas interpersonales de tu organización</div>
+    <p class="item-body">Saber cuándo no decir algo en una reunión. Entender que la resistencia de tu colega no es al proyecto sino a la persona que lo propuso. La IA no tiene acceso al contexto político no escrito de tu empresa — ese es tu territorio.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">02</div>
+    <div class="item-title">Verificar que la información es correcta</div>
+    <p class="item-body">La IA alucina — inventa datos, cita fuentes que no existen, confunde fechas. Nunca uses un número, estadística o dato de IA en un contexto donde importa sin verificarlo. Tu criterio profesional es el control de calidad.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">03</div>
+    <div class="item-title">Tomar decisiones con consecuencias reales</div>
+    <p class="item-body">La IA puede analizar opciones, listar pros y contras, modelar escenarios. Pero decidir — contratar o no contratar a alguien, lanzar o no lanzar un producto, cerrar o no cerrar un trato — eso requiere responsabilidad humana.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">04</div>
+    <div class="item-title">Construir relaciones de confianza</div>
+    <p class="item-body">Un cliente no te elige por tu correo perfecto. Te elige porque confía en ti, en tu trayectoria y en cómo lo haces sentir. La IA puede apoyarte en el "qué dices", pero el "cómo te perciben" es completamente tuyo.</p>
+  </div>
+
+  <div class="item-card">
+    <div class="item-num">05</div>
+    <div class="item-title">Definir qué problema resolver</div>
+    <p class="item-body">La IA ejecuta instrucciones muy bien. Pero necesita que le digas qué hacer. Identificar el verdadero problema detrás del síntoma, hacer las preguntas correctas antes de actuar — eso es pensamiento estratégico que sigue siendo humano.</p>
+  </div>
+
+  <h2>La conclusión práctica</h2>
+
+  <p>La IA es mejor empleada como un <strong>amplificador de tu expertise</strong>, no como un sustituto de él. Te permite hacer más de lo que ya haces bien, más rápido.</p>
+
+  <blockquote>
+    <p>El profesional del futuro no es el que sabe más — es el que sabe qué delegar a la IA y en qué momentos aplicar el criterio que la IA no tiene.</p>
+  </blockquote>
+
+  <p>El truco está en encontrar ese balance: usa la IA para el volumen y los borradores, aplica tu criterio en la revisión y la decisión final.</p>
+
+  <div class="cta-box">
+    <p style="font-size:15px;color:var(--text);font-weight:600;">Empieza con tareas de bajo riesgo</p>
+    <p style="font-size:13px;color:var(--text2);">Tenemos 40 prompts por área profesional. Úsalos como punto de partida para desarrollar tu propio flujo de trabajo con IA.</p>
+    <a href="/" class="btn">Ver los prompts gratuitos →</a>
+  </div>
+
+  <a href="/blog" class="back-link">← Volver al blog</a>
+</article>
+
+<footer>
+  <p>© 2026 — Llegaste Tarde a la IA. Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>

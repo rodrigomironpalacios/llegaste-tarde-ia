@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glosario de Inteligencia Artificial en Español — 30 Términos Explicados Sin Tecnicismos</title>
+<meta name="description" content="Glosario completo de inteligencia artificial en español: prompt, LLM, alucinación, token, RAG, agente y más. Definiciones claras para profesionales no técnicos.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://llegastetardealaia.com/glosario">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Glosario de IA en Español — 30 Términos Explicados Sin Tecnicismos">
+<meta property="og:description" content="¿Qué es un prompt? ¿Qué es un LLM? ¿Qué significa alucinación en IA? 30 términos de inteligencia artificial explicados en español claro.">
+<meta property="og:url" content="https://llegastetardealaia.com/glosario">
+<meta property="og:locale" content="es_MX">
+<meta property="og:image" content="https://llegastetardealaia.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Glosario de Inteligencia Artificial en Español",
+  "description": "30 términos de inteligencia artificial explicados en español, sin tecnicismos, para profesionales.",
+  "inLanguage": "es",
+  "publisher": {"@type": "Organization", "name": "Llegaste Tarde a la IA"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"¿Qué es un prompt de inteligencia artificial?","acceptedAnswer":{"@type":"Answer","text":"Un prompt es la instrucción o pregunta que le das a una herramienta de IA como Claude o ChatGPT. Entre más claro y específico sea tu prompt, mejor será la respuesta."}},
+    {"@type":"Question","name":"¿Qué es una alucinación en IA?","acceptedAnswer":{"@type":"Answer","text":"Una alucinación ocurre cuando la inteligencia artificial inventa información falsa pero la presenta como si fuera verdadera. Es importante verificar siempre datos importantes que provienen de la IA."}},
+    {"@type":"Question","name":"¿Qué es un LLM o Large Language Model?","acceptedAnswer":{"@type":"Answer","text":"Un LLM es el modelo de lenguaje que funciona como el cerebro detrás de herramientas como Claude y ChatGPT. Está entrenado con grandes cantidades de texto para entender y generar lenguaje humano."}},
+    {"@type":"Question","name":"¿Qué es la IA Generativa?","acceptedAnswer":{"@type":"Answer","text":"La IA generativa es un tipo de inteligencia artificial que puede crear contenido nuevo: textos, imágenes, audio y video. Claude, ChatGPT, Gemini y DALL-E son ejemplos de IA generativa."}},
+    {"@type":"Question","name":"¿Qué es RAG en inteligencia artificial?","acceptedAnswer":{"@type":"Answer","text":"RAG (Retrieval-Augmented Generation) es una técnica donde la IA busca en documentos específicos antes de responder, reduciendo significativamente las alucinaciones y aumentando la precisión."}},
+    {"@type":"Question","name":"¿Qué es un token en IA?","acceptedAnswer":{"@type":"Answer","text":"Un token es la unidad de medida de texto que usa la IA. En español, una palabra equivale aproximadamente a 1-2 tokens. Los modelos tienen un límite de tokens por conversación (ventana de contexto)."}}
+  ]
+}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0L1NKYM39S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0L1NKYM39S', { anonymize_ip: true });
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#d95a1b;--accent-glow:rgba(217,90,27,.10);--accent-border:rgba(217,90,27,.25);--bg:#0b0b0e;--surface:#141418;--card:#1a1a20;--border:#27272f;--text:#ece8e0;--text2:#8d8a82;--text3:#5a5850;--tag:rgba(217,90,27,.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Karla',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(217,90,27,.3)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+
+.top-bar{display:flex;justify-content:space-between;align-items:center;max-width:780px;margin:0 auto;padding:20px 20px 0}
+.top-bar a.home{font-family:'Instrument Serif',serif;font-size:18px;color:var(--text);text-decoration:none}
+.top-bar a.home em{color:var(--accent);font-style:normal}
+.top-bar nav{display:flex;gap:20px}
+.top-bar nav a{font-size:14px;font-weight:600;color:var(--text2);text-decoration:none}
+.top-bar nav a:hover{color:var(--text)}
+
+.hero{text-align:center;padding:56px 20px 40px;max-width:780px;margin:0 auto}
+.badge{display:inline-block;background:var(--accent-glow);border:1px solid var(--accent-border);border-radius:40px;padding:4px 16px;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(30px,6vw,52px);font-weight:400;line-height:1.1;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:16px;color:var(--text2);max-width:560px;margin:0 auto 32px}
+
+.search-wrap{position:relative;max-width:440px;margin:0 auto 40px}
+.search-wrap input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 16px 13px 42px;font-size:15px;color:var(--text);font-family:inherit;outline:none}
+.search-wrap input:focus{border-color:var(--accent)}
+.search-wrap::before{content:'🔍';position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:15px;pointer-events:none}
+
+.container{max-width:780px;margin:0 auto;padding:0 20px 80px}
+
+.alpha-section{margin-bottom:40px}
+.alpha-label{font-size:11px;font-weight:800;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+.gloss-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin-bottom:8px;transition:border-color .15s;cursor:default}
+.gloss-card:hover{border-color:var(--accent-border)}
+.gloss-card[hidden]{display:none}
+.gloss-term{font-weight:800;font-size:16px;color:var(--accent)}
+.gloss-def{font-size:15px;color:var(--text2);margin-top:4px;line-height:1.55}
+.gloss-example{font-size:13px;color:var(--text3);margin-top:6px;font-style:italic}
+
+.no-results{text-align:center;padding:40px;color:var(--text2);display:none}
+
+.cta-box{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin:48px 0;text-align:center}
+.cta-box h2{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;margin-bottom:8px}
+.cta-box p{font-size:14px;color:var(--text2);max-width:400px;margin:0 auto 16px}
+.cta-box a{display:inline-block;background:var(--accent);color:#fff;padding:10px 28px;border-radius:10px;font-weight:700;font-size:14px}
+.cta-box a:hover{background:#c44e15;text-decoration:none}
+
+footer{max-width:780px;margin:0 auto;padding:24px 20px 40px;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:12px;color:var(--text3)}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/" class="home">Llegaste Tarde <em>a la IA</em></a>
+  <nav>
+    <a href="/">Prompts</a>
+    <a href="/blog">Blog</a>
+  </nav>
+</div>
+
+<div class="hero">
+  <div class="badge">📚 Glosario Completo</div>
+  <h1>Términos de <em>IA</em> en Español</h1>
+  <p>30 términos de inteligencia artificial explicados sin tecnicismos. Todo lo que necesitas para entender cualquier conversación sobre IA — en el trabajo, en las noticias o en el libro.</p>
+  <div class="search-wrap">
+    <input type="search" id="glossSearch" placeholder="Buscar término de IA..." aria-label="Buscar en el glosario">
+  </div>
+</div>
+
+<div class="container">
+
+  <div id="glossList">
+
+    <!-- A -->
+    <div class="alpha-section">
+      <div class="alpha-label">A</div>
+
+      <div class="gloss-card" data-term="agente agent">
+        <div class="gloss-term">Agente (Agent)</div>
+        <div class="gloss-def">IA que ejecuta secuencias de tareas de forma autónoma, no solo responde preguntas individuales. Puede navegar la web, usar herramientas y encadenar acciones sin que tengas que pedirle cada paso.</div>
+        <div class="gloss-example">Ejemplo: un agente de IA que revisa tu correo, prioriza los urgentes y redacta borradores de respuesta automáticamente.</div>
+      </div>
+
+      <div class="gloss-card" data-term="alucinacion alucinación hallucination">
+        <div class="gloss-term">Alucinación</div>
+        <div class="gloss-def">Cuando la IA inventa información falsa pero la presenta con total confianza, como si fuera verdadera. No sabe que está equivocada. Por eso es fundamental verificar datos, números y citas importantes.</div>
+        <div class="gloss-example">Ejemplo: la IA cita un estudio que no existe, pero lo escribe con título, año y autores completos.</div>
+      </div>
+
+      <div class="gloss-card" data-term="api interfaz programacion">
+        <div class="gloss-term">API</div>
+        <div class="gloss-def">Application Programming Interface. Interfaz que permite a programadores conectar herramientas de IA con otros sistemas o aplicaciones. Si no sabes programar, probablemente no la uses directamente — pero sí la usan las herramientas que usas.</div>
+      </div>
+
+      <div class="gloss-card" data-term="automatizacion automatización">
+        <div class="gloss-term">Automatización</div>
+        <div class="gloss-def">Hacer que una tarea se ejecute sola, sin que tengas que hacerla manualmente cada vez. Con IA, puedes automatizar tareas que antes requerían razonamiento: redactar, clasificar, resumir, responder.</div>
+        <div class="gloss-example">Ejemplo: un flujo automático que cuando llega un correo de queja, lo clasifica, genera un borrador de respuesta y te lo manda para aprobar.</div>
+      </div>
+    </div>
+
+    <!-- C -->
+    <div class="alpha-section">
+      <div class="alpha-label">C</div>
+
+      <div class="gloss-card" data-term="chatbot">
+        <div class="gloss-term">Chatbot</div>
+        <div class="gloss-def">Programa que conversa contigo a través de texto. Los chatbots clásicos seguían scripts rígidos; los modernos como Claude y ChatGPT entienden lenguaje natural y pueden mantener conversaciones complejas.</div>
+      </div>
+
+      <div class="gloss-card" data-term="contexto ventana">
+        <div class="gloss-term">Contexto (ventana de contexto)</div>
+        <div class="gloss-def">Cantidad de información que la IA puede "recordar" dentro de una conversación. Si la conversación supera ese límite, la IA "olvida" lo que dijiste al principio. Modelos más nuevos tienen ventanas de contexto más grandes.</div>
+        <div class="gloss-example">Ejemplo: pegarle un documento de 100 páginas a Claude. Si supera la ventana de contexto, solo procesará parte del documento.</div>
+      </div>
+
+      <div class="gloss-card" data-term="copilot microsoft">
+        <div class="gloss-term">Copilot</div>
+        <div class="gloss-def">Marca de Microsoft para su IA integrada en herramientas como Word, Excel, Teams y Outlook. Asiste en tiempo real dentro de las aplicaciones que ya usas. También es el nombre del asistente de código GitHub.</div>
+      </div>
+    </div>
+
+    <!-- F -->
+    <div class="alpha-section">
+      <div class="alpha-label">F</div>
+
+      <div class="gloss-card" data-term="fine-tuning entrenamiento">
+        <div class="gloss-term">Fine-tuning</div>
+        <div class="gloss-def">Proceso de personalizar un modelo de IA entrenándolo con datos específicos de tu empresa, industria o estilo. El resultado es un modelo que "suena" como tu marca y conoce tu contexto sin que tengas que explicarlo cada vez.</div>
+      </div>
+    </div>
+
+    <!-- G -->
+    <div class="alpha-section">
+      <div class="alpha-label">G</div>
+
+      <div class="gloss-card" data-term="gpt generative pre-trained transformer chatgpt">
+        <div class="gloss-term">GPT</div>
+        <div class="gloss-def">Generative Pre-trained Transformer. La arquitectura de red neuronal detrás de ChatGPT (no de Claude ni Gemini, que usan sus propias arquitecturas). Frecuentemente mal usado como sinónimo de "inteligencia artificial" o "ChatGPT".</div>
+      </div>
+
+      <div class="gloss-card" data-term="guardrails seguridad limites">
+        <div class="gloss-term">Guardrails</div>
+        <div class="gloss-def">Límites de seguridad programados en un modelo de IA que evitan que genere contenido dañino, ilegal o inapropiado. Son los "frenos" del sistema. Diferentes empresas implementan diferentes niveles de restricción.</div>
+      </div>
+    </div>
+
+    <!-- I -->
+    <div class="alpha-section">
+      <div class="alpha-label">I</div>
+
+      <div class="gloss-card" data-term="ia generativa inteligencia artificial generativa">
+        <div class="gloss-term">IA Generativa</div>
+        <div class="gloss-def">Tipo de inteligencia artificial capaz de crear contenido nuevo: texto, imágenes, audio, video y código. Es la forma de IA que más está cambiando el trabajo profesional. Claude, ChatGPT, Gemini, DALL-E y Midjourney son ejemplos.</div>
+        <div class="gloss-example">Diferencia clave: la IA "tradicional" clasifica o predice. La generativa crea.</div>
+      </div>
+
+      <div class="gloss-card" data-term="iteracion iteración refinar">
+        <div class="gloss-term">Iteración</div>
+        <div class="gloss-def">Refinar la respuesta de la IA a través de mensajes sucesivos dentro de la misma conversación. No esperes perfección al primer intento — un buen flujo es: primer borrador → ajustes → versión final. La IA mejora con tus correcciones.</div>
+      </div>
+    </div>
+
+    <!-- L -->
+    <div class="alpha-section">
+      <div class="alpha-label">L</div>
+
+      <div class="gloss-card" data-term="llm large language model modelo lenguaje">
+        <div class="gloss-term">LLM (Large Language Model)</div>
+        <div class="gloss-def">Modelo de Lenguaje Grande. El "cerebro" que alimenta herramientas como Claude, ChatGPT y Gemini. Entrenado con cantidades masivas de texto, aprende los patrones del lenguaje humano y puede generarlo de forma coherente.</div>
+      </div>
+    </div>
+
+    <!-- M -->
+    <div class="alpha-section">
+      <div class="alpha-label">M</div>
+
+      <div class="gloss-card" data-term="machine learning ml aprendizaje maquina">
+        <div class="gloss-term">Machine Learning (ML)</div>
+        <div class="gloss-def">Tipo de inteligencia artificial que aprende patrones a partir de datos, sin ser programada explícitamente para cada caso. El algoritmo de recomendaciones de Netflix o Spotify es machine learning. La IA generativa es un tipo avanzado de ML.</div>
+      </div>
+
+      <div class="gloss-card" data-term="modelo version">
+        <div class="gloss-term">Modelo</div>
+        <div class="gloss-def">Versión específica de un sistema de IA. Por ejemplo, GPT-4o, Claude Sonnet 3.7, Gemini 1.5 Pro. Cada modelo tiene diferentes capacidades, costos y límites. Los modelos más grandes suelen ser más capaces pero más lentos o costosos.</div>
+      </div>
+
+      <div class="gloss-card" data-term="multimodal imagen audio video texto">
+        <div class="gloss-term">Multimodal</div>
+        <div class="gloss-def">IA que puede procesar y generar varios tipos de contenido al mismo tiempo: texto, imágenes, audio y video. Modelos como GPT-4o y Claude 3 son multimodales — puedes mandarles una foto y preguntarles sobre ella.</div>
+      </div>
+    </div>
+
+    <!-- N -->
+    <div class="alpha-section">
+      <div class="alpha-label">N</div>
+
+      <div class="gloss-card" data-term="no-code low-code sin codigo automatizacion zapier make">
+        <div class="gloss-term">No-code / Low-code</div>
+        <div class="gloss-def">Herramientas para crear automatizaciones y flujos de trabajo sin escribir código de programación. Zapier, Make (antes Integromat) y Microsoft Power Automate son las más populares. Permiten conectar apps y automatizar tareas repetitivas.</div>
+      </div>
+    </div>
+
+    <!-- O -->
+    <div class="alpha-section">
+      <div class="alpha-label">O</div>
+
+      <div class="gloss-card" data-term="open source codigo abierto llama mistral">
+        <div class="gloss-term">Open Source</div>
+        <div class="gloss-def">Modelos de IA cuyo código fuente y/o pesos son públicos y gratuitos. LLaMA (Meta) y Mistral son ejemplos. Permiten que empresas los instalen en sus servidores y los personalicen, a diferencia de modelos propietarios como GPT o Claude.</div>
+      </div>
+    </div>
+
+    <!-- P -->
+    <div class="alpha-section">
+      <div class="alpha-label">P</div>
+
+      <div class="gloss-card" data-term="prompt instruccion pregunta">
+        <div class="gloss-term">Prompt</div>
+        <div class="gloss-def">La instrucción o pregunta que le das a una herramienta de IA. Es lo que escribes en el cuadro de texto. Un prompt vago produce una respuesta vaga; un prompt claro, con rol, objetivo, contexto y formato definido, produce resultados que puedes usar directamente.</div>
+        <div class="gloss-example">Framework ROCA: Rol + Objetivo + Contexto + Acción = prompt efectivo.</div>
+      </div>
+    </div>
+
+    <!-- R -->
+    <div class="alpha-section">
+      <div class="alpha-label">R</div>
+
+      <div class="gloss-card" data-term="rag retrieval augmented generation documentos">
+        <div class="gloss-term">RAG (Retrieval-Augmented Generation)</div>
+        <div class="gloss-def">Técnica donde la IA primero busca información en documentos específicos antes de generar su respuesta. Reduce enormemente las alucinaciones porque la IA trabaja con datos reales, no solo con lo que aprendió en el entrenamiento.</div>
+        <div class="gloss-example">Ejemplo: subir el manual de tu empresa a una IA y preguntarle sobre políticas internas — te responde con datos del manual, no inventados.</div>
+      </div>
+    </div>
+
+    <!-- S -->
+    <div class="alpha-section">
+      <div class="alpha-label">S</div>
+
+      <div class="gloss-card" data-term="sesgo bias prejuicio">
+        <div class="gloss-term">Sesgo (Bias)</div>
+        <div class="gloss-def">Tendencias o prejuicios en las respuestas de la IA que vienen de los datos con los que fue entrenada. Si los datos de entrenamiento sobrerrepresentan ciertos grupos, perspectivas o idiomas, el modelo los reflejará en sus respuestas.</div>
+      </div>
+    </div>
+
+    <!-- T -->
+    <div class="alpha-section">
+      <div class="alpha-label">T</div>
+
+      <div class="gloss-card" data-term="temperatura creatividad parametro">
+        <div class="gloss-term">Temperatura</div>
+        <div class="gloss-def">Parámetro técnico que controla qué tan creativa o conservadora es la respuesta de la IA. Temperatura alta = respuestas más creativas e inesperadas. Temperatura baja = respuestas más predecibles y precisas. La mayoría de las interfaces lo ajustan automáticamente.</div>
+      </div>
+
+      <div class="gloss-card" data-term="token unidad texto palabras">
+        <div class="gloss-term">Token</div>
+        <div class="gloss-def">La unidad básica de texto que procesa la IA. No es exactamente una palabra — puede ser una sílaba, una palabra o una puntuación. En español, una palabra equivale aproximadamente a 1.5-2 tokens. El costo de usar la IA vía API se mide en tokens.</div>
+      </div>
+    </div>
+
+    <!-- W -->
+    <div class="alpha-section">
+      <div class="alpha-label">W</div>
+
+      <div class="gloss-card" data-term="workflow flujo trabajo automatizacion zapier">
+        <div class="gloss-term">Workflow</div>
+        <div class="gloss-def">Secuencia de pasos automatizados que se ejecutan cuando ocurre un evento (disparador). En herramientas como Zapier o Make, cada workflow conecta aplicaciones: "cuando llegue un formulario → crear contacto en CRM → enviar correo de bienvenida".</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="noResults">No se encontraron términos para "<span id="searchQuery"></span>".</div>
+
+  <div class="cta-box">
+    <h2>¿Quieres usar estos términos en la práctica?</h2>
+    <p>Tenemos 40 prompts profesionales listos para copiar — por área: Marketing, RRHH, Excel, Legal, Finanzas y más.</p>
+    <a href="/">Ver los prompts gratuitos →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 — Llegaste Tarde a la IA. Todos los derechos reservados. · <a href="/">Inicio</a> · <a href="/blog">Blog</a></p>
+</footer>
+
+<script>
+  var searchEl = document.getElementById('glossSearch');
+  var cards = document.querySelectorAll('.gloss-card');
+  var sections = document.querySelectorAll('.alpha-section');
+  var noResults = document.getElementById('noResults');
+  var searchQuery = document.getElementById('searchQuery');
+
+  searchEl.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    var found = 0;
+    cards.forEach(function(card) {
+      var term = card.querySelector('.gloss-term').textContent.toLowerCase();
+      var def = card.querySelector('.gloss-def').textContent.toLowerCase();
+      var data = (card.getAttribute('data-term') || '').toLowerCase();
+      var match = !q || term.includes(q) || def.includes(q) || data.includes(q);
+      card.hidden = !match;
+      if (match) found++;
+    });
+    sections.forEach(function(sec) {
+      var visible = Array.from(sec.querySelectorAll('.gloss-card')).some(function(c) { return !c.hidden; });
+      sec.style.display = visible ? '' : 'none';
+    });
+    noResults.style.display = found === 0 ? 'block' : 'none';
+    if (found === 0) searchQuery.textContent = q;
+    if (typeof gtag !== 'undefined' && q.length > 2) gtag('event', 'search', { search_term: q, search_location: 'glosario' });
+  });
+</script>
+
+</body>
+</html>
