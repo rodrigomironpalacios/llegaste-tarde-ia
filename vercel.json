@@ -2,6 +2,8 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/encuesta", "destination": "/encuesta.html" }
   ],
