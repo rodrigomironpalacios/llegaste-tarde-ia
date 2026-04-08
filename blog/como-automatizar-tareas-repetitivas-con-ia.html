@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo Automatizar Tareas Repetitivas con IA Sin Saber Programar — Llegaste Tarde a la IA</title>
+<meta name="description" content="Aprende a automatizar tareas repetitivas usando IA sin programar: correos automáticos, clasificación de datos, reportes y más con Zapier, Make y ChatGPT.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://llegastetardealaia.com/blog/como-automatizar-tareas-repetitivas-con-ia">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cómo Automatizar Tareas Repetitivas con IA Sin Saber Programar">
+<meta property="og:description" content="Correos automáticos, clasificación de datos, reportes y más — con IA y herramientas no-code. Guía práctica para profesionales.">
+<meta property="og:url" content="https://llegastetardealaia.com/blog/como-automatizar-tareas-repetitivas-con-ia">
+<meta property="og:locale" content="es_MX">
+<meta property="og:image" content="https://llegastetardealaia.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"Cómo Automatizar Tareas Repetitivas con IA Sin Saber Programar",
+  "author":{"@type":"Organization","name":"Llegaste Tarde a la IA"},
+  "publisher":{"@type":"Organization","name":"Llegaste Tarde a la IA"},
+  "datePublished":"2026-04-07","dateModified":"2026-04-07",
+  "inLanguage":"es"
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0L1NKYM39S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0L1NKYM39S',{anonymize_ip:true});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#d95a1b;--accent-glow:rgba(217,90,27,.10);--accent-border:rgba(217,90,27,.25);--bg:#0b0b0e;--surface:#141418;--card:#1a1a20;--border:#27272f;--text:#ece8e0;--text2:#8d8a82;--text3:#5a5850;--tag:rgba(217,90,27,.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Karla',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(217,90,27,.3)}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.top-bar{display:flex;justify-content:space-between;align-items:center;max-width:720px;margin:0 auto;padding:20px 20px 0;flex-wrap:wrap;gap:12px}
+.top-bar a.home{font-family:'Instrument Serif',serif;font-size:18px;color:var(--text);text-decoration:none}
+.top-bar a.home em{color:var(--accent);font-style:normal}
+.top-bar nav{display:flex;gap:18px}
+.top-bar nav a{font-size:14px;font-weight:600;color:var(--text2);text-decoration:none}
+.top-bar nav a:hover{color:var(--text)}
+article{max-width:720px;margin:0 auto;padding:40px 20px 80px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--tag);padding:3px 12px;border-radius:20px;margin-bottom:16px}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(28px,6vw,46px);font-weight:400;line-height:1.1;margin-bottom:14px}
+.meta{font-size:13px;color:var(--text3);margin-bottom:40px;font-weight:600}
+h2{font-family:'Instrument Serif',serif;font-size:clamp(20px,4vw,28px);font-weight:400;line-height:1.2;margin:40px 0 14px}
+h3{font-size:17px;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{font-size:16px;color:var(--text2);margin-bottom:18px;line-height:1.75}
+strong{color:var(--text);font-weight:700}
+ul,ol{padding-left:22px;margin-bottom:18px}
+li{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:6px}
+li strong{color:var(--text)}
+.step{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:12px}
+.step-num{display:inline-block;background:var(--accent);color:#fff;width:26px;height:26px;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:800;margin-bottom:10px}
+.step h3{margin-top:0;margin-bottom:8px}
+.step p{margin:0}
+.callout{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:18px 20px;margin:28px 0}
+.callout p{margin:0;font-size:15px}
+.example-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin:24px 0}
+.example-box .before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.example-box .side{background:var(--surface);border-radius:10px;padding:14px}
+.example-box .side-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.example-box .side-label.before{color:var(--text3)}
+.example-box .side-label.after{color:#22c55e}
+.example-box .side p{font-size:13px;margin:0;color:var(--text2)}
+.cta-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin:48px 0;text-align:center}
+.cta-section h2{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;margin-bottom:8px}
+.cta-section p{font-size:14px;color:var(--text2);max-width:400px;margin:0 auto 20px}
+.cta-btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 32px;border-radius:12px;font-weight:800;font-size:15px;text-decoration:none}
+.cta-btn:hover{background:#c44e15;text-decoration:none}
+footer{max-width:720px;margin:60px auto 0;padding:24px 20px 40px;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:12px;color:var(--text3)}
+@media(max-width:500px){.example-box .before-after{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/" class="home">Llegaste Tarde <em>a la IA</em></a>
+  <nav><a href="/blog">← Blog</a><a href="/">Prompts</a></nav>
+</div>
+
+<article>
+  <span class="tag">Productividad · Automatización</span>
+  <h1>Cómo Automatizar Tareas Repetitivas con IA Sin Saber Programar</h1>
+  <div class="meta">8 min de lectura · Abril 2026</div>
+
+  <p>¿Cuántas horas a la semana haces cosas que sabes que deberían hacerse solas? Copiar datos de un formulario a una hoja de Excel. Responder siempre el mismo tipo de correo. Generar el mismo reporte cada lunes cambiando solo los números.</p>
+
+  <p>La buena noticia: todo eso ya se puede automatizar — y no necesitas saber programar para hacerlo. Solo necesitas entender dos cosas: <strong>cuándo usar IA sola</strong> y <strong>cuándo combinar IA con herramientas no-code</strong>.</p>
+
+  <h2>Dos tipos de automatización: entiende la diferencia</h2>
+
+  <p>Antes de empezar, es importante distinguir dos cosas que la gente confunde:</p>
+
+  <ul>
+    <li><strong>Automatización simple:</strong> mover datos de A a B, disparar acciones cuando pasa algo. Para esto se usan herramientas no-code como Zapier, Make o Power Automate.</li>
+    <li><strong>Automatización inteligente:</strong> generar texto, analizar un documento, tomar decisiones basadas en contexto. Para esto se usa IA (Claude, ChatGPT).</li>
+  </ul>
+
+  <p>El poder real está en combinarlas: la herramienta no-code maneja el flujo, y la IA hace el trabajo inteligente en el medio.</p>
+
+  <h2>Qué puedes automatizar ya, hoy</h2>
+
+  <h3>1. Correos de respuesta estándar</h3>
+
+  <p>Si recibes el mismo tipo de consulta todos los días (precios, disponibilidad, quejas, seguimientos), la IA puede generar el borrador. Tú solo revisas y envías.</p>
+
+  <div class="example-box">
+    <strong style="font-size:14px">Ejemplo de flujo:</strong>
+    <div class="before-after">
+      <div class="side"><div class="side-label before">Antes</div><p>Leer correo → pensar respuesta → escribir → revisar → enviar. 10 minutos por correo, 30 correos al día.</p></div>
+      <div class="side"><div class="side-label after">Con IA</div><p>Copiar correo → pedir borrador → ajustar 2 líneas → enviar. 90 segundos por correo.</p></div>
+    </div>
+  </div>
+
+  <h3>2. Clasificación y priorización de información</h3>
+
+  <p>¿Tienes una lista de leads, tickets de soporte o solicitudes que alguien tiene que leer y categorizar? La IA puede hacerlo a velocidad máquina.</p>
+
+  <p>Prompt que funciona: <em>"Lee estas [X] solicitudes y clasifícalas en: urgente / normal / puede esperar. Para cada una, incluye en una oración por qué la clasificaste así."</em></p>
+
+  <h3>3. Generación de reportes narrativos</h3>
+
+  <p>Tienes los números. Lo que tarda es escribir el texto alrededor: el análisis, la interpretación, las conclusiones para presentarle a dirección. Eso es exactamente para lo que la IA es brillante.</p>
+
+  <h3>4. Resúmenes de reuniones y documentos</h3>
+
+  <p>Grabas tu reunión de 60 minutos, obtienes la transcripción (Teams, Zoom, Otter.ai lo hacen automáticamente), y le pides a la IA: <em>"Dame los 5 acuerdos principales, quién hace qué y para cuándo"</em>. Listo en 30 segundos.</p>
+
+  <h3>5. Seguimiento a tareas y pendientes</h3>
+
+  <p>Pegar el thread de un proyecto en la IA y preguntarle: <em>"¿Qué está pendiente? ¿Quién debe responder? ¿Hay algún plazo próximo?"</em> — funciona sorprendentemente bien.</p>
+
+  <h2>El stack no-code para automatizar con IA</h2>
+
+  <p>Estas son las herramientas que necesitas conocer:</p>
+
+  <ul>
+    <li><strong>Zapier</strong> — La más fácil de aprender. Conecta más de 6,000 aplicaciones. Si un formulario se llena, dispara una acción en otra app. Plan gratuito disponible.</li>
+    <li><strong>Make (antes Integromat)</strong> — Más poderosa que Zapier, ideal para flujos más complejos. Interfaz visual más clara. Plan gratuito generoso.</li>
+    <li><strong>Microsoft Power Automate</strong> — Si tu empresa usa Microsoft 365, esta es tu primera opción. Ya la tienes incluida en tu licencia.</li>
+    <li><strong>Notion AI / ClickUp AI</strong> — Si ya usas estas herramientas de productividad, tienen IA integrada que puede ayudarte con notas, tareas y documentos sin salir de la plataforma.</li>
+  </ul>
+
+  <div class="callout">
+    <p>🎯 <strong>Por dónde empezar:</strong> Identifica la tarea más repetitiva y aburrida de tu semana. La que más "copiar y pegar" requiere. Esa es tu primera automatización. No intentes hacer todo de golpe.</p>
+  </div>
+
+  <h2>Un flujo completo que puedes copiar hoy</h2>
+
+  <p>Este flujo funciona para quien maneja muchos formularios de contacto o solicitudes:</p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <h3>El formulario llega (disparador)</h3>
+    <p>Alguien llena tu formulario de contacto en tu sitio, Google Forms o Typeform.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <h3>Zapier lo captura</h3>
+    <p>Zapier detecta el nuevo envío automáticamente.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <h3>La IA lo analiza</h3>
+    <p>Zapier manda el contenido a ChatGPT o Claude con un prompt preconfigurado: "Clasifica esta solicitud como: interesado en compra / queja / información general / otro. Genera un borrador de respuesta de máximo 100 palabras."</p>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <h3>Se crea un borrador</h3>
+    <p>El borrador llega a tu correo o a tu CRM (HubSpot, Pipedrive, etc.) listo para que lo revises y envíes.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <h3>Tú apruebas en segundos</h3>
+    <p>Si el borrador está bien, send. Si necesita ajuste, cambias dos palabras. En total: 60 segundos en lugar de 10 minutos.</p>
+  </div>
+
+  <h2>¿Qué NO automatices todavía?</h2>
+
+  <p>La automatización tiene límites que debes respetar:</p>
+
+  <ul>
+    <li><strong>Decisiones irreversibles</strong> — Nunca automatices respuestas que comprometan a tu empresa sin revisión humana: contratos, compromisos financieros, comunicaciones de crisis.</li>
+    <li><strong>Comunicación sensible</strong> — Despidos, retroalimentación difícil, manejo de quejas graves. La IA puede ayudarte a <em>preparar</em> esa conversación, nunca a reemplazarla.</li>
+    <li><strong>Información confidencial</strong> — Lee los términos de uso de cada herramienta antes de pasarle datos de clientes o información interna sensible.</li>
+  </ul>
+
+  <h2>El primer paso en la próxima hora</h2>
+
+  <p>No te quedes en la teoría. Haz esto ahora:</p>
+
+  <ol>
+    <li>Piensa en la tarea más repetitiva de tu semana.</li>
+    <li>Escríbela en Claude o ChatGPT como si le explicaras a un nuevo empleado: "Cada semana tengo que hacer [describir]. Ayúdame a hacer esto más rápido."</li>
+    <li>Sigue las instrucciones que te dé.</li>
+  </ol>
+
+  <p>La automatización no es un proyecto de TI. Es un hábito. Y empieza con una conversación.</p>
+
+  <div class="cta-section">
+    <h2>¿Listo para empezar a automatizar?</h2>
+    <p>Tenemos prompts listos para las tareas más comunes — reportes, correos, análisis de datos, y más.</p>
+    <a href="/" class="cta-btn">Ver los 40 prompts gratis →</a>
+  </div>
+</article>
+
+<footer>
+  <p>© 2026 — Llegaste Tarde a la IA · <a href="/">Inicio</a> · <a href="/blog">Blog</a> · <a href="/glosario">Glosario de IA</a></p>
+</footer>
+
+</body>
+</html>
