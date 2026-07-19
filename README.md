@@ -8,26 +8,33 @@
 
 ## 📂 Estructura del Repositorio
 
+> El contenido del libro (capítulos, prompts y ebook completo) vive ahora en el
+> repositorio privado `llegaste-tarde-ia-libro`. Este repositorio contiene solo
+> el sitio web y sus archivos de despliegue.
+
 ```
 llegaste-tarde-ia/
-├── docs/                          # Contenido del libro
-│   ├── 00-disclaimer.md           # Nota del autor
-│   ├── 01-introduccion.md         # Introducción completa
-│   ├── 02-capitulo-01.md          # ¿Qué Es la IA?
-│   ├── 03-capitulo-02.md          # Tu Primera Conversación
-│   ├── 04-capitulo-03.md          # El Arte de Pedir (Prompts)
-│   ├── 05-capitulo-04.md          # IA para Tu Área
-│   ├── 06-capitulo-05.md          # Excel + IA
-│   ├── 07-capitulo-06.md          # Automatiza lo Aburrido
-│   ├── 08-capitulo-07.md          # Cómo Destacar en Tu Trabajo
-│   ├── 09-capitulo-08.md          # Plan de 30 Días
-│   ├── 10-conclusion.md           # Conclusión
-│   └── 11-apendices.md            # Prompts, recursos, glosario
-├── website/                       # Sitio web companion
-│   └── sitio_llegaste_tarde_ia.jsx
-├── prompts/                       # Prompts del libro (formato independiente)
-│   └── prompts-magicos.md
-├── ebook-completo.md              # Libro completo en un solo archivo
+├── index.html                     # Sitio principal (prompts, capítulos, glosario)
+├── glosario/                      # Página del glosario de IA
+│   └── index.html
+├── blog/                          # Artículos del blog
+│   └── index.html
+├── admin/                         # Panel de administración
+│   └── index.html
+├── api/                           # Funciones serverless (Vercel)
+│   ├── datos.js
+│   ├── encuesta.js
+│   ├── github.js
+│   └── subscribe.js
+├── website/                       # Sitio web companion (versión React/JSX)
+│   ├── index.html
+│   ├── sitio_llegaste_tarde_ia.jsx
+│   └── encuesta_early_adopters.jsx
+├── encuesta.html                  # Encuesta a early adopters
+├── 404.html                       # Página de error 404
+├── middleware.js                  # Middleware de Vercel
+├── vercel.json                    # Configuración de despliegue
+├── sitemap.xml / robots.txt       # SEO
 └── README.md
 ```
 
@@ -44,7 +51,9 @@ Profesionales de **marketing, ventas, RRHH, finanzas, legal, administración, co
 
 El sitio web contiene los 40 prompts del libro listos para copiar y pegar, el glosario de 30 términos de IA y la tabla de contenidos interactiva. Optimizado para SEO con HTML semántico, structured data (JSON-LD), Open Graph y meta tags.
 
-**Archivo principal:** `website/index.html` (HTML estático, SEO-friendly)
+**Sitio en vivo:** https://llegaste-tarde-ia.mx
+
+**Archivo principal:** `index.html` (HTML estático, SEO-friendly)
 
 ## 📝 Estado del Proyecto
 
@@ -61,8 +70,7 @@ El sitio web contiene los 40 prompts del libro listos para copiar y pegar, el gl
 | Capítulo 8 | ✅ Completo |
 | Conclusión | ✅ Completa |
 | Sitio web | ✅ Completo |
-| 10 Prompts | ✅ Completos |
-| Apéndices | ✅ Completos |
+| 40 Prompts | ✅ Completos |
 | Apéndices | ✅ Completos |
 
 ## 📜 Licencia
